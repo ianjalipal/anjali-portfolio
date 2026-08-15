@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Anjali Pal — Product Designer</title>
+<meta name="description" content="Product Designer portfolio — case studies in healthcare, SaaS and B2B workflow design, including Wizlo, MediFlow and Polystox.">
+<style>
+  :root {
+    --paper: #F5F3EE;
+    --paper-raised: #FFFFFF;
+    --ink: #171A18;
+    --ink-soft: #5C6259;
+    --ink-faint: #8B9086;
+    --line: #E1DDD1;
+    --line-strong: #CCC6B6;
+    --accent: #526B5A;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #DCE3DD;
+    --secondary: #B5A47A;
+    --secondary-ink: #171A18;
+    --node-off: #C7C2B2;
+    --tag-bg: #EBE8E0;
+    --code-bg: #EBE8E0;
+    --ribbon-bg: #526B5A;
+    --ribbon-ink: #FFFFFF;
+  }
+  :root[data-theme="dark"] {
+    --paper: #14160F;
+    --paper-raised: #1C1F17;
+    --ink: #F1EFE7;
+    --ink-soft: #ABB0A2;
+    --ink-faint: #6E7568;
+    --line: #282B21;
+    --line-strong: #393E30;
+    --accent: #86A390;
+    --accent-ink: #10140E;
+    --accent-soft: #253128;
+    --secondary: #CDBD8E;
+    --secondary-ink: #171A10;
+    --node-off: #40453A;
+    --tag-bg: #1F2318;
+    --code-bg: #1B1E15;
+    --ribbon-bg: #86A390;
+    --ribbon-ink: #10140E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14160F;
+      --paper-raised: #1C1F17;
+      --ink: #F1EFE7;
+      --ink-soft: #ABB0A2;
+      --ink-faint: #6E7568;
+      --line: #282B21;
+      --line-strong: #393E30;
+      --accent: #86A390;
+      --accent-ink: #10140E;
+      --accent-soft: #253128;
+      --secondary: #CDBD8E;
+      --secondary-ink: #171A10;
+      --node-off: #40453A;
+      --tag-bg: #1F2318;
+      --code-bg: #1B1E15;
+      --ribbon-bg: #86A390;
+      --ribbon-ink: #10140E;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  ::selection { background: var(--accent-soft); color: var(--accent-ink); }
+
+  code, .mono {
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", "Cascadia Mono", Consolas, monospace;
+  }
+
+  a { color: var(--accent); }
+
+  .shell { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---- sticky side ribbon ---- */
+  .ribbon {
+    position: fixed;
+    top: 0;
+    right: 36px;
+    z-index: 30;
+    background: var(--ribbon-bg);
+    color: var(--ribbon-ink);
+    padding: 14px 11px;
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  }
+  .ribbon .rdot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--ribbon-ink);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+  .ribbon .rtext {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  @media (max-width: 640px) { .ribbon { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .ribbon .rdot { animation: none; } }
+
+  /* ---- top nav ---- */
+  nav.topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.topbar .shell {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 14px; padding-bottom: 14px;
+  }
+  .brand { font-weight: 800; font-size: 15px; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+  .navlinks { display: flex; gap: 22px; font-size: 13px; }
+  .navlinks a { color: var(--ink-soft); text-decoration: none; font-weight: 600; }
+  .navlinks a:hover { color: var(--accent); }
+
+  /* ---- hero ---- */
+  header.hero { padding: 72px 0 20px; }
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 12px; letter-spacing: 0.06em; color: var(--accent);
+    text-transform: uppercase; margin-bottom: 16px; display: block;
+  }
+  h1.hero-title {
+    font-size: clamp(34px, 5.4vw, 54px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.06;
+    margin: 0 0 18px;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  h1.hero-title .accentword { color: var(--accent); }
+  p.hero-sub {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin: 0 0 30px;
+    line-height: 1.6;
+  }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; border-radius: 7px;
+    font-size: 13.5px; font-weight: 700; text-decoration: none;
+    border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-ghost { border-color: var(--line-strong); color: var(--ink); }
+
+  /* ---- workflow diagram ---- */
+  .flow-wrap {
+    margin: 46px 0 8px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  .flow-caption {
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 11px; color: var(--ink-faint); letter-spacing: 0.03em;
+    margin-top: 10px;
+  }
+  svg.flow text { font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace; }
+
+  /* ---- section scaffolding ---- */
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  section:first-of-type { border-top: none; }
+  h2.section-title {
+    font-size: 12px; font-weight: 800; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-faint);
+    margin: 0 0 28px; display: flex; align-items: center; gap: 10px;
+  }
+  h2.section-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  p.lede { font-size: 16px; color: var(--ink-soft); max-width: 62ch; margin: 0 0 8px; }
+
+  /* ---- about ---- */
+  .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; }
+  @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } }
+  .stat { display: flex; flex-direction: column; gap: 2px; padding: 14px 0; border-top: 1px solid var(--line); }
+  .stat:first-child { border-top: none; }
+  .stat .num { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--accent); }
+  .stat .lbl { font-size: 12.5px; color: var(--ink-soft); }
+
+  /* ---- numbered services ---- */
+  .services { display: flex; flex-direction: column; }
+  .service-row {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 18px;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+  }
+  .service-row:first-child { border-top: none; }
+  .service-row .snum {
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 13px; font-weight: 700; color: var(--accent);
+    padding-top: 2px;
+  }
+  .service-row h3 { margin: 0 0 6px; font-size: 17px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; }
+  .service-row p { margin: 0; font-size: 14px; color: var(--ink-soft); max-width: 60ch; line-height: 1.6; }
+
+  /* ---- case studies ---- */
+  .case {
+    padding: 30px 26px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--paper-raised);
+    margin-bottom: 20px;
+  }
+  .case.flagship { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .case-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 16px; flex-wrap: wrap; margin-bottom: 14px;
+  }
+  .case-name { font-size: 20px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; }
+  .case-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag {
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.02em;
+    padding: 3px 9px; border-radius: 20px; background: var(--tag-bg); color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .tag.flag { background: var(--secondary); color: var(--secondary-ink); }
+  .case-desc { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 18px; max-width: 68ch; }
+
+  .modules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 22px; }
+  @media (max-width: 640px) { .modules { grid-template-columns: 1fr; } }
+  .module { padding: 12px 0; border-top: 1px solid var(--line); }
+  .module:nth-child(-n+2) { border-top: none; }
+  @media (max-width: 640px) { .module:nth-child(2) { border-top: 1px solid var(--line); } }
+  .module .mtitle {
+    font-size: 13px; font-weight: 700; color: var(--ink);
+    display: flex; align-items: baseline; gap: 8px; margin-bottom: 3px;
+  }
+  .module .mtitle .jira {
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 10.5px; color: var(--secondary); font-weight: 700;
+  }
+  .module p { margin: 0; font-size: 12.5px; color: var(--ink-soft); line-height: 1.55; }
+
+  .stack-note {
+    margin-top: 20px; padding: 14px 16px;
+    background: var(--code-bg); border-radius: 8px;
+    font-size: 12.5px; color: var(--ink-soft);
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .stack-note .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-top: 5px; flex-shrink: 0; }
+  .stack-note code { color: var(--ink); }
+
+  .case-list-desc { font-size: 13px; color: var(--ink-soft); margin: 0; }
+
+  /* ---- skills ---- */
+  .skillgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px 40px; }
+  @media (max-width: 640px) { .skillgrid { grid-template-columns: 1fr; } }
+  .skillcat h3 {
+    font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--accent); margin: 0 0 10px; font-weight: 800;
+  }
+  .chiprow { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip {
+    font-size: 12px; padding: 5px 11px; border-radius: 6px;
+    background: var(--tag-bg); color: var(--ink); border: 1px solid var(--line);
+  }
+
+  /* ---- process ---- */
+  .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media (max-width: 760px) { .process { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 460px) { .process { grid-template-columns: 1fr; } }
+  .pstep { padding-top: 14px; border-top: 2px solid var(--line); }
+  .pstep .pnum {
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 11px; color: var(--accent); font-weight: 700; margin-bottom: 8px; display: block;
+  }
+  .pstep h4 { margin: 0 0 6px; font-size: 14.5px; font-weight: 800; color: var(--ink); }
+  .pstep p { margin: 0; font-size: 12.5px; color: var(--ink-soft); line-height: 1.55; }
+
+  /* ---- footer ---- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 48px 0 60px;
+  }
+  .foot-grid { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 28px; }
+  footer h2.section-title { margin-bottom: 14px; }
+  .foot-title { font-size: 24px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 10px; max-width: 30ch; text-wrap: balance; }
+  .foot-links { display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+  .foot-links a { text-decoration: none; color: var(--ink); font-weight: 600; }
+  .foot-links a span { color: var(--ink-faint); font-weight: 400; font-size: 12px; margin-left: 6px; }
+  .foot-note { margin-top: 40px; font-size: 12px; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+
+<a class="ribbon" href="mailto:palanjali0853@gmail.com">
+  <span class="rdot"></span>
+  <span class="rtext">Open to Work</span>
+</a>
+
+<nav class="topbar">
+  <div class="shell">
+    <a href="#top" class="brand">ANJALI PAL</a>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div id="top"></div>
+<div class="shell">
+
+  <header class="hero">
+    <span class="eyebrow">Product Designer · Bangalore, India</span>
+    <h1 class="hero-title">I turn tangled operational<br>workflows into <span class="accentword">systems people<br>can actually use.</span></h1>
+    <p class="hero-sub">3 years designing SaaS, healthcare, and B2B platforms — multi-role dashboards, approval flows, and revenue-adjacent processes — from first sketch through to production-ready components.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#work">View case studies</a>
+      <a class="btn btn-ghost" href="mailto:palanjali0853@gmail.com">Get in touch</a>
+    </div>
+
+    <div class="flow-wrap">
+      <svg class="flow" viewBox="0 0 1040 92" width="1040" height="92" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A workflow diagram of the Wizlo product lifecycle, from lead to notifications">
+        <line x1="30" y1="46" x2="1010" y2="46" stroke="var(--line-strong)" stroke-width="1.5" />
+        <g id="flow-nodes"></g>
+      </svg>
+      <div class="flow-caption">THE WIZLO LIFECYCLE — ONE OF THE SYSTEMS I DESIGNED, END TO END</div>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">About</h2>
+    <div class="about-grid">
+      <p class="lede">I design for the unglamorous middle of a product — the approval queues, review states, and multi-role handoffs that make or break whether operational software actually gets adopted. My work spans clinic/EMR software, B2B trading platforms, and marketplace apps, but the throughline is the same: take a process that's complicated because the business is complicated, and make the interface simple anyway. I also work close to implementation — building in Claude Code, HTML/CSS, React and Storybook — so what I design is what actually ships.</p>
+      <div>
+        <div class="stat"><span class="num">10+</span><span class="lbl">modules designed end-to-end on Wizlo, a clinic/EMR SaaS platform</span></div>
+        <div class="stat"><span class="num">4</span><span class="lbl">live, shipped 0-to-1 products (Polystox, Jayhyzmat, Mostly Events, Car Arbab)</span></div>
+        <div class="stat"><span class="num">66</span><span class="lbl">screens across 4 user roles designed for MediFlow, a healthcare SaaS platform</span></div>
+        <div class="stat"><span class="num">3 yrs</span><span class="lbl">across SaaS, healthcare, marketplace &amp; e-commerce domains</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">What I Do</h2>
+    <div class="services">
+      <div class="service-row">
+        <span class="snum">01</span>
+        <div>
+          <h3>Product design</h3>
+          <p>End-to-end UX and UI for operational software — from early flows and information architecture to polished, production-ready interfaces. I focus on the parts that are complicated because the business is complicated.</p>
+        </div>
+      </div>
+      <div class="service-row">
+        <span class="snum">02</span>
+        <div>
+          <h3>Design systems</h3>
+          <p>Scalable design systems with clear tokens, reusable components, and documentation that holds up across every role and product module — like the Nova Design System I built and maintain for Wizlo.</p>
+        </div>
+      </div>
+      <div class="service-row">
+        <span class="snum">03</span>
+        <div>
+          <h3>Healthcare &amp; revenue-cycle UX</h3>
+          <p>GFE review, encounter and provider workflows, subscriptions, billing-adjacent order flows, and approval-style, multi-role interfaces for clinical and operational software.</p>
+        </div>
+      </div>
+      <div class="service-row">
+        <span class="snum">04</span>
+        <div>
+          <h3>AI-assisted design &amp; implementation</h3>
+          <p>Designing directly in Claude Code, connecting Figma to production HTML/CSS and React, with components documented in Storybook and handoff managed through Git/GitHub.</p>
+        </div>
+      </div>
+      <div class="service-row">
+        <span class="snum">05</span>
+        <div>
+          <h3>Prototyping &amp; developer handoff</h3>
+          <p>Figma and HTML/CSS prototypes to pressure-test flows before a line of production code is written, then close collaboration with engineers through implementation.</p>
+        </div>
+      </div>
+      <div class="service-row">
+        <span class="snum">06</span>
+        <div>
+          <h3>UX audits</h3>
+          <p>Reviewing existing workflows to find usability gaps, unnecessary complexity, and inconsistency — then simplifying without stripping out what the workflow actually needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2 class="section-title">Selected Work</h2>
+
+    <div class="case flagship">
+      <div class="case-top">
+        <div>
+          <div class="case-name">Wizlo — Clinic / EMR SaaS Platform</div>
+        </div>
+        <div class="case-tags">
+          <span class="tag flag">FLAGSHIP</span>
+          <span class="tag">Healthcare</span>
+          <span class="tag">Revenue Cycle</span>
+          <span class="tag">Design System</span>
+        </div>
+      </div>
+      <p class="case-desc">End-to-end UX across patient, clinic/admin, and provider/clinical experiences — the full lifecycle from lead intake through Good Faith Estimate review, clinical encounter, treatment, billing-adjacent ordering, subscriptions, and patient-facing notifications.</p>
+
+      <div class="modules">
+        <div class="module">
+          <div class="mtitle">GFE Review → Encounter</div>
+          <p>Reviewer assignment, synchronous vs. asynchronous review flows, and license validation — the Good Faith Estimate to Encounter handoff, modeling healthcare revenue-cycle and compliance requirements directly into the UI.</p>
+        </div>
+        <div class="module">
+          <div class="mtitle">Sync Encounter <span class="jira">WZ-6776</span></div>
+          <p>Manual queue, virtual waiting room, provider availability, and round-robin assignment logic — balancing operational control for providers with a calm experience for waiting patients.</p>
+        </div>
+        <div class="module">
+          <div class="mtitle">Lead Management &amp; Forms Builder</div>
+          <p>Multi-form intake progression with configurable branding — logo, color, and typography — so each clinic's intake feels like their own product.</p>
+        </div>
+        <div class="module">
+          <div class="mtitle">Subscriptions &amp; Product Bundles</div>
+          <p>Plans, bundles, and treatment/program packages, plus a product-level timeline for orders spanning multiple treatments.</p>
+        </div>
+        <div class="module">
+          <div class="mtitle">Patient &amp; White-Label Portal <span class="jira">WZ-1999</span></div>
+          <p>Patient journeys, treatment timelines, and appointments — with per-brand customization so individual healthcare brands could white-label the portal.</p>
+        </div>
+        <div class="module">
+          <div class="mtitle">Clinic Portal &amp; Notifications <span class="jira">WZ-2422 · WZ-7597</span></div>
+          <p>Plan-creation and subscription-management workflows, plus patient/provider notification configuration across Email and SMS — templates, preview, draft, and publish states.</p>
+        </div>
+      </div>
+
+      <div class="stack-note">
+        <span class="dot"></span>
+        <div>Nova Design System underpins every module — tokens, colors, typography, and reusable components, built with Claude/AI-assisted workflows. I'm currently implementing Wizlo's UI directly in <code>Claude Code</code>, writing <code>HTML/CSS</code> and <code>React</code> components documented in <code>Storybook</code>, with handoff managed through <code>Git/GitHub</code> — closing the loop between Figma design and shipped frontend code.</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-top">
+        <div class="case-name">MediFlow — Healthcare SaaS Platform</div>
+        <div class="case-tags"><span class="tag">SaaS</span><span class="tag">66 Screens</span><span class="tag">4 User Roles</span></div>
+      </div>
+      <p class="case-list-desc">66 screens across Doctor, Receptionist, Clinic Owner, and Patient roles — appointment scheduling, patient records, billing, insurance, and role-based dashboards with approval-style, ERP-style workflows under one unified design system.</p>
+    </div>
+
+    <div class="case">
+      <div class="case-top">
+        <div class="case-name">Polystox — B2B Polymer Trading Platform</div>
+        <div class="case-tags"><span class="tag">Marketplace</span><span class="tag">Mobile</span><span class="tag">10K+ downloads</span></div>
+      </div>
+      <p class="case-list-desc">End-to-end UX for manufacturers, traders, importers, and exporters — offer creation, live bidding, demand management, order tracking, and transit insurance. Multi-role, data-dense interfaces with negotiation and real-time status, comparable to procurement and vendor-management systems.</p>
+    </div>
+
+    <div class="case">
+      <div class="case-top">
+        <div class="case-name">Shipment &amp; Logistics Admin Panel</div>
+        <div class="case-tags"><span class="tag">SaaS Admin</span><span class="tag">B2B</span></div>
+      </div>
+      <p class="case-list-desc">Multi-role admin panel spanning appointments, records, billing, insurance, and admin flows with a unified design system across Doctor, Receptionist, and Admin roles — structurally comparable to ERP module architecture.</p>
+    </div>
+
+    <div class="case">
+      <div class="case-top">
+        <div class="case-name">Mostly Events — Dual-Sided Job Portal</div>
+        <div class="case-tags"><span class="tag">Marketplace</span><span class="tag">Web</span></div>
+      </div>
+      <p class="case-list-desc">Two-sided marketplace for the events industry with distinct job-seeker and recruiter experiences — profile creation, job posting, applications, and recruiter dashboards.</p>
+    </div>
+
+    <div class="case">
+      <div class="case-top">
+        <div class="case-name">Car Arbab — Vehicle Bidding Platform</div>
+        <div class="case-tags"><span class="tag">B2B Marketplace</span><span class="tag">UAE</span></div>
+      </div>
+      <p class="case-list-desc">Complex bidding flows, vehicle listing management, and admin controls with data-heavy tables and multi-step transaction workflows for a UAE-based B2B bidding platform.</p>
+    </div>
+
+    <div class="case">
+      <div class="case-top">
+        <div class="case-name">Jayhyzmat — E-Commerce Mobile App</div>
+        <div class="case-tags"><span class="tag">E-Commerce</span><span class="tag">Mobile</span></div>
+      </div>
+      <p class="case-list-desc">Guest browsing, multi-category listings, order management, and a cash-on-delivery checkout flow, focused on navigation clarity and a smooth first-time-user ordering experience.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills &amp; Tools</h2>
+    <div class="skillgrid">
+      <div class="skillcat">
+        <h3>Product &amp; UX Design</h3>
+        <div class="chiprow">
+          <span class="chip">0-to-1 Product Design</span><span class="chip">Systems Thinking</span>
+          <span class="chip">Wireframing</span><span class="chip">Prototyping</span>
+          <span class="chip">High-Fidelity UI</span><span class="chip">User Flows</span>
+          <span class="chip">Information Architecture</span><span class="chip">Usability Testing</span>
+        </div>
+      </div>
+      <div class="skillcat">
+        <h3>Operational &amp; Workflow</h3>
+        <div class="chiprow">
+          <span class="chip">Complex Workflow UI</span><span class="chip">Multi-Role Interfaces</span>
+          <span class="chip">Approval Flow UX</span><span class="chip">Analytics Dashboards</span>
+          <span class="chip">Healthcare Revenue Cycle</span><span class="chip">Payments &amp; Transactions</span>
+        </div>
+      </div>
+      <div class="skillcat">
+        <h3>Design Systems</h3>
+        <div class="chiprow">
+          <span class="chip">Component Libraries</span><span class="chip">Design Tokens</span>
+          <span class="chip">Style Guides</span><span class="chip">Responsive Design</span>
+          <span class="chip">WCAG Accessibility</span>
+        </div>
+      </div>
+      <div class="skillcat">
+        <h3>AI-Assisted &amp; Frontend</h3>
+        <div class="chiprow">
+          <span class="chip">Claude Code</span><span class="chip">Figma-to-Code</span>
+          <span class="chip">HTML &amp; CSS</span><span class="chip">React</span>
+          <span class="chip">Storybook</span><span class="chip">Git / GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <h2 class="section-title">How I Work</h2>
+    <div class="process">
+      <div class="pstep">
+        <span class="pnum">01</span>
+        <h4>Understand the workflow</h4>
+        <p>Audit the existing process, talk to the people running it, and find where complexity is real vs. where it's just accumulated.</p>
+      </div>
+      <div class="pstep">
+        <span class="pnum">02</span>
+        <h4>Design the system</h4>
+        <p>Build the pattern, not just the screen — components, states, and edge cases that hold up across every role that touches it.</p>
+      </div>
+      <div class="pstep">
+        <span class="pnum">03</span>
+        <h4>Prototype &amp; validate</h4>
+        <p>Figma and HTML/CSS prototypes to pressure-test flows before a single line of production code gets written.</p>
+      </div>
+      <div class="pstep">
+        <span class="pnum">04</span>
+        <h4>Build with engineering</h4>
+        <p>Implement directly in Claude Code, React and Storybook, with Git/GitHub handoff — so what ships matches what was designed.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="foot-grid">
+      <div>
+        <h2 class="section-title">Contact</h2>
+        <p class="foot-title">Open to Product Designer roles in healthcare, SaaS &amp; operational software.</p>
+      </div>
+      <div class="foot-links">
+        <a href="mailto:palanjali0853@gmail.com">palanjali0853@gmail.com</a>
+        <a href="https://linkedin.com/in/anjali-paal" target="_blank" rel="noopener">linkedin.com/in/anjali-paal</a>
+        <a href="https://goofyduck.com" target="_blank" rel="noopener">goofyduck.com <span>full portfolio</span></a>
+      </div>
+    </div>
+    <div class="foot-note">Anjali Pal — Product Designer, Bangalore, India.</div>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var steps = [
+      "Lead", "Intake", "GFE Review", "Encounter",
+      "Treatment", "Order", "Subscription", "Portal", "Notify"
+    ];
+    var svgNS = "http://www.w3.org/2000/svg";
+    var g = document.getElementById("flow-nodes");
+    var n = steps.length;
+    var startX = 30, endX = 1010, y = 46;
+    var highlight = 2; // "GFE Review"
+
+    steps.forEach(function (label, i) {
+      var x = startX + (i * (endX - startX)) / (n - 1);
+      var isHi = i === highlight;
+
+      var circle = document.createElementNS(svgNS, "circle");
+      circle.setAttribute("cx", x);
+      circle.setAttribute("cy", y);
+      circle.setAttribute("r", isHi ? 7 : 5);
+      circle.setAttribute("fill", isHi ? "var(--accent)" : "var(--paper)");
+      circle.setAttribute("stroke", isHi ? "var(--accent)" : "var(--node-off)");
+      circle.setAttribute("stroke-width", "2");
+      g.appendChild(circle);
+
+      var text = document.createElementNS(svgNS, "text");
+      text.setAttribute("x", x);
+      text.setAttribute("y", y - 16);
+      text.setAttribute("text-anchor", "middle");
+      text.setAttribute("font-size", "10.5");
+      text.setAttribute("fill", isHi ? "var(--accent)" : "var(--ink-faint)");
+      text.setAttribute("font-weight", isHi ? "700" : "500");
+      text.textContent = label;
+      g.appendChild(text);
+    });
+  })();
+</script>
+</body>
+</html>
