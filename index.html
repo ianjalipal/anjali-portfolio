@@ -90,9 +90,9 @@
   /* ---- sticky side ribbon ---- */
   .ribbon {
     position: fixed;
-    top: 0;
+    top: 58px;
     right: 36px;
-    z-index: 30;
+    z-index: 15;
     background: var(--ribbon-bg);
     color: var(--ribbon-ink);
     padding: 14px 11px;
@@ -135,9 +135,16 @@
     padding-top: 14px; padding-bottom: 14px;
   }
   .brand { font-weight: 800; font-size: 15px; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
-  .navlinks { display: flex; gap: 22px; font-size: 13px; }
+  .navlinks { display: flex; align-items: center; gap: 22px; font-size: 13px; }
   .navlinks a { color: var(--ink-soft); text-decoration: none; font-weight: 600; }
   .navlinks a:hover { color: var(--accent); }
+  .btn-print {
+    font-family: inherit; font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
+    padding: 7px 14px; border-radius: 7px; border: 1px solid var(--line-strong);
+    background: var(--accent); color: var(--accent-ink); cursor: pointer;
+  }
+  .btn-print:hover { opacity: 0.92; }
+  @media (max-width: 640px) { .btn-print { display: none; } }
 
   /* ---- hero ---- */
   header.hero { padding: 72px 0 20px; }
@@ -310,6 +317,14 @@
   .foot-links a { text-decoration: none; color: var(--ink); font-weight: 600; }
   .foot-links a span { color: var(--ink-faint); font-weight: 400; font-size: 12px; margin-left: 6px; }
   .foot-note { margin-top: 40px; font-size: 12px; color: var(--ink-faint); }
+
+  @media print {
+    .ribbon, nav.topbar, .btn-print { display: none !important; }
+    body { background: #fff; }
+    .case, .stack-note { break-inside: avoid; }
+    section { padding: 32px 0; border-top: 1px solid var(--line); }
+    a { color: inherit; text-decoration: none; }
+  }
 </style>
 </head>
 <body>
@@ -329,6 +344,7 @@
       <a href="#process">Process</a>
       <a href="resume.html">Resume</a>
       <a href="#contact">Contact</a>
+      <button class="btn-print" onclick="window.print()">Print / Save as PDF</button>
     </div>
   </div>
 </nav>
