@@ -1,0 +1,268 @@
+<meta charset="utf-8">
+<title>Anjali Pal — Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<style>
+  :root {
+    --paper: #F5F3EE;
+    --paper-raised: #FFFFFF;
+    --ink: #171A18;
+    --ink-soft: #5C6259;
+    --ink-faint: #8B9086;
+    --line: #E1DDD1;
+    --line-strong: #CCC6B6;
+    --accent: #526B5A;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #DCE3DD;
+    --secondary: #B5A47A;
+    --secondary-ink: #171A18;
+    --tag-bg: #EBE8E0;
+  }
+  :root[data-theme="dark"] {
+    --paper: #14160F;
+    --paper-raised: #1C1F17;
+    --ink: #F1EFE7;
+    --ink-soft: #ABB0A2;
+    --ink-faint: #6E7568;
+    --line: #282B21;
+    --line-strong: #393E30;
+    --accent: #86A390;
+    --accent-ink: #10140E;
+    --accent-soft: #253128;
+    --secondary: #CDBD8E;
+    --secondary-ink: #171A10;
+    --tag-bg: #1F2318;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14160F; --paper-raised: #1C1F17; --ink: #F1EFE7; --ink-soft: #ABB0A2;
+      --ink-faint: #6E7568; --line: #282B21; --line-strong: #393E30; --accent: #86A390;
+      --accent-ink: #10140E; --accent-soft: #253128; --secondary: #CDBD8E; --secondary-ink: #171A10;
+      --tag-bg: #1F2318;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; line-height: 1.5;
+  }
+  code, .mono { font-family: ui-monospace, "SF Mono", "Roboto Mono", Consolas, monospace; }
+  a { color: var(--accent); }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+    padding: 14px 28px; display: flex; justify-content: space-between; align-items: center;
+  }
+  .topbar .back { font-size: 13px; font-weight: 700; text-decoration: none; color: var(--ink-soft); }
+  .topbar .back:hover { color: var(--accent); }
+  .topbar .actions { display: flex; gap: 10px; }
+  .btn-print {
+    font-family: inherit; font-size: 12.5px; font-weight: 700; letter-spacing: 0.02em;
+    padding: 8px 16px; border-radius: 7px; border: 1px solid var(--line-strong);
+    background: var(--accent); color: var(--accent-ink); cursor: pointer;
+  }
+  .btn-print:hover { opacity: 0.92; }
+
+  .wrap { max-width: 800px; margin: 0 auto; padding: 44px 28px 90px; }
+
+  .sheet {
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: 8px;
+    padding: 52px 56px 60px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  header.id { margin-bottom: 30px; }
+  h1.name {
+    font-family: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+    font-size: 34px; font-weight: 600; letter-spacing: 0.01em; margin: 0 0 6px;
+    text-wrap: balance; color: var(--ink);
+  }
+  .title { font-size: 16px; font-weight: 600; color: var(--accent); margin: 0 0 12px; }
+  .contact { font-size: 13px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 6px 0; }
+  .contact span:not(:last-child)::after { content: "•"; margin: 0 9px; color: var(--ink-faint); }
+  .contact a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); }
+
+  h2.section {
+    font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin: 34px 0 12px; padding-bottom: 7px; border-bottom: 1.5px solid var(--accent);
+  }
+  h2.section:first-of-type { margin-top: 0; }
+
+  p.summary { font-size: 14.5px; line-height: 1.65; color: var(--ink); margin: 0; }
+
+  .skill-row { display: grid; grid-template-columns: 175px 1fr; gap: 4px 16px; font-size: 13.5px; line-height: 1.6; margin-bottom: 9px; }
+  .skill-row dt { font-weight: 700; color: var(--ink); }
+  .skill-row dd { margin: 0; color: var(--ink-soft); }
+
+  .job { margin-bottom: 22px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+  .job-title { font-size: 15px; font-weight: 700; color: var(--ink); }
+  .job-title .co { color: var(--accent); }
+  .job-dates { font-size: 12.5px; font-style: italic; color: var(--ink-faint); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  ul.bullets { margin: 0; padding-left: 18px; }
+  ul.bullets li { font-size: 13.5px; line-height: 1.6; color: var(--ink); margin-bottom: 5px; }
+  ul.bullets li::marker { color: var(--secondary); }
+
+  .project { margin-bottom: 16px; }
+  .project:last-child { margin-bottom: 0; }
+  .project.flagship {
+    background: var(--tag-bg); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px;
+  }
+  .project-head { font-size: 14px; margin-bottom: 3px; }
+  .project-head .pname { font-weight: 700; color: var(--ink); }
+  .project-head .ptag { font-style: italic; color: var(--ink-faint); font-size: 12.5px; }
+  .project p { margin: 0; font-size: 13px; line-height: 1.6; color: var(--ink-soft); }
+  .project ul.bullets { margin-top: 6px; }
+  .project ul.bullets li { font-size: 12.5px; }
+  .project ul.bullets li strong { color: var(--ink); }
+
+  .edu-row, .cert-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13.5px; line-height: 1.6; margin-bottom: 6px; flex-wrap: wrap; }
+  .edu-row .main, .cert-row .main { color: var(--ink); }
+  .edu-row .main strong { font-weight: 700; }
+  .cert-row .yr, .edu-row .yr { color: var(--ink-faint); white-space: nowrap; font-variant-numeric: tabular-nums; font-size: 12.5px; }
+
+  @media print {
+    .topbar { display: none; }
+    body { background: #fff; }
+    .wrap { padding: 0; max-width: none; }
+    .sheet { border: none; box-shadow: none; padding: 0; border-radius: 0; }
+    a { color: inherit; text-decoration: none; }
+  }
+
+  @media (max-width: 600px) {
+    .sheet { padding: 34px 22px 40px; }
+    h1.name { font-size: 27px; }
+    .skill-row { grid-template-columns: 1fr; gap: 2px; }
+  }
+</style>
+
+<nav class="topbar">
+  <a class="back" href="index.html">← Portfolio</a>
+  <div class="actions">
+    <button class="btn-print" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="sheet">
+    <header class="id">
+      <h1 class="name">Anjali Pal</h1>
+      <p class="title">Product Designer (UX/UI) — SaaS, Healthcare &amp; B2B Platforms</p>
+      <div class="contact">
+        <span>Bangalore, India</span>
+        <span>+91-8770015388</span>
+        <span><a href="mailto:palanjali0853@gmail.com">palanjali0853@gmail.com</a></span>
+        <span><a href="https://linkedin.com/in/anjali-paal" target="_blank" rel="noopener">linkedin.com/in/anjali-paal</a></span>
+        <span><a href="https://goofyduck.com" target="_blank" rel="noopener">goofyduck.com</a></span>
+      </div>
+    </header>
+
+    <h2 class="section">Professional Summary</h2>
+    <p class="summary">Product Designer with 3 years of experience taking 0-to-1 products from concept to shipped, live experiences across healthcare, SaaS, B2B marketplace, and e-commerce domains. Led UX across Wizlo, a clinic/EMR SaaS platform, spanning the full patient-to-revenue lifecycle — Good Faith Estimate (GFE) review, encounter and provider workflows, subscriptions and product bundles, billing-adjacent order timelines, and patient-facing portals. Skilled at simplifying complex, data-dense operational and revenue-cycle workflows — multi-role dashboards, approval flows, and form-heavy interfaces — into intuitive, accessible UI. Builds and scales design systems (component libraries, design tokens, style guides) that keep design and engineering aligned, and uses Claude and AI-assisted workflows as part of design and research. Comfortable partnering with product, engineering, and business stakeholders in Agile environments to shape not just how a product looks, but what gets built.</p>
+
+    <h2 class="section">Core Skills</h2>
+    <dl>
+      <div class="skill-row"><dt>Product &amp; UX Design</dt><dd>0-to-1 Product Design · End-to-End UX · Systems Thinking · Wireframing · Prototyping · High-Fidelity UI · User Flows · Information Architecture · Usability Testing · Interaction Design</dd></div>
+      <div class="skill-row"><dt>Operational &amp; Workflow</dt><dd>Complex Workflow &amp; Data-Dense UI · Multi-User Role Interfaces · Approval Flow UX · Analytics Dashboards · Admin Panel Design · Payments &amp; Transaction Flows · Healthcare Revenue Cycle Workflows (GFE Review, Encounter, Billing, Subscriptions)</dd></div>
+      <div class="skill-row"><dt>Design Systems</dt><dd>Component Libraries · Design Tokens · Style Guides · Design-to-Code Handoff · Responsive Design · WCAG Accessibility Standards</dd></div>
+      <div class="skill-row"><dt>AI-Assisted Design</dt><dd>Claude Code for Design-to-Code Workflows · Claude for Design &amp; Research · Figma-to-Code · AI-Accelerated Prototyping &amp; Documentation</dd></div>
+      <div class="skill-row"><dt>Frontend / Implementation</dt><dd>HTML &amp; CSS · React (component-level, design collaboration) · Storybook · Git / GitHub · Design-System-to-Code Implementation</dd></div>
+      <div class="skill-row"><dt>Tools</dt><dd>Figma · Adobe XD · Illustrator · Photoshop · Jitter (Motion) · Notion · WordPress</dd></div>
+      <div class="skill-row"><dt>Collaboration</dt><dd>Agile / Scrum · Product Strategy Discussions · Cross-Functional Collaboration with Engineering · Developer Handoff · Stakeholder Communication</dd></div>
+    </dl>
+
+    <h2 class="section">Professional Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">UX Designer I — <span class="co">Techdome Solutions</span></span>
+        <span class="job-dates">Jan 2025 – Present</span>
+      </div>
+      <ul class="bullets">
+        <li>Led UX design across Wizlo, a clinic/EMR SaaS platform, covering the full patient-to-revenue ecosystem: Lead → Intake/Forms → GFE Review → Encounter → Treatment → Product/Service → Order → Subscription → Patient Portal → Notifications.</li>
+        <li>Designed the Good Faith Estimate (GFE) Review workflow — reviewer assignment, synchronous vs. asynchronous review flows, and license validation — plus the GFE → Encounter handoff, modeling healthcare revenue-cycle and compliance requirements directly into the UI.</li>
+        <li>Designed Sync Encounter (Jira WZ-6776): manual queue, virtual waiting room, provider availability, and round-robin assignment logic, balancing operational controls for providers with a calm waiting-room experience for patients.</li>
+        <li>Designed Subscription and Product Bundle management (plans, bundles, treatment/program packages) and a product-level Multi-Treatment Order Timeline for orders spanning multiple treatments.</li>
+        <li>Designed the Patient Portal, a White-Label Patient Portal (WZ-1999) for per-brand customization, and Clinic Portal plan-creation / subscription-management workflows (WZ-2422).</li>
+        <li>Designed Notification configuration (WZ-7597) across patient and provider tabs and Email/SMS channels — templates, preview, Save Draft, and Publish states.</li>
+        <li>Built and scaled the Nova Design System (tokens, colors, typography, reusable components) as the shared foundation across all Wizlo modules, keeping design and engineering implementation tightly aligned.</li>
+        <li>Ran UX audits on existing workflows to identify usability issues, then validated fixes through Figma and HTML/CSS prototypes before developer handoff.</li>
+        <li>Currently designing directly in Claude Code, building Wizlo UI in HTML/CSS and React with Storybook, and managing implementation through Git/GitHub — closing the loop between Figma design and shipped, componentized frontend code.</li>
+        <li>Used Claude and AI-assisted workflows as part of the broader design and research process, and worked directly with developers on specs and implementation refinement.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Junior UX Designer — <span class="co">Developer Bazaar Technologies</span></span>
+        <span class="job-dates">May 2023 – Jan 2025</span>
+      </div>
+      <ul class="bullets">
+        <li>Designed user flows, wireframes, and interactive prototypes for 5+ B2B and consumer-facing products across marketplace, healthcare, event management, and e-commerce domains.</li>
+        <li>Took multiple products from 0 to 1 — concept through live launch — translating ambiguous business requirements into simple, actionable UI solutions.</li>
+        <li>Partnered with clients and cross-functional teams to gather requirements and ship iterative design improvements each sprint.</li>
+        <li>Applied accessibility and usability principles to build user-friendly interfaces across web and mobile platforms.</li>
+      </ul>
+    </div>
+
+    <h2 class="section">Key Projects <span style="font-weight:400; text-transform:none; letter-spacing:0; font-size:11.5px; color:var(--ink-faint);">(0-to-1 Product Design)</span></h2>
+
+    <div class="project flagship">
+      <div class="project-head"><span class="pname">Wizlo — Clinic / EMR SaaS Platform (SmarterEMR)</span> <span class="ptag">· Healthcare · Revenue Cycle · Design System · Flagship Project</span></div>
+      <p>End-to-end UX across patient, clinic/admin, and provider/clinical experiences, spanning the complete lifecycle: Lead → Intake/Forms → GFE Review → Encounter → Treatment → Product/Service → Order → Subscription → Patient Portal → Notifications.</p>
+      <ul class="bullets">
+        <li><strong>GFE Review → Encounter —</strong> reviewer assignment, sync/async review flows, license validation, and the Good Faith Estimate to Encounter handoff (healthcare revenue-cycle &amp; compliance workflow).</li>
+        <li><strong>Sync Encounter / Manual Queue (WZ-6776) —</strong> provider availability, round-robin assignment, and virtual waiting-room experience.</li>
+        <li><strong>Subscriptions &amp; Product Bundles —</strong> plans, bundles, treatment/program packages, and a multi-treatment order timeline.</li>
+        <li><strong>Nova Design System —</strong> tokens, colors, typography, reusable components; built with Claude/AI-assisted workflows and implemented directly in Claude Code (HTML/CSS, React, Storybook) with Git/GitHub-managed handoff.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head"><span class="pname">MediFlow — Healthcare SaaS Platform</span> <span class="ptag">· SaaS · 66 Screens · 4 User Roles</span></div>
+      <p>Designed 66 screens across Doctor, Receptionist, Clinic Owner, and Patient roles for a healthcare SaaS platform — appointment scheduling, patient records, billing, insurance, and role-based dashboards with approval-style, ERP-style workflows and a unified design system across all user types.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head"><span class="pname">Polystox — B2B Polymer Trading Platform</span> <span class="ptag">· Marketplace · Mobile App · Live on Google Play, 10K+ downloads</span></div>
+      <p>Designed end-to-end UX for a B2B trading platform for manufacturers, traders, importers, and exporters — offer creation, live bidding, demand management, order tracking, and transit insurance. Multi-role, data-dense interfaces with negotiation and real-time status workflows.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head"><span class="pname">Shipment &amp; Logistics Admin Panel</span> <span class="ptag">· SaaS Admin Panel · B2B</span></div>
+      <p>Multi-role admin panel spanning appointments, records, billing, insurance, and admin flows with a unified design system across Doctor, Receptionist, and Admin roles — structurally comparable to ERP module architecture.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head"><span class="pname">Mostly Events — Dual-Sided Job Portal</span> <span class="ptag">· Marketplace Web Platform · Live: mostlyevents.com</span></div>
+      <p>Designed a job portal for the events industry with separate interfaces for job seekers and recruiters — covering profile creation, job posting, applications, and recruiter dashboards.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head"><span class="pname">Car Arbab — Vehicle Bidding Platform</span> <span class="ptag">· B2B Marketplace · Web · UAE</span></div>
+      <p>UAE-based platform for bidding on old and damaged vehicles. Designed complex bidding flows, vehicle listing management, and admin controls with data-heavy tables and multi-step workflows.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head"><span class="pname">Jayhyzmat — E-Commerce Mobile App</span> <span class="ptag">· E-Commerce · Mobile App · Live on Google Play</span></div>
+      <p>Designed a full e-commerce app with guest browsing, multi-category listings, order management, and a cash-on-delivery checkout flow, focused on navigation clarity and a smooth first-time-user ordering experience.</p>
+    </div>
+
+    <h2 class="section">Education</h2>
+    <div class="edu-row">
+      <span class="main"><strong>Bachelor of Commerce</strong> — K.K. Vigyan Avam Vyavasaik Adhyayan Mahavidyalaya, Indore</span>
+      <span class="yr">2019 – 2022</span>
+    </div>
+
+    <h2 class="section">Certifications &amp; Training</h2>
+    <div class="cert-row"><span class="main">Certificate of Excellence in UI/UX Design Assessments — LearnTube</span><span class="yr">2024</span></div>
+    <div class="cert-row"><span class="main">UI/UX Design Certificate — Tutedude.com</span><span class="yr">2023</span></div>
+    <div class="cert-row"><span class="main">Adobe Illustrator Certificate — Tutedude.com</span><span class="yr">2023</span></div>
+    <div class="cert-row"><span class="main">Certificate of Participation &amp; Excellence, Design Hackathon — Tutedude.com</span><span class="yr">2023</span></div>
+    <div class="cert-row"><span class="main">Advanced Digital Marketing (WordPress, SEO, Graphic Design, Social Media) — Skills Elephant</span><span class="yr">Aug–Oct 2024</span></div>
+  </div>
+</div>
