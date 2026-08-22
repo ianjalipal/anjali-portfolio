@@ -146,7 +146,7 @@
 
   h2.chapter-title {
     font-size: clamp(26px, 4vw, 40px); font-weight: 800; letter-spacing: -0.02em;
-    line-height: 1.12; margin: 0 0 20px; max-width: 18ch; text-wrap: balance;
+    line-height: 1.12; margin: 0 0 20px; max-width: 22ch; text-wrap: balance;
   }
   h2.chapter-title .fade { color: var(--ink-faint); }
 
@@ -167,15 +167,68 @@
   .ps-card p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.65; margin: 0; }
   .ps-card p strong { color: var(--ink); }
 
-  /* roles */
-  .role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
-  @media (max-width: 760px) { .role-grid { grid-template-columns: 1fr; } }
-  .role-card {
+  /* personas */
+  .disclosure {
+    display: flex; gap: 10px; align-items: flex-start;
+    background: var(--tag-bg); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; margin: 22px 0 0; font-size: 12.5px; color: var(--ink-soft); line-height: 1.55;
+  }
+  .disclosure .dmark { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+  .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 32px; }
+  @media (max-width: 760px) { .persona-grid { grid-template-columns: 1fr; } }
+  .persona-card {
     padding: 26px 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper-raised);
   }
-  .role-card .rnum { font-family: ui-monospace, monospace; font-size: 11px; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
-  .role-card h3 { font-size: 16px; font-weight: 800; margin: 0 0 10px; }
-  .role-card p { font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+  .persona-card .rnum { font-family: ui-monospace, monospace; font-size: 11px; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
+  .persona-card h3 { font-size: 16px; font-weight: 800; margin: 0 0 12px; }
+  .persona-card .pblock { margin-bottom: 14px; }
+  .persona-card .pblock:last-child { margin-bottom: 0; }
+  .persona-card .plabel {
+    font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--ink-faint); margin-bottom: 6px;
+  }
+  .persona-card ul { margin: 0; padding-left: 16px; }
+  .persona-card li { font-size: 12.5px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 4px; }
+  .persona-card li:last-child { margin-bottom: 0; }
+
+  /* user flow diagrams */
+  .flow-block { margin-top: 40px; }
+  .flow-block:first-child { margin-top: 0; }
+  .flow-title { font-size: 13.5px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+  .flow-sub { font-size: 12.5px; color: var(--ink-faint); margin-bottom: 18px; }
+  .flow-row { display: flex; align-items: stretch; flex-wrap: wrap; gap: 0; }
+  .flow-step {
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; min-width: 148px; flex: 1 1 148px;
+  }
+  .flow-step .fnum {
+    font-family: ui-monospace, monospace; font-size: 10px; font-weight: 700; color: var(--accent); margin-bottom: 6px;
+  }
+  .flow-step h4 { margin: 0 0 4px; font-size: 13px; font-weight: 800; }
+  .flow-step p { margin: 0; font-size: 11.5px; color: var(--ink-soft); line-height: 1.5; }
+  .flow-arrow {
+    display: flex; align-items: center; justify-content: center; color: var(--ink-faint);
+    font-size: 16px; padding: 0 6px; flex: 0 0 auto;
+  }
+  @media (max-width: 640px) {
+    .flow-row { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); padding: 4px 0; }
+  }
+
+  /* feature grid */
+  .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
+  @media (max-width: 700px) { .feature-grid { grid-template-columns: 1fr; } }
+  .feature-card {
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px;
+  }
+  .feature-card h4 { margin: 0 0 8px; font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+  .feature-card h4 .ficon { font-size: 15px; }
+  .feature-card p { margin: 0; font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+
+  /* roles (legacy, kept for support-content note) */
+  .role-note { margin-top: 34px; padding: 18px 20px; border-radius: 10px; background: var(--tag-bg); font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+  .role-note strong { color: var(--ink); }
 
   /* screen showcase */
   .showcase { margin-top: 44px; }
@@ -291,36 +344,189 @@
   </section>
 
   <section id="roles">
-    <div class="chapter-tag"><span class="cnum">02</span><span class="clabel">Users</span></div>
+    <div class="chapter-tag"><span class="cnum">02</span><span class="clabel">Users &amp; Personas</span></div>
     <h2 class="chapter-title">One system, <span class="fade">three</span> audiences.</h2>
     <p class="big" style="max-width:60ch;">Each role gets its own entry points and its own support content — including three separate Help Centers, one per audience, instead of a single generic FAQ.</p>
 
-    <div class="role-grid">
-      <div class="role-card">
-        <div class="rnum">ROLE 01</div>
-        <h3>Customer</h3>
-        <p>Discovers providers and courses, books and pays, manages a dashboard covering bookings, wishlist, loyalty points, gift cards, and referrals.</p>
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="rnum">PERSONA 01</div>
+        <h3>The Customer</h3>
+        <div class="pblock">
+          <div class="plabel">Goals</div>
+          <ul>
+            <li>Find a provider or course she can trust quickly</li>
+            <li>Book without back-and-forth phone calls</li>
+            <li>Track rewards and offers across visits</li>
+          </ul>
+        </div>
+        <div class="pblock">
+          <div class="plabel">Needs from the product</div>
+          <ul>
+            <li>Clear ratings, reviews, and accreditation up front</li>
+            <li>Transparent pricing and flexible cancellation</li>
+            <li>One place for bookings, payments, and rewards</li>
+          </ul>
+        </div>
       </div>
-      <div class="role-card">
-        <div class="rnum">ROLE 02</div>
-        <h3>Service Provider</h3>
-        <p>Gets discovered through listing cards and a detail page carrying reviews, team bios, accreditations, and amenities — where "verified" has to be earned visually.</p>
+      <div class="persona-card">
+        <div class="rnum">PERSONA 02</div>
+        <h3>The Service Provider</h3>
+        <div class="pblock">
+          <div class="plabel">Goals</div>
+          <ul>
+            <li>Get discovered by the right customers</li>
+            <li>Prove credentials clearly, not just claim them</li>
+            <li>Fill the calendar without manual admin</li>
+          </ul>
+        </div>
+        <div class="pblock">
+          <div class="plabel">Needs from the product</div>
+          <ul>
+            <li>A rich profile — team, accreditations, amenities, portfolio</li>
+            <li>Review visibility tied directly to bookings</li>
+            <li>A support channel built for their side of the business</li>
+          </ul>
+        </div>
       </div>
-      <div class="role-card">
-        <div class="rnum">ROLE 03</div>
-        <h3>Training Provider</h3>
-        <p>Runs the education side — course listings, detail, and a booking/checkout path that parallels but doesn't duplicate the service-booking flow.</p>
+      <div class="persona-card">
+        <div class="rnum">PERSONA 03</div>
+        <h3>The Training Provider</h3>
+        <div class="pblock">
+          <div class="plabel">Goals</div>
+          <ul>
+            <li>List courses credibly, on equal footing with service providers</li>
+            <li>Manage enrollment and payments without a separate system</li>
+            <li>Build reputation through reviews over time</li>
+          </ul>
+        </div>
+        <div class="pblock">
+          <div class="plabel">Needs from the product</div>
+          <ul>
+            <li>A distinct course detail and booking/checkout path</li>
+            <li>Not to feel bolted onto the service-provider flow</li>
+            <li>A Help Center written for their specific workflow</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclosure">
+      <span class="dmark">⚑</span>
+      <span>These are target user profiles inferred directly from the product's own three-sided structure and feature set — not backed by user interviews or usability testing, since primary research wasn't part of this project's scope. Framed this way deliberately, rather than presenting them as research that didn't happen.</span>
+    </div>
+  </section>
+
+  <section id="flows">
+    <div class="chapter-tag"><span class="cnum">03</span><span class="clabel">User Flows</span></div>
+    <h2 class="chapter-title">Two booking journeys, <span class="fade">one visual language.</span></h2>
+    <p class="big" style="max-width:64ch;">Services and courses are structurally different products — one is scheduled time with a provider, the other is enrollment in a program — so each gets its own flow. Both share the same screen patterns, so switching between them never feels like switching apps.</p>
+
+    <div class="flow-block">
+      <div class="flow-title">Flow A — Booking a Service</div>
+      <div class="flow-sub">Customer persona · Home through to a confirmed appointment</div>
+      <div class="flow-row">
+        <div class="flow-step">
+          <div class="fnum">01</div>
+          <h4>Search / Home</h4>
+          <p>Toggle between Beauty Provider and Training Provider search from the hero.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="fnum">02</div>
+          <h4>Listing Page</h4>
+          <p>Filter by service, location, rating, offers, and accessibility.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="fnum">03</div>
+          <h4>Provider Detail</h4>
+          <p>Reviews, pricing, team, accreditations — the trust-to-decision step.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="fnum">04</div>
+          <h4>Booking Popup</h4>
+          <p>Select service and time slot.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="fnum">05</div>
+          <h4>Checkout</h4>
+          <p>Payment and confirmation of details.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="fnum">06</div>
+          <h4>Confirmed</h4>
+          <p>Booking Successful screen, then synced to the dashboard.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-block">
+      <div class="flow-title">Flow B — Enrolling in a Course</div>
+      <div class="flow-sub">Customer persona · Training Providers listing through to enrollment</div>
+      <div class="flow-row">
+        <div class="flow-step">
+          <div class="fnum">01</div>
+          <h4>Training Providers</h4>
+          <p>Browse courses the same way services are browsed.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="fnum">02</div>
+          <h4>Course Detail</h4>
+          <p>Curriculum, provider credentials, and reviews.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="fnum">03</div>
+          <h4>Course Booking Popup</h4>
+          <p>Select cohort or start date.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="fnum">04</div>
+          <h4>Course Checkout</h4>
+          <p>A distinct checkout from service booking, same visual system.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="fnum">05</div>
+          <h4>Enrolled</h4>
+          <p>Course Booking Successful, then tracked in the dashboard.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="trust">
-    <div class="chapter-tag"><span class="cnum">03</span><span class="clabel">The Trust System</span></div>
+    <div class="chapter-tag"><span class="cnum">04</span><span class="clabel">The Trust System</span></div>
     <h2 class="chapter-title">Verification that <span class="fade">repeats</span>, not a single badge.</h2>
     <div class="chapter-row">
       <p class="big">Ratings, review counts, and offer badges appear on listing cards before a user opens a detail page. Detail pages add accreditation logos, team credentials, and an amenities grid. Accessibility sits as a <strong>first-class filter</strong> on the main listing page — wheelchair accessible, women-only, LGBTQ+ friendly — not buried in an "advanced" toggle.</p>
       <div class="tagrow">
         <span>Ratings &amp; reviews</span><span>Accreditation</span><span>Accessibility filters</span><span>Offer badges</span><span>Team credentials</span>
+      </div>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h4><span class="ficon">★</span>Ratings &amp; Reviews</h4>
+        <p>A 1–5 star score plus review count on every listing card, with a full breakdown and individual reviews on the detail page — the first trust signal a customer sees, before any other detail loads.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="ficon">✓</span>Accreditation Badges</h4>
+        <p>Verified-provider marks and accreditation logos surfaced on the detail page's Company Profile section — the specifics behind the "verified" claim, not just a green checkmark.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="ficon">♿</span>Accessibility Filters</h4>
+        <p>Wheelchair accessible, women-only, and LGBTQ+ friendly sit as primary filter checkboxes on the listing page — alongside service type and location, not hidden in an "advanced" panel.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="ficon">%</span>Offer Badges</h4>
+        <p>Active discounts and "book X, save Y%" offers shown directly on listing cards and reiterated on the detail page — visible before a customer commits to opening a profile.</p>
       </div>
     </div>
 
@@ -339,9 +545,28 @@
   </section>
 
   <section id="detail">
-    <div class="chapter-tag"><span class="cnum">04</span><span class="clabel">Provider Detail</span></div>
+    <div class="chapter-tag"><span class="cnum">05</span><span class="clabel">Provider Detail</span></div>
     <h2 class="chapter-title">Where the badge becomes <span class="fade">specifics.</span></h2>
-    <p class="big" style="max-width:60ch;">Offers, service pricing, portfolio work, reviews, team bios, accreditations, amenities, and a map — everything a customer needs to convert trust into a booking decision, on one screen.</p>
+    <p class="big" style="max-width:60ch;">Everything a customer needs to convert trust into a booking decision, on one screen — no second page required to answer "can I trust this place."</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h4><span class="ficon">🏷</span>Offers &amp; Pricing</h4>
+        <p>Current offers pinned near the top, followed by a full service menu with per-treatment pricing — no "contact for pricing" dead ends.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="ficon">🖼</span>Portfolio ("Our Work")</h4>
+        <p>A gallery of past work photos, giving visual proof to sit alongside the written credentials.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="ficon">👥</span>Meet the Team</h4>
+        <p>Named staff bios with roles and credentials — trust attached to real people, not just the business.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="ficon">🏆</span>Company Profile &amp; Awards</h4>
+        <p>Accreditations and awards displayed as their own section, plus an amenities icon grid (parking, wheelchair access, and similar) and a location map.</p>
+      </div>
+    </div>
 
     <div class="showcase">
       <div class="device">
@@ -358,13 +583,36 @@
   </section>
 
   <section id="retention">
-    <div class="chapter-tag"><span class="cnum">05</span><span class="clabel">Retention Loop</span></div>
+    <div class="chapter-tag"><span class="cnum">06</span><span class="clabel">Retention &amp; Account</span></div>
     <h2 class="chapter-title">A rewards system, not a <span class="fade">bolt-on.</span></h2>
     <div class="chapter-row">
       <p class="big">Verified Beauty Points (a persistent site-wide banner), Loyalty Points, E-Gift Cards, and Invite-a-Friend referrals — all reachable from one dashboard hub, alongside bookings, wishlist, and payment history. Post-booking states are designed too: rescheduling and cancellation each get their own screen, with a reason captured on cancel.</p>
       <div class="tagrow">
         <span>Loyalty points</span><span>E-gift cards</span><span>Referrals</span><span>Reschedule flow</span><span>Cancellation reason</span>
       </div>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h4><span class="ficon">◈</span>Loyalty Points</h4>
+        <p>Points accrue per booking and are tracked in a dedicated dashboard module, redeemable against future bookings — surfaced as a persistent banner sitewide, not just buried in account settings.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="ficon">🎁</span>E-Gift Cards</h4>
+        <p>Buy, send, or redeem gift cards for yourself or someone else, managed from the same dashboard as loyalty points — reinforcing the same reward loop rather than a separate feature.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="ficon">👋</span>Invite a Friend</h4>
+        <p>A referral code shareable from the dashboard, with rewards on both sides when a friend joins.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="ficon">↻</span>Reschedule &amp; Cancellation</h4>
+        <p>Rescheduling has its own "Consider Rescheduling" prompt before a cancellation is finalized, and cancellation itself captures a reason rather than silently deleting the booking.</p>
+      </div>
+    </div>
+
+    <div class="role-note">
+      <strong>Also part of the account layer:</strong> Profile Management, Payment Methods, Payment History, and a Wishlist for saving services or courses for later — plus three separate, role-specific Help Centers (Customers, Service Providers, Training Providers) instead of one generic FAQ.
     </div>
 
     <div class="showcase">
@@ -382,7 +630,7 @@
   </section>
 
   <section id="build">
-    <div class="chapter-tag"><span class="cnum">06</span><span class="clabel">Build Process</span></div>
+    <div class="chapter-tag"><span class="cnum">07</span><span class="clabel">Build Process</span></div>
     <h2 class="chapter-title">Fidelity over <span class="fade">shortcuts.</span></h2>
     <p class="big" style="max-width:64ch;">The harder discipline wasn't the visual design — it was resisting the urge to "fix" or invent where the Figma source was incomplete, while still catching and documenting real inconsistencies in the system.</p>
 
@@ -407,7 +655,7 @@
   </section>
 
   <section id="system">
-    <div class="chapter-tag"><span class="cnum">07</span><span class="clabel">Design System</span></div>
+    <div class="chapter-tag"><span class="cnum">08</span><span class="clabel">Design System</span></div>
     <h2 class="chapter-title">Typography &amp; color, <span class="fade">pulled from source.</span></h2>
     <p class="big" style="max-width:60ch;">Headings in Advice Medium Lys, body and UI text in Montserrat. The palette below is the real token layer — not approximated, pulled directly from the Figma style guide's variable definitions.</p>
 
@@ -432,7 +680,7 @@
   </section>
 
   <section id="status">
-    <div class="chapter-tag"><span class="cnum">08</span><span class="clabel">Status</span></div>
+    <div class="chapter-tag"><span class="cnum">09</span><span class="clabel">Status</span></div>
     <h2 class="chapter-title">Where it <span class="fade">stands</span> today.</h2>
     <p class="big" style="max-width:60ch;">This is a live, in-progress build, not a finished shipped product — and that's the honest framing at this stage. The value on display is process rigor on a system large enough that shortcuts would be easy to take and hard to notice.</p>
 
