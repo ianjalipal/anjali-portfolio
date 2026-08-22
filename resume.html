@@ -113,7 +113,8 @@
     background: var(--tag-bg); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px;
   }
   .project-head { font-size: 14px; margin-bottom: 3px; }
-  .project-head .pname { font-weight: 700; color: var(--ink); }
+  .project-head .pname { font-weight: 700; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+  .project-head .pname:hover { color: var(--accent); border-bottom-color: var(--accent); }
   .project-head .ptag { font-style: italic; color: var(--ink-faint); font-size: 12.5px; }
   .project p { margin: 0; font-size: 13px; line-height: 1.6; color: var(--ink-soft); }
   .project ul.bullets { margin-top: 6px; }
@@ -212,44 +213,38 @@
     <h2 class="section">Key Projects <span style="font-weight:400; text-transform:none; letter-spacing:0; font-size:11.5px; color:var(--ink-faint);">(0-to-1 Product Design)</span></h2>
 
     <div class="project flagship">
-      <div class="project-head"><span class="pname">Wizlo — Clinic / EMR SaaS Platform (SmarterEMR)</span> <span class="ptag">· Healthcare · Revenue Cycle · Design System · Flagship Project</span></div>
-      <p>End-to-end UX across patient, clinic/admin, and provider/clinical experiences, spanning the complete lifecycle: Lead → Intake/Forms → GFE Review → Encounter → Treatment → Product/Service → Order → Subscription → Patient Portal → Notifications.</p>
-      <ul class="bullets">
-        <li><strong>GFE Review → Encounter —</strong> reviewer assignment, sync/async review flows, license validation, and the Good Faith Estimate to Encounter handoff (healthcare revenue-cycle &amp; compliance workflow).</li>
-        <li><strong>Sync Encounter / Manual Queue (WZ-6776) —</strong> provider availability, round-robin assignment, and virtual waiting-room experience.</li>
-        <li><strong>Subscriptions &amp; Product Bundles —</strong> plans, bundles, treatment/program packages, and a multi-treatment order timeline.</li>
-        <li><strong>Nova Design System —</strong> tokens, colors, typography, reusable components; built with Claude/AI-assisted workflows and implemented directly in Claude Code (HTML/CSS, React, Storybook) with Git/GitHub-managed handoff.</li>
-      </ul>
+      <div class="project-head"><a class="pname" href="index.html#wizlo">Wizlo — Clinic / EMR SaaS Platform</a> <span class="ptag">· Flagship · Healthcare · Design System</span></div>
+      <p>Full patient-to-revenue lifecycle for a clinic/EMR SaaS platform — GFE review, encounter workflows, subscriptions, and the Nova Design System, built through to production code in Claude Code. <a href="index.html#wizlo">Details →</a></p>
     </div>
 
     <div class="project">
-      <div class="project-head"><span class="pname">MediFlow — Healthcare SaaS Platform</span> <span class="ptag">· SaaS · 66 Screens · 4 User Roles</span></div>
-      <p>Designed 66 screens across Doctor, Receptionist, Clinic Owner, and Patient roles for a healthcare SaaS platform — appointment scheduling, patient records, billing, insurance, and role-based dashboards with approval-style, ERP-style workflows and a unified design system across all user types.</p>
+      <div class="project-head"><a class="pname" href="index.html#mediflow">MediFlow — Healthcare SaaS Platform</a> <span class="ptag">· 66 Screens · 4 Roles</span></div>
+      <p>Role-based healthcare SaaS platform spanning appointments, records, billing, and insurance. <a href="index.html#mediflow">Details →</a></p>
     </div>
 
     <div class="project">
-      <div class="project-head"><span class="pname">Polystox — B2B Polymer Trading Platform</span> <span class="ptag">· Marketplace · Mobile App · Live on Google Play, 10K+ downloads</span></div>
-      <p>Designed end-to-end UX for a B2B trading platform for manufacturers, traders, importers, and exporters — offer creation, live bidding, demand management, order tracking, and transit insurance. Multi-role, data-dense interfaces with negotiation and real-time status workflows.</p>
+      <div class="project-head"><a class="pname" href="index.html#polystox">Polystox — B2B Polymer Trading Platform</a> <span class="ptag">· 10K+ downloads</span></div>
+      <p>B2B trading marketplace with live bidding, demand management, and order tracking. <a href="index.html#polystox">Details →</a></p>
     </div>
 
     <div class="project">
-      <div class="project-head"><span class="pname">Shipment &amp; Logistics Admin Panel</span> <span class="ptag">· SaaS Admin Panel · B2B</span></div>
-      <p>Multi-role admin panel spanning appointments, records, billing, insurance, and admin flows with a unified design system across Doctor, Receptionist, and Admin roles — structurally comparable to ERP module architecture.</p>
+      <div class="project-head"><a class="pname" href="index.html#shipment-logistics">Shipment &amp; Logistics Admin Panel</a> <span class="ptag">· SaaS Admin</span></div>
+      <p>Multi-role admin panel for appointments, billing, and insurance — ERP-style module architecture. <a href="index.html#shipment-logistics">Details →</a></p>
     </div>
 
     <div class="project">
-      <div class="project-head"><span class="pname">Mostly Events — Dual-Sided Job Portal</span> <span class="ptag">· Marketplace Web Platform · Live: mostlyevents.com</span></div>
-      <p>Designed a job portal for the events industry with separate interfaces for job seekers and recruiters — covering profile creation, job posting, applications, and recruiter dashboards.</p>
+      <div class="project-head"><a class="pname" href="https://mostlyevents.com" target="_blank" rel="noopener">Mostly Events — Dual-Sided Job Portal</a> <span class="ptag">· mostlyevents.com</span></div>
+      <p>Two-sided marketplace for the events industry — distinct job-seeker and recruiter experiences.</p>
     </div>
 
     <div class="project">
-      <div class="project-head"><span class="pname">Car Arbab — Vehicle Bidding Platform</span> <span class="ptag">· B2B Marketplace · Web · UAE</span></div>
-      <p>UAE-based platform for bidding on old and damaged vehicles. Designed complex bidding flows, vehicle listing management, and admin controls with data-heavy tables and multi-step workflows.</p>
+      <div class="project-head"><a class="pname" href="index.html#car-arbab">Car Arbab — Vehicle Bidding Platform</a> <span class="ptag">· UAE</span></div>
+      <p>B2B bidding platform for vehicle listings with data-heavy admin controls. <a href="index.html#car-arbab">Details →</a></p>
     </div>
 
     <div class="project">
-      <div class="project-head"><span class="pname">Jayhyzmat — E-Commerce Mobile App</span> <span class="ptag">· E-Commerce · Mobile App · Live on Google Play</span></div>
-      <p>Designed a full e-commerce app with guest browsing, multi-category listings, order management, and a cash-on-delivery checkout flow, focused on navigation clarity and a smooth first-time-user ordering experience.</p>
+      <div class="project-head"><a class="pname" href="index.html#jayhyzmat">Jayhyzmat — E-Commerce Mobile App</a> <span class="ptag">· Mobile</span></div>
+      <p>E-commerce app with guest browsing and a cash-on-delivery checkout flow. <a href="index.html#jayhyzmat">Details →</a></p>
     </div>
 
     <h2 class="section">Education</h2>
