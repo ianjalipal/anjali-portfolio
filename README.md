@@ -9,12 +9,13 @@ Live at: https://ianjalipal.github.io/anjali-portfolio/ (once GitHub Pages is en
 No build step — plain HTML/CSS/JS, one file per page.
 
 - `index.html` — main portfolio, minimal / editorial (hero, about, services, selected work, skills, process, contact).
-- `index-bento.html` — a compact single-screen bento "intro" grid (à la Sanjay Billa / Evan Smith /
-  Daniel Evans): profile card with mini-stats and a gradient CTA button, colourful "Tools I use
-  daily" icon grid, "Selected work" link list with category swatches, a rotating "available for
-  work" badge with a 3D gradient orb, "Right now", and a gradient "Let's work together" card.
-  Warm-gradient background with drifting blobs, staggered card entrance, count-up stats,
-  hover lifts — all reduced-motion-aware. No scroll on desktop. Swap the placeholder avatar.
+- `index-bento.html` — a single-screen bento "intro" grid in the Evan Smith style: floating pill
+  nav, an "About me" card (B&W photo with colour-blob accents, "Hi, I'm Anjali Pal!", bio),
+  an icon-only "Tools I use daily" grid, a "By the numbers" stat grid, a "Selected work" list,
+  and a centred gradient "View my work" button. Warm-gradient background with drifting blobs,
+  staggered card entrance, count-up stats, hover lifts — all reduced-motion-aware.
+  **Add `anjali.jpg`** (square B&W headshot) to the repo root — the About card + nav avatar
+  use it, and fall back to a placeholder silhouette until it's there.
 - `index-moxa.html` — alternate landing in a brutalist-editorial "moxa" style: cream panel inside
   a black frame with orange geometric shapes, heavy Archivo Black display type, a sparkle/asterisk
   motif, a diagonal scrolling skills marquee, strikethrough joke in the hero, hard-edged split
