@@ -130,8 +130,9 @@
   .portrait .d-y { position: absolute; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(150deg,#FFD873,#F5B33C); left: 6%; bottom: 12%; z-index: 0; box-shadow: 0 8px 16px -6px rgba(240,160,60,.5); }
   .portrait .d-p { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: #C6A8F5; left: 10%; top: 32%; z-index: 2; }
   .portrait .dots { position: absolute; left: 0; top: 6%; width: 54px; height: 40px; z-index: 0; color: var(--accent); opacity: .3; background-image: radial-gradient(currentColor 1px, transparent 1.4px); background-size: 9px 9px; }
-  .portrait .img { position: absolute; inset: 0; z-index: 1; display: grid; place-items: end center; filter: grayscale(1) contrast(1.03); -webkit-mask-image: linear-gradient(180deg,#000 86%,transparent); mask-image: linear-gradient(180deg,#000 86%,transparent); }
-  .portrait .img img { width: 100%; max-height: 100%; object-fit: contain; object-position: bottom center; }
+  .portrait .img { position: absolute; inset: 0; z-index: 1; display: grid; place-items: end center; filter: grayscale(1) contrast(1.03); -webkit-mask-image: linear-gradient(180deg,#000 84%,transparent); mask-image: linear-gradient(180deg,#000 84%,transparent); }
+  .portrait .img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+  .portrait .img img ~ svg { display: none; }
   .portrait .img > svg { width: 74%; }
   .portrait .arrow { position: absolute; right: 2%; bottom: 24%; width: 42px; color: var(--accent); z-index: 2; }
   .hero-copy .lbl { font-family: var(--hand); }
