@@ -1,37 +1,35 @@
 # Anjali Pal — Product Designer Portfolio
 
-Personal portfolio: UI/UX and product design case studies in healthcare, SaaS and B2B workflow design.
+Personal portfolio — a premium single-page bento grid.
 
-Live at: https://ianjalipal.github.io/anjali-portfolio/ (once GitHub Pages is enabled on this repo)
+Live at: https://ianjalipal.github.io/anjali-portfolio/
 
 ## Contents
 
 No build step — plain HTML/CSS/JS, one file per page.
 
-- `index.html` — main portfolio (minimal / editorial, full scroll).
-- `index-bento.html` — **premium 7-card bento landing** (Apple / Linear / Notion feel): glass
-  pill nav with avatar + name, hero with blue-circle portrait, category-row Tools & Stack,
-  Experience timeline, dark Featured Case Study card (Wizlo / SmarterEMR) with an angled
-  dashboard mockup, warm "Beyond Design" card, Selected Projects (Wizlo, MediFlow, Polystox),
-  and a Contact card with a line-art desk illustration. White `#FAFAFA`, accent `#4F7CFF`,
-  Inter + Caveat labels, scroll-reveal + hover lifts, `prefers-reduced-motion`-aware.
-- `index-moxa.html` — alternate landing in a brutalist-editorial style.
+- `index.html` — the homepage: a premium 7-card bento grid (Apple / Linear / Notion feel).
+  Glass pill nav (avatar + name), a hero with a mesh-gradient blob portrait and 4 icon stats,
+  a category-row Tools & Stack card, an Experience timeline, a dark Featured Case Study card
+  (Wizlo / SmarterEMR) with an angled dashboard mockup, a warm "Beyond Design" card with
+  pastel hobby stickers, Selected Projects (Wizlo, MediFlow, Polystox), and a Contact card
+  with a line-art desk illustration.
+- `index-bento.html` — identical source of the homepage, kept as a named copy.
+- `index-minimal.html` — the earlier minimal / editorial landing (full scroll, Fraunces italic).
+- `index-moxa.html` — the earlier brutalist-editorial landing.
 - `resume.html` — web résumé, printable to PDF.
 - `verified-beauty-providers.html`, `ability-amore.html`, `mostly-events.html` — case studies.
+- `anjali.jpg` — the headshot used by the hero portrait and nav avatar.
 
-## Add a photo
+## Design tokens (homepage)
 
-`index-bento.html` (and index / index-moxa) reference **`anjali.jpg`** at the repo root —
-a square-ish B&W headshot. The About card, hero portrait and nav avatar use it and fall back
-to a placeholder silhouette until the file is added.
-
-## Design tokens (index-bento)
-
-Warm-neutral white (`--bg #FAFAFA`), accent blue (`--accent #4F7CFF`) with a violet secondary
-for the hero circle, light borders (`--line #ECECEC`), 32px card radius, soft blur shadows.
-Body **Inter**, handwritten card labels **Caveat**.
+White `--bg #FAFAFA`, accent blue `--accent #4F7CFF` with a violet secondary for the hero blob,
+light borders `--line #ECECEC`, 32px card radius, soft blur shadows. Body **Inter**, handwritten
+card labels **Caveat**. Scroll-reveal, hover lift, mobile hamburger — all
+`prefers-reduced-motion`-aware. Tool logos and UI icons are inlined SVGs (no runtime fetches).
 
 ## Sharing / SEO
 
 Every page has `<title>`, `<meta name="description">`, canonical URL, an inline SVG favicon,
-and Open Graph / Twitter Card tags.
+and Open Graph / Twitter Card tags. For a link-preview image, add a 1200×630 `og-cover.png`
+to the repo root and add an `og:image` meta to each page's `<head>`.
