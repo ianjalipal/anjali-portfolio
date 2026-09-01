@@ -9,10 +9,14 @@ Live at: https://ianjalipal.github.io/anjali-portfolio/ (once GitHub Pages is en
 No build step — plain HTML/CSS/JS, one file per page.
 
 - `index.html` — main portfolio, minimal / editorial (hero, about, services, selected work, skills, process, contact).
-- `index-bento.html` — alternate landing page in the bento-grid "personality" style: playful headline
-  with inline avatar, "Open to work" pill, and a card grid (experience timeline, right-now, toolkit,
-  map, how-I-work tabs), then selected work as browser-framed cards. Warm light, orange accent.
-  Swap over `index.html` if it's the chosen direction.
+- `index-bento.html` — alternate landing in the bento-grid "personality" style: playful headline
+  with inline avatar, "Open to work" pill, card grid (experience timeline, right-now, toolkit,
+  map, how-I-work tabs), browser-framed work cards. Warm light, orange accent.
+- `index-moxa.html` — alternate landing in a brutalist-editorial "moxa" style: cream panel inside
+  a black frame with orange geometric shapes, heavy Archivo Black display type, a sparkle/asterisk
+  motif, a diagonal scrolling skills marquee, strikethrough joke in the hero, hard-edged split
+  buttons, centered section headers, alternating portfolio rows, a 2×2 services grid.
+  Swap the chosen variant over `index.html` once picked.
 - `resume.html` — web résumé, printable to PDF.
 - `verified-beauty-providers.html` — case study (three-sided marketplace design system, Figma-to-code).
 - `ability-amore.html` — case study (accessible native iOS dating app).
