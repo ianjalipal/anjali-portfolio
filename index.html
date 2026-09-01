@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Anjali Pal — Product Designer</title>
-<meta name="description" content="Anjali Pal — Product Designer crafting intuitive SaaS experiences for healthcare and B2B platforms. Wizlo (SmarterEMR), MediFlow, Polystox. Bengaluru, India.">
+<meta name="description" content="Anjali Pal — product designer for complex B2B & healthcare SaaS. I model multi-role workflows, build design systems, and ship my own React + Storybook. Wizlo (SmarterEMR), Verified Beauty Providers, MediFlow. Bengaluru / Remote.">
 <meta name="author" content="Anjali Pal">
 <meta name="theme-color" content="#FAFAFA">
 <link rel="canonical" href="https://ianjalipal.github.io/anjali-portfolio/">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Anjali Pal">
 <meta property="og:title" content="Anjali Pal — Product Designer">
-<meta property="og:description" content="Product Designer crafting intuitive SaaS experiences for healthcare and B2B platforms.">
+<meta property="og:description" content="Product designer for complex B2B & healthcare SaaS — models multi-role workflows, builds design systems, ships production React + Storybook.">
 <meta property="og:url" content="https://ianjalipal.github.io/anjali-portfolio/">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -138,12 +138,15 @@
   .hero-copy .lbl { font-family: var(--hand); }
   .hero-copy h1 { margin: 0 0 14px; font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.08; }
   .hero-copy h1 .b { color: var(--accent); }
-  .hero-copy .sub { margin: 0 0 22px; font-size: clamp(15px, 1.8vw, 18px); color: var(--ink); max-width: 42ch; line-height: 1.45; }
-  .hstats { display: flex; flex-wrap: wrap; gap: 26px; margin-bottom: 22px; }
+  .hero-copy .sub { margin: 0 0 14px; font-size: clamp(15px, 1.8vw, 18px); color: var(--ink); max-width: 42ch; line-height: 1.45; }
+  .hero-copy .avail { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 22px; font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
+  .hero-copy .avail .dot { width: 8px; height: 8px; border-radius: 50%; background: #22C55E; box-shadow: 0 0 0 4px rgba(34,197,94,.16); flex: none; }
+  .hstats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; margin-bottom: 22px; max-width: 440px; }
   .hstat { display: flex; flex-direction: column; }
-  .hstat .hi { display: inline-flex; align-items: center; gap: 6px; font-size: 20px; font-weight: 800; letter-spacing: -0.03em; }
-  .hstat .hi svg { width: 15px; height: 15px; color: var(--accent); }
-  .hstat span { font-size: 11px; color: var(--ink-2); margin-top: 2px; }
+  .hstat .hi { display: inline-flex; align-items: center; gap: 6px; font-size: 20px; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap; }
+  .hstat .hi.txt { font-size: 15px; }
+  .hstat .hi svg { width: 15px; height: 15px; color: var(--accent); flex: none; }
+  .hstat span { font-size: 11px; color: var(--ink-2); margin-top: 3px; line-height: 1.35; }
   .hero-copy p.bio { margin: 0 0 24px; font-size: 13px; color: var(--ink-2); line-height: 1.65; max-width: 68ch; }
   .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
   .btn { display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 999px; font-size: 13.5px; font-weight: 600; transition: transform .16s ease, background-color .16s ease; }
@@ -208,7 +211,11 @@
   .case-meta .kind { font-size: 13px; color: #8FA6FF; font-weight: 600; }
   .case-meta .tl-tags { margin: 14px 0; }
   .case-meta .tl-tags span { background: rgba(143,166,255,.16); color: #C7D2FF; font-size: 11px; }
-  .case-meta p { margin: 0 0 22px; font-size: 12.5px; color: #A9B2C6; line-height: 1.65; }
+  .case-meta p { margin: 0 0 18px; font-size: 12.5px; color: #A9B2C6; line-height: 1.65; }
+  .case-stats { display: flex; flex-wrap: wrap; gap: 12px 24px; margin: 0 0 22px; }
+  .case-stats div { display: flex; flex-direction: column; }
+  .case-stats b { font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+  .case-stats span { font-size: 10.5px; color: #8FA6FF; margin-top: 3px; max-width: 17ch; line-height: 1.35; }
   .case-meta .btn.solid { box-shadow: none; }
   .mock {
     border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.1);
@@ -392,14 +399,15 @@
         <div class="hero-copy">
           <span class="lbl">About me</span>
           <h1>Hi, I'm <span class="b">Anjali Pal</span> <span aria-hidden="true">👋</span></h1>
-          <p class="sub">Product Designer crafting intuitive SaaS experiences for healthcare and B2B platforms.</p>
+          <p class="sub">Product designer for complex B2B &amp; healthcare SaaS — I take tangled, multi-role workflows and make the interface simple anyway.</p>
+          <p class="avail"><span class="dot" aria-hidden="true"></span> Open to product design roles · Bengaluru / Remote</p>
           <div class="hstats">
-            <div class="hstat"><span class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>3+</span><span>Years Experience</span></div>
-            <div class="hstat"><span class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.4"/></svg>30+</span><span>Projects Completed</span></div>
-            <div class="hstat"><span class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>0→1</span><span>Product Design</span></div>
-            <div class="hstat"><span class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>10+</span><span>Design Systems</span></div>
+            <div class="hstat"><span class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>3.5+</span><span>Years in product design</span></div>
+            <div class="hstat"><span class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>6</span><span>Wizlo modules shipped end-to-end</span></div>
+            <div class="hstat"><span class="hi txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>Nova</span><span>Design system, built &amp; owned</span></div>
+            <div class="hstat"><span class="hi txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Figma&#8202;→&#8202;Prod</span><span>Ships production React + Storybook</span></div>
           </div>
-          <p class="bio">I design scalable digital products that simplify complex workflows. My work spans research to high-fidelity design, design systems and developer handoff — collaborating closely with engineering using AI-assisted workflows in Agile environments.</p>
+          <p class="bio">I design scalable products that simplify complex workflows — research through high-fidelity design, design systems and developer handoff. I also build what I design: production HTML/CSS and React components, documented in Storybook and shipped through Git, so design intent survives the handoff.</p>
           <div class="btn-row">
             <a class="btn solid" href="#case">View Case Studies
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
@@ -448,7 +456,7 @@
             <div class="rung open">
               <div class="rung-head">
                 <h4>UI/UX Designer II <span class="org">Techdome Solutions Pvt. Ltd.</span></h4>
-                <span class="yr">Jul 2026 — Present</span>
+                <span class="yr">May 2026 — Present</span>
               </div>
               <div class="tl-tags"><span>Healthcare SaaS</span><span>Design Systems</span><span>AI Workflows</span></div>
               <p class="rung-body">Leading UX across Wizlo (SmarterEMR) — the end-to-end patient-to-revenue lifecycle including GFE review, encounters, subscriptions, product bundles, patient portal and notifications. Own the design system and partner with engineering through AI-assisted workflows.</p>
@@ -457,7 +465,7 @@
             <div class="rung">
               <div class="rung-head">
                 <h4>UX Designer I <span class="org">Techdome Solutions Pvt. Ltd.</span></h4>
-                <span class="yr">Jan 2025 — Jul 2026</span>
+                <span class="yr">Jan 2025 — May 2026</span>
               </div>
               <div class="tl-tags"><span>Healthcare SaaS</span><span>Design Systems</span><span>Prototyping</span></div>
               <p class="rung-body">Owned UX for core Wizlo modules — encounters, subscriptions and the patient portal — taking flows from concept to ship. Built wireframes, prototypes and high-fidelity designs while partnering closely with product and engineering.</p>
@@ -502,8 +510,13 @@
         <div class="case-meta">
           <h3>Wizlo (SmarterEMR)</h3>
           <div class="kind">Healthcare SaaS Platform</div>
-          <div class="tl-tags"><span>Healthcare</span><span>Enterprise</span><span>Design System</span><span>0→1 Product</span></div>
-          <p>Designed end-to-end patient, provider and clinic workflows across Lead Management, GFE Review, Encounters, Product Bundles, Subscriptions, Patient Portal and Notifications. Built reusable design systems and collaborated directly with engineering using AI-assisted workflows.</p>
+          <div class="tl-tags"><span>Healthcare</span><span>Revenue-Cycle UX</span><span>Design System</span><span>0→1 · Multi-role</span></div>
+          <p>An EMR where the hard problem isn't charts — it's the revenue cycle: estimates, compliance reviews, subscriptions and billing-adjacent orders. I modelled each object's real states first, then designed reusable patterns so six modules — across patient, provider and clinic roles — stayed consistent instead of drifting.</p>
+          <div class="case-stats">
+            <div><b>6</b><span>modules shipped end-to-end</span></div>
+            <div><b>Nova</b><span>design system built &amp; owned</span></div>
+            <div><b>Figma → prod</b><span>components authored in code</span></div>
+          </div>
           <a class="btn solid" href="wizlo.html">View Full Case Study
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
           </a>
