@@ -110,10 +110,10 @@
   .lbl { font-family: var(--hand); font-size: 24px; font-weight: 700; color: var(--accent); line-height: 1; display: inline-block; margin: 0 0 22px; padding-bottom: 5px; border-bottom: 2px solid var(--accent); }
 
   .c-hero    { grid-column: 1 / -1; }
-  .c-tools   { grid-column: span 5; }
-  .c-exp     { grid-column: span 7; }
+  .c-tools   { grid-column: 1 / -1; }
+  .c-exp     { grid-column: span 6; }
   .c-case    { grid-column: 1 / -1; background: var(--navy); border-color: transparent; color: #EDEFF5; }
-  .c-beyond  { grid-column: 1 / -1; background: var(--cream); border-color: #EFE7D6; }
+  .c-beyond  { grid-column: span 6; background: var(--cream); border-color: #EFE7D6; }
   .c-projects{ grid-column: 1 / -1; }
   .c-contact { grid-column: 1 / -1; }
   @media (max-width: 1000px) {
@@ -153,10 +153,23 @@
   .btn.line:hover { border-color: var(--accent); color: var(--accent); }
 
   /* ---- tools ---- */
-  .tool-row { display: grid; grid-template-columns: 96px 1fr; gap: 14px; align-items: center; padding: 14px 0; border-top: 1px solid var(--line); }
-  .tool-row:first-of-type { border-top: none; }
-  .tool-row h3 { margin: 0; font-size: 12.5px; font-weight: 600; color: var(--ink-2); line-height: 1.25; }
-  .tool-row .set { display: flex; flex-wrap: wrap; gap: 12px; }
+  .tool-slider {
+    display: flex; gap: 16px; align-items: flex-start; overflow-x: auto; scroll-snap-type: x proximity;
+    padding: 4px 4px 12px; margin: 0 -4px; cursor: grab;
+    scrollbar-width: thin; scrollbar-color: var(--line-2) transparent;
+    -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+  }
+  .tool-slider.drag { cursor: grabbing; scroll-snap-type: none; }
+  .tool-slider::-webkit-scrollbar { height: 6px; }
+  .tool-slider::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 3px; }
+  .tool-slide {
+    flex: 0 0 auto; width: 208px; scroll-snap-align: start;
+    border: 1px solid var(--line); border-radius: var(--r-md); padding: 18px; background: #fff;
+  }
+  .tool-slide h3 { margin: 0 0 16px; font-size: 12.5px; font-weight: 600; color: var(--ink-2); line-height: 1.25; }
+  .tool-slide .set { display: flex; flex-wrap: wrap; gap: 14px; }
+  .tool-slide .set .tool img, .tool-slide .set svg { pointer-events: none; }
+  @media (max-width: 620px) { .tool-slide { width: 168px; } }
   .tool { width: 38px; height: 38px; display: grid; place-items: center; transition: transform .16s ease; }
   .tool:hover { transform: translateY(-4px); }
   .tool > svg, .tool > span { width: 100%; height: 100%; }
@@ -211,29 +224,20 @@
 
   /* ---- beyond design ---- */
   .c-beyond .lbl { color: var(--accent); border-color: var(--accent); }
-  .c-beyond p.lead { margin: 0 0 6px; font-size: 13px; color: #7A6E56; line-height: 1.65; max-width: 62ch; }
-  .board-hint { font-family: var(--hand); font-size: 20px; font-weight: 600; color: #B98C4A; margin: 0 0 14px; }
-  .sticker-board {
-    position: relative; width: 100%; height: 440px; border-radius: var(--r-md);
-    background-color: #FFFDF7;
-    background-image:
-      linear-gradient(rgba(120,90,40,.10) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(120,90,40,.10) 1px, transparent 1px);
-    background-size: 36px 36px;
-    border: 1px solid #EFE7D6; overflow: hidden; touch-action: none;
-  }
-  .sticker-board .sk {
-    position: absolute; width: 120px; cursor: grab; touch-action: none;
-    filter: drop-shadow(0 10px 16px rgba(120,90,40,.26));
-    transition: filter .18s ease;
-  }
-  .sticker-board .sk img { width: 100%; display: block; pointer-events: none; -webkit-user-drag: none; user-select: none; }
-  .sticker-board .sk.drag { cursor: grabbing; filter: drop-shadow(0 20px 28px rgba(120,90,40,.36)); }
-  @media (max-width: 620px) {
-    .sticker-board { height: 380px; }
-    .sticker-board .sk { width: 88px; }
-  }
-  @media (prefers-reduced-motion: reduce) { .sticker-board .sk { transition: none; } }
+  .c-beyond p.lead { margin: 0 0 22px; font-size: 13px; color: #7A6E56; line-height: 1.65; }
+  .hobby-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 12px; }
+  .hobby { display: flex; align-items: center; gap: 10px; }
+  .hobby .e { width: 44px; height: 44px; border-radius: 15px; display: grid; place-items: center; font-size: 21px; transition: transform .2s ease; box-shadow: 0 10px 20px -8px rgba(120,90,40,.3); }
+  .hobby:nth-child(1) .e { background: #FFE6D2; transform: rotate(-4deg); }
+  .hobby:nth-child(2) .e { background: #E4ECFF; transform: rotate(3deg); }
+  .hobby:nth-child(3) .e { background: #DEF2E6; transform: rotate(-2deg); }
+  .hobby:nth-child(4) .e { background: #F6E7CF; transform: rotate(4deg); }
+  .hobby:nth-child(5) .e { background: #EFE1FA; transform: rotate(-3deg); }
+  .hobby:nth-child(6) .e { background: #FDE2E8; transform: rotate(2deg); }
+  .hobby:hover .e { transform: translateY(-5px) rotate(-6deg) scale(1.06); }
+  .hobby .e.sticker { width: 52px; height: 52px; border-radius: 0; background: none; box-shadow: none; }
+  .hobby .e.sticker img { width: 100%; height: 100%; display: block; filter: drop-shadow(0 8px 14px rgba(120,90,40,.28)); }
+  .hobby span { font-size: 11.5px; color: #6E634D; }
 
   /* ---- selected projects ---- */
   .proj-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
@@ -371,7 +375,8 @@
     <!-- 2 · TOOLS -->
     <section class="card c-tools rv">
       <span class="lbl">Tools &amp; Stack</span>
-      <div class="tool-row">
+      <div class="tool-slider">
+      <div class="tool-slide">
         <h3>Design</h3>
         <div class="set">
           <span class="tool"><svg viewBox="0 0 16 24"><path fill="#0acf83" d="M4 24a4 4 0 0 0 4-4v-4H4a4 4 0 0 0 0 8z"/><path fill="#a259ff" d="M0 12a4 4 0 0 1 4-4h4v8H4a4 4 0 0 1-4-4z"/><path fill="#f24e1e" d="M0 4a4 4 0 0 1 4-4h4v8H4a4 4 0 0 1-4-4z"/><path fill="#ff7262" d="M8 0h4a4 4 0 0 1 0 8H8z"/><path fill="#1abcfe" d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg></span>
@@ -381,7 +386,7 @@
           <span class="tool"><span class="badge" style="width:100%;height:100%;background:#2E001F;color:#FF61C7">Xd</span></span>
         </div>
       </div>
-      <div class="tool-row">
+      <div class="tool-slide">
         <h3>Development</h3>
         <div class="set">
           <span class="tool"><svg viewBox="0 0 24 24"><path fill="#0078D4" d="m18.2 2.3-11 10.1L4.3 10 2.2 11.2v1.6L4.3 14l2.9-2.4 11 10.1 3.6-1.7V4z"/><path fill="#fff" d="M17.6 6.9 11.3 12l6.3 5.1z" opacity=".22"/></svg></span>
@@ -392,20 +397,21 @@
           <span class="tool"><svg viewBox="0 0 24 24"><path fill="#16181F" d="M12 .5A11.5 11.5 0 0 0 8.4 22.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></span>
         </div>
       </div>
-      <div class="tool-row">
+      <div class="tool-slide">
         <h3>AI &amp; Automation</h3>
         <div class="set">
           <span class="tool"><svg viewBox="0 0 24 24"><g fill="#D97757"><g><rect x="11" y="1" width="2" height="22" rx="1"/><rect x="1" y="11" width="22" height="2" rx="1"/></g><g transform="rotate(45 12 12)"><rect x="11.2" y="3" width="1.6" height="18" rx=".8"/><rect x="3" y="11.2" width="18" height="1.6" rx=".8"/></g><g transform="rotate(22.5 12 12)"><rect x="11.3" y="4" width="1.4" height="16" rx=".7"/><rect x="4" y="11.3" width="16" height="1.4" rx=".7"/></g></g></svg></span>
           <span class="tool"><svg viewBox="0 0 24 24" fill="#10A37F"><path d="M21.6 10a5.4 5.4 0 0 0-.5-4.5 5.5 5.5 0 0 0-5.9-2.6A5.4 5.4 0 0 0 11.2 1a5.5 5.5 0 0 0-5.2 3.8A5.4 5.4 0 0 0 2.4 7.4a5.5 5.5 0 0 0 .7 6.4 5.4 5.4 0 0 0 .5 4.5 5.5 5.5 0 0 0 5.9 2.6A5.4 5.4 0 0 0 13.4 23a5.5 5.5 0 0 0 5.2-3.8 5.4 5.4 0 0 0 3.6-2.6 5.5 5.5 0 0 0-.6-6.6zm-8.2 11.3a4.1 4.1 0 0 1-2.6-.9l.1-.1 4.3-2.5a.7.7 0 0 0 .4-.6v-6.1l1.8 1.1v5a4.1 4.1 0 0 1-4 4zM4.7 17.6a4 4 0 0 1-.5-2.7l4.3 2.5a.7.7 0 0 0 .7 0l5.3-3v2.1l-4.4 2.6a4.1 4.1 0 0 1-5.6-1.5zM3.6 8.3a4.1 4.1 0 0 1 2.1-1.8v5.3a.7.7 0 0 0 .4.6l5.3 3-1.8 1.1-4.3-2.5a4.1 4.1 0 0 1-1.7-5.7zm14.9 3.5-5.3-3.1 1.8-1 4.3 2.5a4.1 4.1 0 0 1-.6 7.3v-5.1a.7.7 0 0 0-.4-.6zm1.8-2.7-4.3-2.5a.7.7 0 0 0-.7 0l-5.3 3V7.1l4.3-2.5a4.1 4.1 0 0 1 6 4.5zM9.5 12.8l-1.8-1V6.6a4.1 4.1 0 0 1 6.7-3.1l-.1.1L10 6.1a.7.7 0 0 0-.4.6zm1-2.1L13 9.4l2.4 1.3v2.7L13 14.7l-2.4-1.3z"/></svg></span>
         </div>
       </div>
-      <div class="tool-row">
+      <div class="tool-slide">
         <h3>Collaboration</h3>
         <div class="set">
           <span class="tool"><svg viewBox="0 0 24 24"><rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="#fff" stroke="#16181F" stroke-width="1.4"/><path d="M8 16.5v-9M8 7.5l8 9M16 7.5v9" stroke="#16181F" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <span class="tool"><svg viewBox="0 0 24 24"><path fill="#2684FF" d="M11.6 2H22a1 1 0 0 1 1 1v10.4A5.7 5.7 0 0 1 17.3 7.7V5.4A5.7 5.7 0 0 1 11.6 2z"/><path fill="#2684FF" opacity=".7" d="M6.4 7.2h10.4a1 1 0 0 1 1 1v10.4a5.7 5.7 0 0 1-5.7-5.7v-2.3a5.7 5.7 0 0 1-5.7-3.4z"/><path fill="#2684FF" opacity=".5" d="M1.2 12.5h10.4a1 1 0 0 1 1 1V24a5.7 5.7 0 0 1-5.7-5.7v-2.3a5.7 5.7 0 0 1-5.7-3.5z"/></svg></span>
           <span class="tool"><svg viewBox="0 0 24 24"><path fill="#E01E5A" d="M6 15a2 2 0 1 1-2-2h2zM7 15a2 2 0 0 1 4 0v5a2 2 0 0 1-4 0z"/><path fill="#36C5F0" d="M9 6a2 2 0 1 1 2 2H9zM9 7a2 2 0 0 1 0 4H4a2 2 0 0 1 0-4z"/><path fill="#2EB67D" d="M18 9a2 2 0 1 1 2 2h-2zM17 9a2 2 0 0 1-4 0V4a2 2 0 0 1 4 0z"/><path fill="#ECB22E" d="M15 18a2 2 0 1 1-2-2h2zM15 17a2 2 0 0 1 0-4h5a2 2 0 0 1 0 4z"/></svg></span>
         </div>
+      </div>
       </div>
     </section>
 
@@ -428,7 +434,21 @@
       </div>
     </section>
 
-    <!-- 4 · FEATURED CASE STUDY -->
+    <!-- 4 · BEYOND DESIGN -->
+    <section class="card c-beyond rv">
+      <span class="lbl">Beyond Design</span>
+      <p class="lead">Outside of work, I love visual storytelling and seek inspiration beyond the screen — capturing moments through photography, watching cinema, travelling, discovering cafés and experimenting with cinematography. It shapes how I observe and design.</p>
+      <div class="hobby-grid">
+        <span class="hobby"><span class="e sticker"><img src="assets/sticker-camera.svg" alt="" loading="lazy"></span><span>Photography</span></span>
+        <span class="hobby"><span class="e sticker"><img src="assets/sticker-popcorn.svg" alt="" loading="lazy"></span><span>Cinema</span></span>
+        <span class="hobby"><span class="e sticker"><img src="assets/sticker-adventures.svg" alt="" loading="lazy"></span><span>Travel</span></span>
+        <span class="hobby"><span class="e sticker"><img src="assets/sticker-tea.svg" alt="" loading="lazy"></span><span>Coffee</span></span>
+        <span class="hobby"><span class="e sticker"><img src="assets/sticker-record-player.svg" alt="" loading="lazy"></span><span>Music</span></span>
+        <span class="hobby"><span class="e sticker"><img src="assets/sticker-clapper.svg" alt="" loading="lazy"></span><span>Cinematography</span></span>
+      </div>
+    </section>
+
+    <!-- 5 · FEATURED CASE STUDY -->
     <section class="card c-case rv" id="case">
       <span class="lbl">Featured Case Study</span>
       <div class="case-inner">
@@ -450,24 +470,6 @@
             <div class="chart"><em style="height:55%"></em><em style="height:82%"></em><em style="height:44%"></em><em style="height:96%"></em><em style="height:60%"></em><em style="height:74%"></em><em style="height:38%"></em></div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- 5 · BEYOND DESIGN -->
-    <section class="card c-beyond rv">
-      <span class="lbl">Beyond Design</span>
-      <p class="lead">Outside of work, I love visual storytelling and seek inspiration beyond the screen — photography, cinema, travel, road trips, coffee and music. It shapes how I observe and design.</p>
-      <p class="board-hint">try moving things around :)</p>
-      <div class="sticker-board" aria-hidden="true">
-        <div class="sk" data-id="camera"     style="left:2%;  top:20px;  transform:rotate(-8deg)"><img src="assets/sticker-camera.svg" alt=""></div>
-        <div class="sk" data-id="clapper"    style="left:36%; top:14px;  transform:rotate(-3deg)"><img src="assets/sticker-clapper.svg" alt=""></div>
-        <div class="sk" data-id="record"     style="left:68%; top:18px;  transform:rotate(5deg)"><img src="assets/sticker-record-player.svg" alt=""></div>
-        <div class="sk" data-id="adventures" style="left:16%; top:148px; transform:rotate(5deg)"><img src="assets/sticker-adventures.svg" alt=""></div>
-        <div class="sk" data-id="tea"        style="left:48%; top:138px; transform:rotate(7deg)"><img src="assets/sticker-tea.svg" alt=""></div>
-        <div class="sk" data-id="mountains"  style="left:74%; top:150px; transform:rotate(-6deg)"><img src="assets/sticker-mountains.svg" alt=""></div>
-        <div class="sk" data-id="sunset"     style="left:6%;  top:264px; transform:rotate(3deg)"><img src="assets/sticker-sunset.svg" alt=""></div>
-        <div class="sk" data-id="popcorn"    style="left:40%; top:258px; transform:rotate(-5deg)"><img src="assets/sticker-popcorn.svg" alt=""></div>
-        <div class="sk" data-id="car"        style="left:66%; top:270px; transform:rotate(6deg)"><img src="assets/sticker-car.svg" alt=""></div>
       </div>
     </section>
 
@@ -582,39 +584,23 @@
     addEventListener("load", function () { setTimeout(function () { els.forEach(function (e) { e.classList.add("in"); }); }, 900); });
   })();
   (function () {
-    var board = document.querySelector(".sticker-board");
-    if (!board || !window.PointerEvent) return;
-    var z = 1, KEY = "ap-beyond-stickers", saved = {};
-    try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) {}
-    [].slice.call(board.querySelectorAll(".sk")).forEach(function (sk) {
-      var id = sk.getAttribute("data-id"), s = saved[id];
-      if (s) { sk.style.left = s.x + "px"; sk.style.top = s.y + "px"; }
-      var ox = 0, oy = 0;
-      sk.addEventListener("pointerdown", function (e) {
-        e.preventDefault();
-        try { sk.setPointerCapture(e.pointerId); } catch (er) {}
-        sk.classList.add("drag"); sk.style.zIndex = ++z;
-        var r = sk.getBoundingClientRect();
-        ox = e.clientX - r.left; oy = e.clientY - r.top;
-      });
-      sk.addEventListener("pointermove", function (e) {
-        if (!sk.classList.contains("drag")) return;
-        var b = board.getBoundingClientRect();
-        var x = Math.max(0, Math.min(e.clientX - b.left - ox, board.clientWidth - sk.offsetWidth));
-        var y = Math.max(0, Math.min(e.clientY - b.top - oy, board.clientHeight - sk.offsetHeight));
-        sk.style.left = x + "px"; sk.style.top = y + "px";
-      });
-      function end() {
-        if (!sk.classList.contains("drag")) return;
-        sk.classList.remove("drag");
-        try {
-          saved[id] = { x: parseFloat(sk.style.left) || 0, y: parseFloat(sk.style.top) || 0 };
-          localStorage.setItem(KEY, JSON.stringify(saved));
-        } catch (e) {}
-      }
-      sk.addEventListener("pointerup", end);
-      sk.addEventListener("pointercancel", end);
+    var sl = document.querySelector(".tool-slider");
+    if (!sl || !window.PointerEvent) return;
+    var down = false, sx = 0, sc = 0, moved = 0;
+    sl.addEventListener("pointerdown", function (e) {
+      if (e.pointerType !== "mouse" || e.button !== 0) return;
+      down = true; moved = 0; sx = e.clientX; sc = sl.scrollLeft;
+      sl.classList.add("drag");
     });
+    sl.addEventListener("pointermove", function (e) {
+      if (!down) return;
+      var d = e.clientX - sx; moved += Math.abs(d);
+      sl.scrollLeft = sc - d;
+    });
+    function up() { down = false; sl.classList.remove("drag"); }
+    sl.addEventListener("pointerup", up);
+    sl.addEventListener("pointercancel", up);
+    sl.addEventListener("pointerleave", up);
   })();
 </script>
 </body>
