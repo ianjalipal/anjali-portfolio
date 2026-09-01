@@ -10,10 +10,11 @@ No build step — plain HTML/CSS/JS, one file per page.
 
 - `index.html` — main portfolio, minimal / editorial (hero, about, services, selected work, skills, process, contact).
 - `index-bento.html` — a compact single-screen bento "intro" grid (à la Sanjay Billa / Evan Smith /
-  Daniel Evans): profile card (avatar, availability, location + live time, quick buttons), a
-  "Tools I use daily" chip grid, a "Selected work" link list, a small stats card, "Right now",
-  and a "Let's work together" card. Warm light, one clay accent, handwritten (Caveat) card labels.
-  No scroll on desktop. Swap the placeholder avatar for a photo.
+  Daniel Evans): profile card with mini-stats and a gradient CTA button, colourful "Tools I use
+  daily" icon grid, "Selected work" link list with category swatches, a rotating "available for
+  work" badge with a 3D gradient orb, "Right now", and a gradient "Let's work together" card.
+  Warm-gradient background with drifting blobs, staggered card entrance, count-up stats,
+  hover lifts — all reduced-motion-aware. No scroll on desktop. Swap the placeholder avatar.
 - `index-moxa.html` — alternate landing in a brutalist-editorial "moxa" style: cream panel inside
   a black frame with orange geometric shapes, heavy Archivo Black display type, a sparkle/asterisk
   motif, a diagonal scrolling skills marquee, strikethrough joke in the hero, hard-edged split
