@@ -30,8 +30,9 @@ card labels **Caveat**. Scroll-reveal, hover lift, mobile hamburger — all
 
 ## Credits
 
-- Beyond Design card stickers (`assets/sticker-*.svg`) — camera / adventure / record-player
-  stickers created by **frdmn**, via [Flaticon](https://www.flaticon.com/free-stickers/camera).
+- Beyond Design card stickers (`assets/sticker-*.svg`) — the draggable camera, clapperboard,
+  record-player, tea, popcorn, car, sunset, mountains and lettering stickers are from
+  [Flaticon](https://www.flaticon.com/) free sticker packs (authors incl. **frdmn**).
 
 ## Sharing / SEO
 

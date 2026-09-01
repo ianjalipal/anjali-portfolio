@@ -112,8 +112,8 @@
   .c-hero    { grid-column: 1 / -1; }
   .c-tools   { grid-column: span 5; }
   .c-exp     { grid-column: span 7; }
-  .c-case    { grid-column: span 8; background: var(--navy); border-color: transparent; color: #EDEFF5; }
-  .c-beyond  { grid-column: span 4; background: var(--cream); border-color: #EFE7D6; }
+  .c-case    { grid-column: 1 / -1; background: var(--navy); border-color: transparent; color: #EDEFF5; }
+  .c-beyond  { grid-column: 1 / -1; background: var(--cream); border-color: #EFE7D6; }
   .c-projects{ grid-column: 1 / -1; }
   .c-contact { grid-column: 1 / -1; }
   @media (max-width: 1000px) {
@@ -211,20 +211,29 @@
 
   /* ---- beyond design ---- */
   .c-beyond .lbl { color: var(--accent); border-color: var(--accent); }
-  .c-beyond p.lead { margin: 0 0 22px; font-size: 13px; color: #7A6E56; line-height: 1.65; }
-  .hobby-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 12px; }
-  .hobby { display: flex; align-items: center; gap: 10px; }
-  .hobby .e { width: 44px; height: 44px; border-radius: 15px; display: grid; place-items: center; font-size: 21px; transition: transform .2s ease; box-shadow: 0 10px 20px -8px rgba(120,90,40,.3); }
-  .hobby:nth-child(1) .e { background: #FFE6D2; transform: rotate(-4deg); }
-  .hobby:nth-child(2) .e { background: #E4ECFF; transform: rotate(3deg); }
-  .hobby:nth-child(3) .e { background: #DEF2E6; transform: rotate(-2deg); }
-  .hobby:nth-child(4) .e { background: #F6E7CF; transform: rotate(4deg); }
-  .hobby:nth-child(5) .e { background: #EFE1FA; transform: rotate(-3deg); }
-  .hobby:nth-child(6) .e { background: #FDE2E8; transform: rotate(2deg); }
-  .hobby:hover .e { transform: translateY(-5px) rotate(-6deg) scale(1.06); }
-  .hobby .e.sticker { width: 52px; height: 52px; border-radius: 0; background: none; box-shadow: none; }
-  .hobby .e.sticker img { width: 100%; height: 100%; display: block; filter: drop-shadow(0 8px 14px rgba(120,90,40,.28)); }
-  .hobby span { font-size: 11.5px; color: #6E634D; }
+  .c-beyond p.lead { margin: 0 0 6px; font-size: 13px; color: #7A6E56; line-height: 1.65; max-width: 62ch; }
+  .board-hint { font-family: var(--hand); font-size: 20px; font-weight: 600; color: #B98C4A; margin: 0 0 14px; }
+  .sticker-board {
+    position: relative; width: 100%; height: 440px; border-radius: var(--r-md);
+    background-color: #FFFDF7;
+    background-image:
+      linear-gradient(rgba(120,90,40,.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120,90,40,.10) 1px, transparent 1px);
+    background-size: 36px 36px;
+    border: 1px solid #EFE7D6; overflow: hidden; touch-action: none;
+  }
+  .sticker-board .sk {
+    position: absolute; width: 120px; cursor: grab; touch-action: none;
+    filter: drop-shadow(0 10px 16px rgba(120,90,40,.26));
+    transition: filter .18s ease;
+  }
+  .sticker-board .sk img { width: 100%; display: block; pointer-events: none; -webkit-user-drag: none; user-select: none; }
+  .sticker-board .sk.drag { cursor: grabbing; filter: drop-shadow(0 20px 28px rgba(120,90,40,.36)); }
+  @media (max-width: 620px) {
+    .sticker-board { height: 380px; }
+    .sticker-board .sk { width: 88px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .sticker-board .sk { transition: none; } }
 
   /* ---- selected projects ---- */
   .proj-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
@@ -447,14 +456,18 @@
     <!-- 5 · BEYOND DESIGN -->
     <section class="card c-beyond rv">
       <span class="lbl">Beyond Design</span>
-      <p class="lead">Outside of work, I love visual storytelling and seek inspiration beyond the screen — capturing moments through photography, watching cinema, travelling, discovering cafés and experimenting with cinematography. It shapes how I observe and design.</p>
-      <div class="hobby-grid">
-        <span class="hobby"><span class="e sticker"><img src="assets/sticker-camera-studio.svg" alt="" loading="lazy"></span><span>Photography</span></span>
-        <span class="hobby"><span class="e">🎬</span><span>Cinema</span></span>
-        <span class="hobby"><span class="e sticker"><img src="assets/sticker-camera-vintage.svg" alt="" loading="lazy"></span><span>Travel</span></span>
-        <span class="hobby"><span class="e">☕</span><span>Coffee</span></span>
-        <span class="hobby"><span class="e sticker"><img src="assets/sticker-record-player.svg" alt="" loading="lazy"></span><span>Music</span></span>
-        <span class="hobby"><span class="e sticker"><img src="assets/sticker-camera-flash.svg" alt="" loading="lazy"></span><span>Cinematography</span></span>
+      <p class="lead">Outside of work, I love visual storytelling and seek inspiration beyond the screen — photography, cinema, travel, road trips, coffee and music. It shapes how I observe and design.</p>
+      <p class="board-hint">try moving things around :)</p>
+      <div class="sticker-board" aria-hidden="true">
+        <div class="sk" data-id="camera"     style="left:2%;  top:20px;  transform:rotate(-8deg)"><img src="assets/sticker-camera.svg" alt=""></div>
+        <div class="sk" data-id="clapper"    style="left:36%; top:14px;  transform:rotate(-3deg)"><img src="assets/sticker-clapper.svg" alt=""></div>
+        <div class="sk" data-id="record"     style="left:68%; top:18px;  transform:rotate(5deg)"><img src="assets/sticker-record-player.svg" alt=""></div>
+        <div class="sk" data-id="adventures" style="left:16%; top:148px; transform:rotate(5deg)"><img src="assets/sticker-adventures.svg" alt=""></div>
+        <div class="sk" data-id="tea"        style="left:48%; top:138px; transform:rotate(7deg)"><img src="assets/sticker-tea.svg" alt=""></div>
+        <div class="sk" data-id="mountains"  style="left:74%; top:150px; transform:rotate(-6deg)"><img src="assets/sticker-mountains.svg" alt=""></div>
+        <div class="sk" data-id="sunset"     style="left:6%;  top:264px; transform:rotate(3deg)"><img src="assets/sticker-sunset.svg" alt=""></div>
+        <div class="sk" data-id="popcorn"    style="left:40%; top:258px; transform:rotate(-5deg)"><img src="assets/sticker-popcorn.svg" alt=""></div>
+        <div class="sk" data-id="car"        style="left:66%; top:270px; transform:rotate(6deg)"><img src="assets/sticker-car.svg" alt=""></div>
       </div>
     </section>
 
@@ -567,6 +580,41 @@
     }, { rootMargin: "0px 0px -6% 0px" });
     els.forEach(function (el) { if (!el.classList.contains("in")) io.observe(el); });
     addEventListener("load", function () { setTimeout(function () { els.forEach(function (e) { e.classList.add("in"); }); }, 900); });
+  })();
+  (function () {
+    var board = document.querySelector(".sticker-board");
+    if (!board || !window.PointerEvent) return;
+    var z = 1, KEY = "ap-beyond-stickers", saved = {};
+    try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) {}
+    [].slice.call(board.querySelectorAll(".sk")).forEach(function (sk) {
+      var id = sk.getAttribute("data-id"), s = saved[id];
+      if (s) { sk.style.left = s.x + "px"; sk.style.top = s.y + "px"; }
+      var ox = 0, oy = 0;
+      sk.addEventListener("pointerdown", function (e) {
+        e.preventDefault();
+        try { sk.setPointerCapture(e.pointerId); } catch (er) {}
+        sk.classList.add("drag"); sk.style.zIndex = ++z;
+        var r = sk.getBoundingClientRect();
+        ox = e.clientX - r.left; oy = e.clientY - r.top;
+      });
+      sk.addEventListener("pointermove", function (e) {
+        if (!sk.classList.contains("drag")) return;
+        var b = board.getBoundingClientRect();
+        var x = Math.max(0, Math.min(e.clientX - b.left - ox, board.clientWidth - sk.offsetWidth));
+        var y = Math.max(0, Math.min(e.clientY - b.top - oy, board.clientHeight - sk.offsetHeight));
+        sk.style.left = x + "px"; sk.style.top = y + "px";
+      });
+      function end() {
+        if (!sk.classList.contains("drag")) return;
+        sk.classList.remove("drag");
+        try {
+          saved[id] = { x: parseFloat(sk.style.left) || 0, y: parseFloat(sk.style.top) || 0 };
+          localStorage.setItem(KEY, JSON.stringify(saved));
+        } catch (e) {}
+      }
+      sk.addEventListener("pointerup", end);
+      sk.addEventListener("pointercancel", end);
+    });
   })();
 </script>
 </body>
