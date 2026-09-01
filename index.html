@@ -250,6 +250,13 @@
     position: absolute; width: 156px; cursor: grab; touch-action: none;
     filter: drop-shadow(0 12px 20px rgba(120,90,40,.26)); transition: filter .18s ease;
   }
+  /* default 3 x 3 arrangement (drag overrides via inline styles) */
+  .sticker-board .sk:nth-child(3n+1) { left: 6%; }
+  .sticker-board .sk:nth-child(3n+2) { left: 40%; }
+  .sticker-board .sk:nth-child(3n)   { left: 74%; }
+  .sticker-board .sk:nth-child(-n+3) { top: 5%; }
+  .sticker-board .sk:nth-child(n+4):nth-child(-n+6) { top: 37%; }
+  .sticker-board .sk:nth-child(n+7) { top: 68%; }
   .sticker-board .sk img { width: 100%; display: block; pointer-events: none; -webkit-user-drag: none; user-select: none; }
   .sticker-board .sk.drag { cursor: grabbing; filter: drop-shadow(0 22px 32px rgba(120,90,40,.4)); }
   .sticker-board .sk::after {
@@ -259,7 +266,17 @@
     opacity: 0; transition: opacity .14s ease; z-index: 30; box-shadow: 0 6px 16px rgba(120,90,40,.3);
   }
   .sticker-board .sk:hover::after, .sticker-board .sk.drag::after { opacity: 1; }
-  @media (max-width: 620px) { .sticker-board { height: 460px; } .sticker-board .sk { width: 118px; } .sticker-board .sk::after { font-size: 10px; } }
+  @media (max-width: 620px) {
+    .sticker-board { height: 420px; }
+    .sticker-board .sk { width: 90px; }
+    .sticker-board .sk::after { font-size: 10px; white-space: normal; width: max-content; max-width: 140px; text-align: center; }
+    .sticker-board .sk:nth-child(3n+1) { left: 2%; }
+    .sticker-board .sk:nth-child(3n+2) { left: 34%; }
+    .sticker-board .sk:nth-child(3n)   { left: 62%; }
+    .sticker-board .sk:nth-child(-n+3) { top: 6%; }
+    .sticker-board .sk:nth-child(n+4):nth-child(-n+6) { top: 38%; }
+    .sticker-board .sk:nth-child(n+7) { top: 70%; }
+  }
   @media (prefers-reduced-motion: reduce) { .sticker-board .sk { transition: none; } }
 
   /* ---- selected projects ---- */
@@ -463,15 +480,15 @@
       <span class="lbl">Beyond Design</span>
       <p class="lead">Outside of work — photography, cinema, travel, road trips, coffee and music. It shapes how I observe and design.</p>
       <div class="sticker-board" aria-hidden="true">
-        <div class="sk" data-id="camera"     data-tip="Photography — mirrorless by day, film on weekends" style="left:3%;  top:26px;  transform:rotate(-8deg)"><img src="assets/sticker-camera.svg" alt=""></div>
-        <div class="sk" data-id="clapper"    data-tip="Cinema — a film almost every night" style="left:37%; top:16px;  transform:rotate(-3deg)"><img src="assets/sticker-clapper.svg" alt=""></div>
-        <div class="sk" data-id="record"     data-tip="Music — vinyl and very long playlists" style="left:72%; top:28px;  transform:rotate(5deg)"><img src="assets/sticker-record-player.svg" alt=""></div>
-        <div class="sk" data-id="adventures" data-tip="Travel — always planning the next trip" style="left:9%;  top:210px; transform:rotate(5deg)"><img src="assets/sticker-adventures.svg" alt=""></div>
-        <div class="sk" data-id="tea"        data-tip="Chai over coffee, every single morning" style="left:42%; top:206px; transform:rotate(7deg)"><img src="assets/sticker-tea.svg" alt=""></div>
-        <div class="sk" data-id="mountains"  data-tip="Mountains — hikes and quiet lake towns" style="left:73%; top:220px; transform:rotate(-6deg)"><img src="assets/sticker-mountains.svg" alt=""></div>
-        <div class="sk" data-id="sunset"     data-tip="Golden hour — always chasing the light" style="left:6%;  top:378px; transform:rotate(3deg)"><img src="assets/sticker-sunset.svg" alt=""></div>
-        <div class="sk" data-id="popcorn"    data-tip="Movie nights — snacks are non-negotiable" style="left:39%; top:372px; transform:rotate(-5deg)"><img src="assets/sticker-popcorn.svg" alt=""></div>
-        <div class="sk" data-id="car"        data-tip="Road trips — windows down, music up" style="left:68%; top:382px; transform:rotate(6deg)"><img src="assets/sticker-car.svg" alt=""></div>
+        <div class="sk" data-id="camera"     data-tip="Photography — mirrorless by day, film on weekends" style="transform:rotate(-5deg)"><img src="assets/sticker-camera.svg" alt=""></div>
+        <div class="sk" data-id="clapper"    data-tip="Cinema — a film almost every night" style="transform:rotate(-2deg)"><img src="assets/sticker-clapper.svg" alt=""></div>
+        <div class="sk" data-id="record"     data-tip="Music — vinyl and very long playlists" style="transform:rotate(4deg)"><img src="assets/sticker-record-player.svg" alt=""></div>
+        <div class="sk" data-id="adventures" data-tip="Travel — always planning the next trip" style="transform:rotate(3deg)"><img src="assets/sticker-adventures.svg" alt=""></div>
+        <div class="sk" data-id="tea"        data-tip="Chai over coffee, every single morning" style="transform:rotate(5deg)"><img src="assets/sticker-tea.svg" alt=""></div>
+        <div class="sk" data-id="mountains"  data-tip="Mountains — hikes and quiet lake towns" style="transform:rotate(-4deg)"><img src="assets/sticker-mountains.svg" alt=""></div>
+        <div class="sk" data-id="sunset"     data-tip="Golden hour — always chasing the light" style="transform:rotate(3deg)"><img src="assets/sticker-sunset.svg" alt=""></div>
+        <div class="sk" data-id="popcorn"    data-tip="Movie nights — snacks are non-negotiable" style="transform:rotate(-3deg)"><img src="assets/sticker-popcorn.svg" alt=""></div>
+        <div class="sk" data-id="car"        data-tip="Road trips — windows down, music up" style="transform:rotate(5deg)"><img src="assets/sticker-car.svg" alt=""></div>
       </div>
       <p class="board-hint">try moving things around :)</p>
     </section>
