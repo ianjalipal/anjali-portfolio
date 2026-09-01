@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Wizlo (SmarterEMR) — Case Study — Anjali Pal</title>
+<meta name="description" content="Wizlo (SmarterEMR) case study — designing an end-to-end clinic/EMR SaaS platform: lead intake, Good Faith Estimate review, encounters, subscriptions, patient portal and the Nova Design System. By Anjali Pal, UX Designer at Techdome Solutions.">
+<meta name="author" content="Anjali Pal">
+<meta name="theme-color" content="#FAFAFA">
+<link rel="canonical" href="https://ianjalipal.github.io/anjali-portfolio/wizlo.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='9'%20fill='%234F7CFF'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Inter,Arial,sans-serif'%20font-weight='700'%20font-size='14'%20text-anchor='middle'%20fill='%23fff'%3EAP%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wizlo (SmarterEMR) — Case Study">
+<meta property="og:description" content="Designing an end-to-end clinic/EMR SaaS platform — from lead intake and Good Faith Estimate review to encounters, subscriptions and a white-label patient portal, plus the Nova Design System.">
+<meta property="og:url" content="https://ianjalipal.github.io/anjali-portfolio/wizlo.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #FAFAFA;
+    --card: #FFFFFF;
+    --ink: #16181F;
+    --ink-2: #5C6270;
+    --ink-3: #9AA0AC;
+    --line: #ECECEC;
+    --line-2: #E2E2E6;
+    --accent: #4F7CFF;
+    --accent-2: #8B5CF6;
+    --accent-soft: #EEF2FF;
+    --navy: #10192E;
+    --r: 24px;
+    --r-sm: 14px;
+    --edge: clamp(1rem, 4vw, 2.25rem);
+    --prose: 720px;
+    --font: "Inter", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --hand: "Caveat", "Inter", cursive;
+    --shadow: 0 14px 40px -22px rgba(22, 24, 31, 0.14);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; letter-spacing: -0.011em; }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  img { max-width: 100%; display: block; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--edge); }
+  .prose { max-width: var(--prose); margin-left: auto; margin-right: auto; }
+
+  /* nav */
+  .nav-outer { position: sticky; top: 0; z-index: 50; padding: 14px var(--edge); display: flex; justify-content: center; }
+  .nav { display: flex; align-items: center; gap: 18px; background: rgba(255,255,255,.75); backdrop-filter: saturate(1.6) blur(14px); border: 1px solid var(--line); border-radius: 999px; padding: 8px 8px 8px 18px; box-shadow: var(--shadow); font-size: 14px; }
+  .nav .back { color: var(--ink); font-weight: 600; display: inline-flex; align-items: center; gap: 7px; }
+  .nav .back:hover { text-decoration: none; color: var(--accent); }
+  .nav .sp { flex: 1; }
+  .nav a.pill { color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 8px 15px; font-weight: 600; }
+  .nav a.pill:hover { background: var(--accent); color: #fff; text-decoration: none; }
+
+  /* hero */
+  header.hero { padding: clamp(40px, 8vw, 80px) 0 clamp(28px, 5vw, 44px); }
+  .kicker { font-family: var(--hand); font-size: 24px; color: var(--accent); }
+  header.hero h1 { margin: 6px 0 10px; font-size: clamp(30px, 5.4vw, 52px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.06; }
+  header.hero .lede { font-size: clamp(17px, 2vw, 21px); color: var(--ink-2); max-width: 40ch; margin: 0 0 26px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 26px; }
+  .tags span { font-size: 12px; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 5px 11px; }
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-sm); overflow: hidden; }
+  @media (max-width: 640px) { .facts { grid-template-columns: 1fr 1fr; } }
+  .facts div { background: var(--card); padding: 16px 18px; }
+  .facts dt { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
+  .facts dd { margin: 0; font-size: 14px; font-weight: 600; }
+
+  /* generic image / screen placeholder */
+  .shot { border-radius: var(--r); border: 1px solid var(--line-2); background: var(--card); box-shadow: var(--shadow); overflow: hidden; margin: 30px auto; }
+  .shot .ph { aspect-ratio: 16 / 9; display: grid; place-items: center; text-align: center; padding: 24px;
+    background:
+      repeating-linear-gradient(135deg, transparent 0 14px, rgba(79,124,255,.04) 14px 15px),
+      linear-gradient(180deg, #F5F7FC, #ECEFF8); color: var(--ink-3); }
+  .shot .ph b { display: block; color: var(--ink-2); font-size: 13px; font-weight: 600; }
+  .shot .ph span { font-size: 12px; }
+  .shot.wide { max-width: 1000px; }
+  figcaption { max-width: var(--prose); margin: -16px auto 34px; font-size: 13px; color: var(--ink-3); text-align: center; }
+
+  .darkshot { background: var(--navy); border-color: transparent; }
+  .darkshot .ph { background: linear-gradient(180deg,#132039,#0C1424); color: #7E88A0; }
+  .darkshot .ph b { color: #B9C6FF; }
+
+  /* sections */
+  section { padding: clamp(30px, 5vw, 52px) 0; }
+  section > .wrap > .prose > h2, section > .wrap > h2.full { font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: -0.03em; margin: 0 0 6px; }
+  .prose h2 + .sub, h2.full + .sub { color: var(--ink-3); font-family: var(--hand); font-size: 20px; margin: 0 0 22px; }
+  .prose h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin: 30px 0 6px; }
+  .prose p { margin: 0 0 16px; color: var(--ink-2); }
+  .prose p strong, .prose li strong { color: var(--ink); font-weight: 600; }
+  .prose ul { margin: 0 0 18px; padding-left: 20px; color: var(--ink-2); }
+  .prose li { margin-bottom: 7px; }
+  .prose code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .88em; background: var(--accent-soft); color: var(--ink); padding: 1px 6px; border-radius: 5px; }
+  .rule { border: none; border-top: 1px solid var(--line); margin: 8px auto; max-width: var(--prose); }
+  .note { max-width: var(--prose); margin: 0 auto 22px; padding: 14px 18px; background: #FFF8E8; border: 1px solid #F3E4BD; border-radius: 12px; font-size: 13px; color: #7A6320; }
+  .note b { color: #5E4B12; }
+
+  /* workstream cards */
+  .streams { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px; }
+  @media (max-width: 780px) { .streams { grid-template-columns: 1fr; } }
+  .stream { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 24px; box-shadow: var(--shadow); }
+  .stream .wz { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--ink-3); }
+  .stream h3 { margin: 4px 0 8px; font-size: 17px; font-weight: 700; letter-spacing: -0.02em; }
+  .stream p { margin: 0 0 10px; font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
+  .stream .k { font-size: 12.5px; color: var(--ink); }
+  .stream .k b { color: var(--accent); }
+
+  /* outcome */
+  .outcomes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 8px auto 0; max-width: var(--prose); }
+  @media (max-width: 640px) { .outcomes { grid-template-columns: 1fr; } }
+  .oc { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 20px; box-shadow: var(--shadow); }
+  .oc b { display: block; font-size: 22px; font-weight: 800; letter-spacing: -0.03em; }
+  .oc span { display: block; font-size: 12px; color: var(--ink-2); margin-top: 4px; }
+
+  /* footer */
+  footer { border-top: 1px solid var(--line); padding: 40px 0 60px; margin-top: 20px; }
+  footer .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  footer .next a { font-weight: 700; font-size: 18px; letter-spacing: -0.02em; color: var(--ink); }
+  footer .next a:hover { color: var(--accent); text-decoration: none; }
+  footer .next span { display: block; font-size: 12px; color: var(--ink-3); font-weight: 400; }
+  footer .home { font-size: 13px; }
+
+  @media print { .nav-outer, .shot { box-shadow: none; } }
+</style>
+</head>
+<body>
+
+<div class="nav-outer">
+  <nav class="nav" aria-label="Case study">
+    <a href="index.html" class="back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg> Anjali Pal</a>
+    <span class="sp"></span>
+    <a href="resume.html" class="pill">Resume</a>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">Featured case study</span>
+    <h1>Wizlo <span style="color:var(--ink-3);font-weight:700">(SmarterEMR)</span></h1>
+    <p class="lede">Designing an end-to-end clinic &amp; EMR platform around the one thing most healthcare software gets wrong — the money.</p>
+    <div class="tags"><span>Healthcare SaaS</span><span>Enterprise</span><span>Revenue-Cycle UX</span><span>Design System</span><span>0→1 Product</span><span>Multi-role</span></div>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>UX Designer I — lead UX</dd></div>
+      <div><dt>Company</dt><dd>Techdome Solutions</dd></div>
+      <div><dt>Timeline</dt><dd>Jan 2025 — present</dd></div>
+      <div><dt>Team</dt><dd>Design, PM, engineering</dd></div>
+    </dl>
+  </div>
+</header>
+
+<div class="shot wide darkshot">
+  <div class="ph"><b>Cover — Wizlo clinic dashboard</b><span>drop a real screenshot of the clinic/admin overview here</span></div>
+</div>
+
+<section>
+  <div class="wrap"><div class="prose">
+    <h2>Overview</h2>
+    <p class="sub">What Wizlo is</p>
+    <p><strong>Wizlo (SmarterEMR)</strong> is a SaaS platform for clinics — an electronic medical record (EMR) system that also runs the business side of a practice. It spans three audiences that rarely see each other's screens: <strong>patients</strong>, <strong>clinic admins</strong>, and <strong>providers / clinical staff</strong>.</p>
+    <p>The product covers the full lifecycle of a patient relationship: a lead comes in, fills out intake forms, gets a cost estimate reviewed for compliance, has a clinical encounter (in person or virtual), starts treatment, buys subscriptions or bundled programs, and receives ongoing notifications through a portal that each clinic can brand as their own.</p>
+    <p>I lead UX across that whole lifecycle — from early flows and information architecture through production-ready components — working alongside product and engineering.</p>
+
+    <h2 style="margin-top:38px">The problem</h2>
+    <p class="sub">Complex because the business is complex</p>
+    <p>Clinical software is usually judged on how well it handles charts and appointments. Wizlo's harder problem is <strong>healthcare revenue cycle</strong>: the sequence of estimates, approvals, licensing checks, subscriptions and billing-adjacent orders that decides whether a clinic actually gets paid — and stays compliant while doing it.</p>
+    <p>Two forces made this a genuinely difficult design problem:</p>
+    <ul>
+      <li><strong>Regulation lives in the UI.</strong> A <strong>Good Faith Estimate (GFE)</strong> — a written cost estimate US clinics must give patients before treatment — has to be created, reviewed, and reconciled against what actually happens in the encounter. The compliance rules can't sit in a policy doc; they have to be modelled into states, permissions and handoffs on screen.</li>
+      <li><strong>Every role wants a different thing from the same object.</strong> A provider wants operational control over their queue. A patient wants a calm, legible experience and no surprises. An admin wants configurability. The same encounter or estimate has to serve all three without becoming a wall of fields.</li>
+    </ul>
+    <p>My job was to take a process that's complicated <em>because the business is complicated</em> — and make the interface simple anyway.</p>
+
+    <h2 style="margin-top:38px">Approach</h2>
+    <p class="sub">How I worked</p>
+    <ul>
+      <li><strong>Model the domain first.</strong> Before screens, I mapped each object (lead, estimate, encounter, subscription, order, notification) with its real states and the transitions between them, so the UI could be built on top of an accurate model rather than a hopeful one.</li>
+      <li><strong>Design the pattern, not the screen.</strong> Wizlo has many similar-but-not-identical flows (review queues, assignment logic, template → preview → publish). I designed reusable patterns for those and let each module inherit them.</li>
+      <li><strong>Prototype to pressure-test.</strong> Figma and HTML/CSS prototypes to walk product and engineering through the multi-role handoffs before a line of production code was written.</li>
+      <li><strong>Build close to the metal.</strong> I implement Wizlo's UI directly — writing <code>HTML/CSS</code> and <code>React</code> components documented in <code>Storybook</code>, with handoff through <code>Git/GitHub</code> — so what I design is what actually ships.</li>
+    </ul>
+  </div></div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <div class="wrap">
+    <h2 class="full">The work</h2>
+    <p class="sub">Six workstreams across the lifecycle</p>
+    <p class="prose" style="margin-bottom:24px">Each of these shipped as its own module on top of the shared patterns. Grouped roughly in the order a patient moves through the product.</p>
+
+    <div class="streams">
+      <article class="stream">
+        <span class="wz">Lead → Intake</span>
+        <h3>Lead Management &amp; Forms Builder</h3>
+        <p>A configurable, multi-step intake flow that clinics assemble themselves — logo, colour and typography — so each clinic's first impression feels like their own product, not a vendor's.</p>
+        <p class="k"><b>Key decision:</b> progressive multi-form progression so long intakes don't feel like a wall; branding tokens that flow straight into the patient portal.</p>
+      </article>
+
+      <article class="stream">
+        <span class="wz">WZ-6776 · Encounter</span>
+        <h3>Sync Encounter</h3>
+        <p>The live side of care: a manual queue, a virtual waiting room, provider availability, and round-robin assignment logic — deciding who sees whom, and when.</p>
+        <p class="k"><b>Key decision:</b> give providers real operational control over the queue while keeping the waiting patient's view calm and low-anxiety — two very different UIs on the same event.</p>
+      </article>
+
+      <article class="stream">
+        <span class="wz">GFE → Encounter</span>
+        <h3>GFE Review → Encounter handoff</h3>
+        <p>Reviewer assignment, synchronous vs. asynchronous review flows, and licence validation — the point where a Good Faith Estimate becomes an actual encounter, with revenue-cycle and compliance rules modelled directly into the states and permissions.</p>
+        <p class="k"><b>Key decision:</b> make the compliance path the default happy path, not an extra gate — so doing it right is the fastest route.</p>
+      </article>
+
+      <article class="stream">
+        <span class="wz">WZ-1999 · Portal</span>
+        <h3>Patient &amp; White-Label Portal</h3>
+        <p>Patient journeys, treatment timelines and appointments — with per-brand customization so individual healthcare brands could white-label the whole portal.</p>
+        <p class="k"><b>Key decision:</b> one timeline component that reads clearly whether a patient has one appointment or a year-long program.</p>
+      </article>
+
+      <article class="stream">
+        <span class="wz">Orders</span>
+        <h3>Subscriptions &amp; Product Bundles</h3>
+        <p>Plans, bundles, and treatment / program packages, plus a product-level timeline for orders that span multiple treatments over time.</p>
+        <p class="k"><b>Key decision:</b> treat a multi-treatment program as a single object with a timeline, rather than a pile of separate orders the admin has to mentally stitch together.</p>
+      </article>
+
+      <article class="stream">
+        <span class="wz">WZ-2422 · WZ-7597</span>
+        <h3>Clinic Portal &amp; Notifications</h3>
+        <p>Plan-creation and subscription-management workflows for admins, plus patient / provider notification configuration across Email and SMS — with template, preview, draft and publish states.</p>
+        <p class="k"><b>Key decision:</b> a single <code>template → preview → draft → publish</code> pattern reused everywhere something gets sent, so admins learn it once.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="shot wide">
+  <div class="ph"><b>GFE Review queue — reviewer assignment &amp; sync/async flows</b><span>screenshot placeholder</span></div>
+</div>
+<figcaption>The review queue: the compliance step designed as the default path, not an obstacle.</figcaption>
+
+<div class="wrap">
+  <div class="streams">
+    <div class="shot" style="margin:0"><div class="ph"><b>Sync Encounter — provider queue</b><span>screenshot</span></div></div>
+    <div class="shot" style="margin:0"><div class="ph"><b>Sync Encounter — patient waiting room</b><span>screenshot</span></div></div>
+  </div>
+</div>
+<figcaption>Same event, two experiences — operational control for the provider, calm for the patient.</figcaption>
+
+<hr class="rule">
+
+<section>
+  <div class="wrap"><div class="prose">
+    <h2>Nova Design System</h2>
+    <p class="sub">The system underneath all of it</p>
+    <p>Six modules built by a small team would drift fast without a shared foundation. I built and maintain the <strong>Nova Design System</strong> — the tokens, colour, typography and reusable components that every Wizlo module is assembled from.</p>
+    <p>What made it work in practice:</p>
+    <ul>
+      <li><strong>Tokens first.</strong> Colour, type and spacing as tokens, so a clinic's white-label branding is a token swap rather than a redesign.</li>
+      <li><strong>Patterns, not just parts.</strong> The queue, the assignment picker, the <code>template → preview → publish</code> flow — documented as patterns so new modules inherit behaviour, not just styling.</li>
+      <li><strong>AI-assisted, end to end.</strong> I use AI-assisted workflows to move from Figma to production: components written in <code>HTML/CSS</code> and <code>React</code>, documented in <code>Storybook</code>, shipped through <code>Git/GitHub</code>. It closes the loop between the design file and the running frontend.</li>
+    </ul>
+  </div></div>
+</section>
+
+<div class="shot wide">
+  <div class="ph"><b>Nova Design System — components in Storybook</b><span>screenshot placeholder</span></div>
+</div>
+
+<hr class="rule">
+
+<section>
+  <div class="wrap">
+    <h2 class="full">Outcome</h2>
+    <p class="sub">Where it landed</p>
+    <div class="note"><b>Note for Anjali:</b> replace the values below with real numbers you can defend in an interview (modules shipped, components in Nova, clinics onboarded, review-time reduction, etc.). Keep the framing; swap the figures.</div>
+    <div class="outcomes">
+      <div class="oc"><b>6</b><span>modules designed end-to-end and shipped on Wizlo</span></div>
+      <div class="oc"><b>1</b><span>design system (Nova) built and maintained across every module</span></div>
+      <div class="oc"><b>Figma → prod</b><span>components authored in code and documented in Storybook</span></div>
+    </div>
+    <div class="prose" style="margin-top:28px">
+      <p>Qualitatively, the wins I'd point to:</p>
+      <ul>
+        <li>The compliance-critical GFE path became the default flow, not a bolt-on — reviewers move through it faster and there's less room to skip a step.</li>
+        <li>New modules now start from Nova patterns, so the team ships consistent multi-role UI without re-litigating the queue or the publish flow each time.</li>
+        <li>Because I implement the components, design intent survives the handoff — what's in Figma is what's in the product.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section>
+  <div class="wrap"><div class="prose">
+    <h2>What I'd do differently</h2>
+    <p class="sub">Reflection</p>
+    <ul>
+      <li><strong>Model earlier, in the open.</strong> The state maps paid off — but a couple of modules were partway designed before the model was solid, and reworking them cost time. Now the state model is the first artifact, shared with engineering before any screens.</li>
+      <li><strong>Write the pattern docs as I go.</strong> Nova's patterns got documented in bursts. Documenting each one the moment it stabilised would have saved onboarding friction later.</li>
+      <li><strong>Get the multi-role prototype in front of real providers sooner.</strong> The provider / patient split on the encounter was right, but I'd validate that tension with actual clinical staff earlier rather than reasoning it through.</li>
+    </ul>
+  </div></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="next">
+      <a href="verified-beauty-providers.html">Verified Beauty Providers <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" style="display:inline;vertical-align:middle"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        <span>Next case study — a three-sided marketplace design system</span>
+      </a>
+    </div>
+    <a class="home" href="index.html">← Back to home</a>
+  </div>
+</footer>
+
+</body>
+</html>
