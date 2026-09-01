@@ -9,9 +9,11 @@ Live at: https://ianjalipal.github.io/anjali-portfolio/ (once GitHub Pages is en
 No build step — plain HTML/CSS/JS, one file per page.
 
 - `index.html` — main portfolio, minimal / editorial (hero, about, services, selected work, skills, process, contact).
-- `index-bento.html` — alternate landing in the bento-grid "personality" style: playful headline
-  with inline avatar, "Open to work" pill, card grid (experience timeline, right-now, toolkit,
-  map, how-I-work tabs), browser-framed work cards. Warm light, orange accent.
+- `index-bento.html` — a compact single-screen bento "intro" grid (à la Sanjay Billa / Evan Smith /
+  Daniel Evans): profile card (avatar, availability, location + live time, quick buttons), a
+  "Tools I use daily" chip grid, a "Selected work" link list, a small stats card, "Right now",
+  and a "Let's work together" card. Warm light, one clay accent, handwritten (Caveat) card labels.
+  No scroll on desktop. Swap the placeholder avatar for a photo.
 - `index-moxa.html` — alternate landing in a brutalist-editorial "moxa" style: cream panel inside
   a black frame with orange geometric shapes, heavy Archivo Black display type, a sparkle/asterisk
   motif, a diagonal scrolling skills marquee, strikethrough joke in the hero, hard-edged split
