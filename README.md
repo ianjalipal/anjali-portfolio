@@ -1,15 +1,35 @@
 # Anjali Pal — Product Designer Portfolio
 
-My personal portfolio showcasing UI/UX design, product design, and creative work.
+Personal portfolio — a premium single-page bento grid.
 
-Live at: https://ianjalipal.github.io/anjali-portfolio/ (once GitHub Pages is enabled on this repo)
+Live at: https://ianjalipal.github.io/anjali-portfolio/
 
 ## Contents
 
-- `index.html` — single-file portfolio site (case studies, numbered services, skills, process, contact). No build step — plain HTML/CSS/JS.
+No build step — plain HTML/CSS/JS, one file per page.
 
-## Design
+- `index.html` — the homepage: a premium 7-card bento grid (Apple / Linear / Notion feel).
+  Glass pill nav (avatar + name), a hero with a mesh-gradient blob portrait and 4 icon stats,
+  a category-row Tools & Stack card, an Experience timeline, a dark Featured Case Study card
+  (Wizlo / SmarterEMR) with an angled dashboard mockup, a warm "Beyond Design" card with
+  pastel hobby stickers, Selected Projects (Wizlo, MediFlow, Polystox), and a Contact card
+  with a line-art desk illustration.
+- `index-bento.html` — identical source of the homepage, kept as a named copy.
+- `index-minimal.html` — the earlier minimal / editorial landing (full scroll, Fraunces italic).
+- `index-moxa.html` — the earlier brutalist-editorial landing.
+- `resume.html` — web résumé, printable to PDF.
+- `verified-beauty-providers.html`, `ability-amore.html`, `mostly-events.html` — case studies.
+- `anjali.jpg` — the headshot used by the hero portrait and nav avatar.
 
-- Palette: warm off-white background (`#F5F3EE`), near-black text (`#171A18`), sage green accent/CTA (`#526B5A`), muted gold secondary accent (`#B5A47A`), white cards.
-- Dark theme included via `prefers-color-scheme` and a `data-theme` override.
-- Type: system sans for body copy, monospace for labels/ticket numbers.
+## Design tokens (homepage)
+
+White `--bg #FAFAFA`, accent blue `--accent #4F7CFF` with a violet secondary for the hero blob,
+light borders `--line #ECECEC`, 32px card radius, soft blur shadows. Body **Inter**, handwritten
+card labels **Caveat**. Scroll-reveal, hover lift, mobile hamburger — all
+`prefers-reduced-motion`-aware. Tool logos and UI icons are inlined SVGs (no runtime fetches).
+
+## Sharing / SEO
+
+Every page has `<title>`, `<meta name="description">`, canonical URL, an inline SVG favicon,
+and Open Graph / Twitter Card tags. For a link-preview image, add a 1200×630 `og-cover.png`
+to the repo root and add an `og:image` meta to each page's `<head>`.
