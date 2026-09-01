@@ -28,6 +28,12 @@ light borders `--line #ECECEC`, 32px card radius, soft blur shadows. Body **Inte
 card labels **Caveat**. Scroll-reveal, hover lift, mobile hamburger — all
 `prefers-reduced-motion`-aware. Tool logos and UI icons are inlined SVGs (no runtime fetches).
 
+## Credits
+
+- Beyond Design card stickers (`assets/sticker-*.svg`) — camera, popcorn, record-player,
+  tea and lettering stickers from [Flaticon](https://www.flaticon.com/) free sticker packs
+  (authors incl. **frdmn**).
+
 ## Sharing / SEO
 
 Every page has `<title>`, `<meta name="description">`, canonical URL, an inline SVG favicon,
