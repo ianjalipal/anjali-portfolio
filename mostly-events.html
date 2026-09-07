@@ -5,32 +5,33 @@
 <title>Mostly Events — Case Study | Anjali Pal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Mostly Events case study — a job-seeker app for the events industry where one listing staffs a whole crew. Sole designer, job-seeker side, at Developer Bazaar Technologies. By Anjali Pal.">
+<meta name="description" content="Mostly Events — a two-sided recruitment app built only for the events industry, where one listing staffs a whole crew. Sole designer, both sides, at Developer Bazaar Technologies. By Anjali Pal.">
 <meta name="author" content="Anjali Pal">
-<meta name="theme-color" content="#F7F8FA">
+<meta name="theme-color" content="#F5F8F7">
 <link rel="canonical" href="https://ianjalipal.github.io/anjali-portfolio/mostly-events.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mostly Events — Events-Industry Job App (Case Study)">
-<meta property="og:description" content="One listing, many roles: designing a job-seeker app for how event staffing actually works. By Anjali Pal.">
+<meta property="og:title" content="Mostly Events — Two-Sided Events-Industry Recruitment App (Case Study)">
+<meta property="og:description" content="One listing, many roles: designing both sides of a recruitment app built only for weddings and events. By Anjali Pal.">
 <meta property="og:url" content="https://ianjalipal.github.io/anjali-portfolio/mostly-events.html">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%231C2541'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Raleway,sans-serif'%20font-size='15'%20font-weight='800'%20text-anchor='middle'%20fill='%23fff'%3EAP%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2317AFA9'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Raleway,sans-serif'%20font-size='15'%20font-weight='800'%20text-anchor='middle'%20fill='%23fff'%3EME%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F6F7F9;
+    --paper:#F4F7F6;
     --raised:#FFFFFF;
-    --ink:#1C2541;
-    --ink-soft:#454E67;
-    --ink-faint:#8A92A6;
-    --line:#E4E7ED;
-    --line-strong:#CDD3DF;
-    --accent:#B26E2E;          /* warm amber — case-study chrome only, not the product */
-    --accent-soft:#F3E9DD;
-    --frame:#20263A;
-    --shadow-sm:0 1px 2px rgba(20,26,45,.05), 0 4px 12px -6px rgba(20,26,45,.12);
-    --shadow-lg:0 2px 6px rgba(20,26,45,.06), 0 30px 60px -30px rgba(20,26,45,.30);
+    --ink:#152A2A;
+    --ink-soft:#42585A;
+    --ink-faint:#8399A0;
+    --line:#E1E9E8;
+    --line-strong:#C8D6D4;
+    --accent:#0F8E8B;
+    --accent-2:#17AFA9;
+    --accent-soft:#E1F1EF;
+    --frame:#1B2C2E;
+    --shadow-sm:0 1px 2px rgba(21,42,42,.05), 0 4px 12px -6px rgba(21,42,42,.12);
+    --shadow-lg:0 2px 6px rgba(21,42,42,.06), 0 32px 64px -32px rgba(21,42,42,.32);
     --serif:"Fraunces", Georgia, serif;
     --sans:"Raleway", -apple-system, "Segoe UI", Roboto, sans-serif;
     --mono:"Space Mono", ui-monospace, Menlo, monospace;
@@ -38,218 +39,157 @@
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --paper:#0F1119;
-      --raised:#171A24;
-      --ink:#ECEEF3;
-      --ink-soft:#AEB6C6;
-      --ink-faint:#6B7387;
-      --line:#242835;
-      --line-strong:#343A4B;
-      --accent:#D9A05B;
-      --accent-soft:#26201A;
-      --frame:#2A3042;
+      --paper:#0D1414;
+      --raised:#151E1E;
+      --ink:#E9F0EF;
+      --ink-soft:#A6B7B6;
+      --ink-faint:#657676;
+      --line:#22302F;
+      --line-strong:#31413F;
+      --accent:#3BC9C0;
+      --accent-2:#4FD8CF;
+      --accent-soft:#152525;
+      --frame:#26332F;
       --shadow-sm:0 1px 2px rgba(0,0,0,.4), 0 4px 12px -6px rgba(0,0,0,.5);
-      --shadow-lg:0 2px 6px rgba(0,0,0,.4), 0 30px 60px -30px rgba(0,0,0,.75);
+      --shadow-lg:0 2px 6px rgba(0,0,0,.4), 0 32px 64px -32px rgba(0,0,0,.75);
     }
   }
   :root[data-theme="dark"]{
-    --paper:#0F1119; --raised:#171A24; --ink:#ECEEF3; --ink-soft:#AEB6C6; --ink-faint:#6B7387;
-    --line:#242835; --line-strong:#343A4B; --accent:#D9A05B; --accent-soft:#26201A; --frame:#2A3042;
+    --paper:#0D1414;--raised:#151E1E;--ink:#E9F0EF;--ink-soft:#A6B7B6;--ink-faint:#657676;
+    --line:#22302F;--line-strong:#31413F;--accent:#3BC9C0;--accent-2:#4FD8CF;--accent-soft:#152525;--frame:#26332F;
     --shadow-sm:0 1px 2px rgba(0,0,0,.4), 0 4px 12px -6px rgba(0,0,0,.5);
-    --shadow-lg:0 2px 6px rgba(0,0,0,.4), 0 30px 60px -30px rgba(0,0,0,.75);
+    --shadow-lg:0 2px 6px rgba(0,0,0,.4), 0 32px 64px -32px rgba(0,0,0,.75);
   }
 
   *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
-  body{
-    margin:0; background:var(--paper); color:var(--ink-soft);
-    font-family:var(--sans); font-size:16px; line-height:1.66;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{ margin:0; background:var(--paper); color:var(--ink-soft); font-family:var(--sans); font-size:16px; line-height:1.66; -webkit-font-smoothing:antialiased; }
   img{ max-width:100%; display:block; }
   a{ color:var(--ink); text-decoration:none; }
   a:hover{ color:var(--accent); }
-  ::selection{ background:var(--accent); color:#fff; }
+  ::selection{ background:var(--accent-2); color:#fff; }
   :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:4px; }
 
-  .wrap{ max-width:1080px; margin:0 auto; padding:0 clamp(20px,5vw,44px); }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 clamp(20px,5vw,44px); }
   .prose{ max-width:680px; }
+  .prose p + p{ margin-top:16px; }
 
-  /* ---- topbar ---- */
   .topbar{
-    position:sticky; top:0; z-index:20;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-    padding:14px clamp(20px,5vw,44px);
-    background:color-mix(in srgb, var(--paper) 82%, transparent);
-    backdrop-filter:saturate(1.4) blur(10px);
-    border-bottom:1px solid var(--line);
-    font-size:13.5px; font-weight:600;
+    position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:14px clamp(20px,5vw,44px); background:color-mix(in srgb, var(--paper) 82%, transparent);
+    backdrop-filter:saturate(1.4) blur(10px); border-bottom:1px solid var(--line); font-size:13.5px; font-weight:600;
   }
   .topbar .back{ display:inline-flex; align-items:center; gap:7px; }
-  .topbar .kick{
-    font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.04em;
-    text-transform:uppercase; color:var(--accent);
-  }
-  .tt{
-    border:1px solid var(--line-strong); background:var(--raised); color:var(--ink-soft);
-    width:34px; height:34px; border-radius:9px; cursor:pointer; display:grid; place-items:center;
-    font-size:14px; flex:none;
-  }
+  .topbar .kick{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--accent); }
+  .tt{ border:1px solid var(--line-strong); background:var(--raised); color:var(--ink-soft); width:34px; height:34px; border-radius:9px; cursor:pointer; display:grid; place-items:center; font-size:14px; flex:none; }
   .tt:hover{ color:var(--accent); border-color:var(--accent); }
 
-  /* ---- cover ---- */
-  .cover{ padding:clamp(44px,8vw,96px) 0 clamp(36px,6vw,60px); }
-  .meta{
-    display:flex; flex-wrap:wrap; gap:22px 40px; margin-bottom:34px;
-    font-size:12.5px;
-  }
+  .cover{ padding:clamp(44px,8vw,92px) 0 clamp(30px,5vw,52px); }
+  .meta{ display:flex; flex-wrap:wrap; gap:20px 40px; margin-bottom:34px; font-size:12.5px; }
   .meta div{ display:flex; flex-direction:column; gap:3px; }
   .meta dt{ font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); }
   .meta dd{ margin:0; font-weight:600; color:var(--ink); }
   .meta dd a{ color:var(--accent); }
 
-  h1.display{
-    font-family:var(--serif); font-weight:400;
-    font-size:clamp(34px,6.2vw,62px); line-height:1.06; letter-spacing:-.015em;
-    color:var(--ink); margin:0 0 26px; max-width:16ch; text-wrap:balance;
-  }
+  h1.display{ font-family:var(--serif); font-weight:400; font-size:clamp(33px,6vw,60px); line-height:1.05; letter-spacing:-.015em; color:var(--ink); margin:0 0 24px; max-width:17ch; text-wrap:balance; }
   h1.display .u{ background:linear-gradient(transparent 66%, var(--accent-soft) 66%); padding:0 .04em; }
-  .dek{ font-size:clamp(16px,2vw,19px); line-height:1.6; color:var(--ink-soft); max-width:60ch; margin:0; }
+  .dek{ font-size:clamp(16px,2vw,19px); line-height:1.6; color:var(--ink-soft); max-width:62ch; margin:0; }
   .dek b{ color:var(--ink); font-weight:600; }
 
-  /* ---- hero device fan ---- */
-  .hero-fan{
-    margin-top:clamp(36px,6vw,64px);
-    display:flex; justify-content:center; align-items:flex-end;
-    gap:clamp(-40px,-3vw,-10px);
-    perspective:1400px;
-  }
-  .hero-fan .phone{ margin-inline:clamp(-34px,-2.5vw,-8px); }
-  .hero-fan .phone:nth-child(1){ transform:rotate(-6deg) translateY(14px); z-index:1; }
-  .hero-fan .phone:nth-child(2){ transform:translateY(-8px); z-index:3; }
-  .hero-fan .phone:nth-child(3){ transform:rotate(6deg) translateY(14px); z-index:1; }
-  @media (max-width:640px){
-    .hero-fan{ gap:0; }
-    .hero-fan .phone:nth-child(1),.hero-fan .phone:nth-child(3){ display:none; }
-    .hero-fan .phone:nth-child(2){ transform:none; }
-  }
+  .hero-fan{ margin-top:clamp(38px,6vw,64px); display:flex; justify-content:center; align-items:flex-start; perspective:1500px; }
+  .hero-fan .phone{ margin-inline:clamp(-40px,-3vw,-12px); }
+  .hero-fan .phone:nth-child(1){ transform:rotate(-6deg) translateY(20px); z-index:1; }
+  .hero-fan .phone:nth-child(2){ transform:translateY(-6px); z-index:3; }
+  .hero-fan .phone:nth-child(3){ transform:rotate(6deg) translateY(20px); z-index:1; }
+  @media (max-width:640px){ .hero-fan .phone:nth-child(1),.hero-fan .phone:nth-child(3){ display:none; } .hero-fan .phone:nth-child(2){ transform:none; } }
 
-  /* ---- phone frame ---- */
-  .phone{
-    background:var(--frame); border-radius:34px; padding:8px;
-    box-shadow:var(--shadow-lg); width:min(260px,72vw); flex:none;
-  }
-  .phone img,.phone .ph{
-    border-radius:26px; width:100%; display:block; background:#fff;
-  }
-  .phone .ph{
-    aspect-ratio:9/19.5; display:grid; place-content:center; text-align:center; gap:6px;
-    padding:24px; color:var(--ink-faint);
-    background:
-      repeating-linear-gradient(135deg, transparent 0 12px, color-mix(in srgb,var(--accent) 8%, transparent) 12px 13px),
-      var(--raised);
-    border:1px dashed var(--line-strong);
-  }
+  .phone{ background:var(--frame); border-radius:32px; padding:7px; box-shadow:var(--shadow-lg); width:min(248px,70vw); flex:none; }
+  .phone.tall{ align-self:flex-start; }
+  .phone > .scr{ border-radius:26px; overflow:hidden; background:#fff; max-height:560px; }
+  .phone > .scr.full{ max-height:none; }
+  .phone img{ width:100%; }
+  .phone .ph{ aspect-ratio:9/17; display:grid; place-content:center; text-align:center; gap:6px; padding:22px; color:var(--ink-faint);
+    background:repeating-linear-gradient(135deg, transparent 0 12px, color-mix(in srgb,var(--accent) 8%, transparent) 12px 13px), var(--raised); border:1px dashed var(--line-strong); }
   .phone .ph b{ color:var(--ink-soft); font-size:12.5px; font-weight:700; display:block; }
   .phone .ph span{ font-size:11px; font-family:var(--mono); }
 
-  /* ---- sections ---- */
-  section{ padding:clamp(48px,8vw,88px) 0; border-top:1px solid var(--line); }
-  .snum{
-    font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent);
-    letter-spacing:.06em; display:block; margin-bottom:14px;
-  }
-  h2{
-    font-family:var(--serif); font-weight:400; font-size:clamp(24px,3.6vw,36px);
-    line-height:1.14; letter-spacing:-.01em; color:var(--ink); margin:0 0 20px; max-width:20ch; text-wrap:balance;
-  }
-  h3{ font-size:15px; font-weight:700; color:var(--ink); margin:0 0 6px; letter-spacing:-.005em; }
-  p{ margin:0 0 18px; }
-  p:last-child{ margin-bottom:0; }
+  section{ padding:clamp(48px,8vw,84px) 0; border-top:1px solid var(--line); }
+  .snum{ font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent); letter-spacing:.06em; display:block; margin-bottom:14px; }
+  h2{ font-family:var(--serif); font-weight:400; font-size:clamp(24px,3.6vw,36px); line-height:1.13; letter-spacing:-.01em; color:var(--ink); margin:0 0 18px; max-width:22ch; text-wrap:balance; }
+  h3{ font-size:15px; font-weight:700; color:var(--ink); margin:0 0 6px; }
+  p{ margin:0; }
   .lead{ font-size:clamp(16px,1.7vw,18px); color:var(--ink-soft); }
   strong{ color:var(--ink); font-weight:600; }
 
-  /* problem / approach cards */
-  .pair{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:34px; }
+  .pair{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:32px; }
   @media (max-width:680px){ .pair{ grid-template-columns:1fr; } }
-  .card{
-    background:var(--raised); border:1px solid var(--line); border-radius:var(--radius);
-    padding:22px 24px; box-shadow:var(--shadow-sm);
-  }
-  .card .tag{
-    font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
-    color:var(--ink-faint); display:block; margin-bottom:8px;
-  }
+  .card{ background:var(--raised); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px; box-shadow:var(--shadow-sm); }
+  .card .tag{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); display:block; margin-bottom:8px; }
   .card.prob .tag{ color:#C2603F; }
   .card.appr .tag{ color:var(--accent); }
   .card p{ font-size:13.5px; margin:0; }
 
-  /* findings list */
-  .findings{ list-style:none; margin:30px 0 0; padding:0; display:grid; gap:2px; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+  .findings{ list-style:none; margin:30px 0 0; padding:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
   .findings li{ background:var(--raised); padding:18px 22px; display:grid; grid-template-columns:26px 1fr; gap:14px; }
   .findings li + li{ border-top:1px solid var(--line); }
   .findings .n{ font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent); }
   .findings b{ color:var(--ink); }
   .findings p{ font-size:13.5px; margin:4px 0 0; }
 
-  /* feature grid */
-  .feat{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:34px; }
+  .feat{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:32px; }
   @media (max-width:680px){ .feat{ grid-template-columns:1fr; } }
   .feat .card{ padding:20px 22px; }
   .feat .card p{ font-size:13px; margin-top:5px; color:var(--ink-soft); }
-  .feat .k{
-    font-family:var(--mono); color:var(--accent); font-weight:700; font-size:13px; float:left; margin-right:8px;
-  }
+  .feat .k{ font-family:var(--mono); color:var(--accent); font-weight:700; font-size:13px; margin-right:8px; }
 
-  /* showcase rows */
-  .showcase{ margin-top:clamp(36px,6vw,56px); }
+  .showcase{ margin-top:clamp(34px,6vw,52px); }
   .showcase.two{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(20px,4vw,44px); align-items:start; }
-  @media (max-width:720px){ .showcase.two{ grid-template-columns:1fr; } }
-  .showcase .cap{
-    margin-top:14px; font-size:12.5px; color:var(--ink-faint); font-family:var(--mono);
-    display:flex; gap:8px; align-items:baseline;
-  }
-  .showcase .cap .badge{
-    background:var(--accent-soft); color:var(--accent); border-radius:5px; padding:1px 7px;
-    font-size:10px; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
-  }
+  .showcase.three{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,3vw,28px); align-items:start; }
+  @media (max-width:820px){ .showcase.three{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:680px){ .showcase.two,.showcase.three{ grid-template-columns:1fr; } .showcase .phone{ margin:0 auto; } }
+  .showcase .cap{ margin-top:14px; font-size:12.5px; color:var(--ink-faint); font-family:var(--mono); display:flex; gap:8px; align-items:baseline; flex-wrap:wrap; }
+  .showcase .cap .badge{ background:var(--accent-soft); color:var(--accent); border-radius:5px; padding:1px 7px; font-size:10px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
   .showcase .single{ display:flex; justify-content:center; }
+  .gal{ display:flex; gap:18px; overflow-x:auto; padding:6px 2px 14px; scroll-snap-type:x proximity; }
+  .gal .item{ flex:0 0 auto; scroll-snap-align:center; }
+  .gal .cap{ margin-top:12px; }
 
-  /* flow diagram */
-  .flowbox{
-    margin-top:34px; background:var(--raised); border:1px solid var(--line); border-radius:var(--radius);
-    padding:clamp(20px,4vw,34px); overflow-x:auto; box-shadow:var(--shadow-sm);
-  }
+  .split{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,5vw,56px); align-items:center; margin-top:34px; }
+  @media (max-width:820px){ .split{ grid-template-columns:1fr; } .split .single{ order:-1; } }
+
+  .flowbox{ margin-top:32px; background:var(--raised); border:1px solid var(--line); border-radius:var(--radius); padding:clamp(20px,4vw,32px); overflow-x:auto; box-shadow:var(--shadow-sm); }
   .flowbox svg{ display:block; min-width:640px; width:100%; height:auto; }
   .fnode rect{ fill:var(--raised); stroke:var(--line-strong); }
   .fnode.hi rect{ fill:var(--accent-soft); stroke:var(--accent); }
   .fnode text{ fill:var(--ink); font-family:var(--sans); font-weight:600; font-size:12px; }
   .fnode .sub{ fill:var(--ink-faint); font-family:var(--mono); font-size:9.5px; font-weight:400; }
-  .fedge{ stroke:var(--line-strong); stroke-width:1.6; fill:none; marker-end:url(#arrow); }
+  .fedge{ stroke:var(--line-strong); stroke-width:1.6; fill:none; marker-end:url(#arr); }
   .fbranch{ fill:var(--ink-faint); font-family:var(--mono); font-size:9.5px; }
 
-  /* testing note */
-  .note{
-    margin-top:30px; border-left:3px solid var(--accent); background:var(--accent-soft);
-    padding:16px 20px; border-radius:0 10px 10px 0; font-size:13.5px; color:var(--ink-soft);
-  }
+  .note{ margin-top:28px; border-left:3px solid var(--accent); background:var(--accent-soft); padding:16px 20px; border-radius:0 10px 10px 0; font-size:13.5px; color:var(--ink-soft); }
   .note b{ color:var(--ink); }
   .note .todo{ font-family:var(--mono); font-size:11px; color:var(--accent); }
 
-  /* design system */
-  .ds{ display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:34px; }
+  .tiers{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:32px; }
+  @media (max-width:820px){ .tiers{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:520px){ .tiers{ grid-template-columns:1fr; } }
+  .tier{ border:1px solid var(--line); border-radius:14px; background:var(--raised); padding:18px 18px 20px; box-shadow:var(--shadow-sm); }
+  .tier .name{ font-weight:700; color:var(--ink); font-size:14px; }
+  .tier .price{ font-family:var(--serif); font-size:22px; color:var(--accent); margin:4px 0 10px; }
+  .tier ul{ list-style:none; margin:0; padding:0; font-size:12px; color:var(--ink-soft); }
+  .tier li{ padding:3px 0 3px 16px; position:relative; }
+  .tier li::before{ content:"✓"; position:absolute; left:0; color:var(--accent); font-size:11px; }
+
+  .ds{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:32px; }
   @media (max-width:680px){ .ds{ grid-template-columns:1fr; } }
   .ds .block{ background:var(--raised); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow-sm); }
   .ds .aa{ font-family:var(--sans); font-size:40px; font-weight:800; color:var(--ink); line-height:1; }
   .ds .meta-line{ font-size:12px; margin-top:12px; }
   .ds .meta-line span{ font-family:var(--mono); color:var(--ink-faint); }
-  .swatches{ display:flex; gap:0; border-radius:10px; overflow:hidden; border:1px solid var(--line); }
-  .swatches i{ flex:1; height:56px; }
-  .swrow{ display:flex; gap:0; margin-top:8px; font-family:var(--mono); font-size:9px; color:var(--ink-faint); }
-  .swrow span{ flex:1; text-align:center; }
+  .taxo{ display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+  .taxo span{ font-size:11px; font-family:var(--mono); background:var(--accent-soft); color:var(--accent); border-radius:6px; padding:3px 8px; }
 
-  /* outcome */
-  .status{ list-style:none; margin:30px 0 0; padding:0; display:grid; gap:2px; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+  .status{ list-style:none; margin:30px 0 0; padding:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
   .status li{ background:var(--raised); padding:15px 22px; display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:13.5px; }
   .status li + li{ border-top:1px solid var(--line); }
   .status .pill{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:3px 9px; border-radius:999px; flex:none; }
@@ -258,27 +198,18 @@
   .pill.next{ background:var(--line); color:var(--ink-faint); }
   :root[data-theme="dark"] .pill.live, :root:not([data-theme="light"]) .pill.live{ background:#12321F; color:#5FD08A; }
 
-  /* footer */
   footer{ border-top:1px solid var(--line); padding:clamp(44px,7vw,72px) 0; }
-  .nextcase{
-    display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;
-    background:var(--raised); border:1px solid var(--line); border-radius:var(--radius);
-    padding:22px 26px; box-shadow:var(--shadow-sm); margin-bottom:36px;
-  }
+  .nextcase{ display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; background:var(--raised); border:1px solid var(--line); border-radius:var(--radius); padding:22px 26px; box-shadow:var(--shadow-sm); margin-bottom:36px; }
   .nextcase .l{ font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); }
   .nextcase .t{ font-family:var(--serif); font-size:20px; color:var(--ink); }
   .nextcase a.go{ font-size:13px; font-weight:700; color:var(--accent); display:inline-flex; align-items:center; gap:6px; }
   .foot-links{ display:flex; gap:22px; flex-wrap:wrap; font-size:13px; font-weight:600; }
   .foot-links .sep{ color:var(--ink-faint); }
-  .foot-fine{ margin-top:22px; font-size:12px; color:var(--ink-faint); }
+  .foot-fine{ margin-top:22px; font-size:12px; color:var(--ink-faint); max-width:70ch; }
 
-  /* reveal */
   .rv{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s cubic-bezier(.2,.6,.3,1); }
   .rv.in{ opacity:1; transform:none; }
-  @media (prefers-reduced-motion:reduce){
-    .rv{ opacity:1; transform:none; transition:none; }
-    html{ scroll-behavior:auto; }
-  }
+  @media (prefers-reduced-motion:reduce){ .rv{ opacity:1; transform:none; transition:none; } html{ scroll-behavior:auto; } }
 </style>
 </head>
 <body>
@@ -293,21 +224,21 @@
 
   <header class="cover">
     <dl class="meta">
-      <div><dt>Role</dt><dd>Sole designer — job-seeker side</dd></div>
+      <div><dt>Role</dt><dd>Sole designer — both sides</dd></div>
       <div><dt>Company</dt><dd>Developer Bazaar Technologies</dd></div>
       <div><dt>Platform</dt><dd>Native mobile app</dd></div>
-      <div><dt>Scope</dt><dd>Requirements &rarr; design &rarr; usability testing · 45+ screens</dd></div>
+      <div><dt>Scope</dt><dd>Requirements &rarr; design &rarr; usability testing</dd></div>
       <div><dt>Live</dt><dd><a href="https://mostlyevents.com" target="_blank" rel="noopener">mostlyevents.com</a></dd></div>
     </dl>
 
-    <h1 class="display">One listing, <span class="u">many roles</span> — staffing events shift by shift.</h1>
+    <h1 class="display">One listing, <span class="u">many roles</span> — a recruitment app built only for events.</h1>
 
-    <p class="dek">Mostly Events connects freelancers to work in the events industry — weddings, décor, hospitality, F&amp;B. I owned the job-seeker experience end to end: gathering requirements with the product team, designing every screen, and running usability tests. <b>The core problem: a single event needs a whole crew at different day-rates, and no job board is built for that.</b></p>
+    <p class="dek">Mostly Events staffs weddings and events shift by shift — a décor lead, servers, a coordinator, a photographer, all from one event post. I designed <b>both sides solo</b> at Developer Bazaar: the recruiter product for event companies and the job-seeker side for freelancers, from gathering requirements through to usability testing.</p>
 
     <div class="hero-fan">
-      <div class="phone"><img src="assets/mostly-events/me-profile.png" alt="Mostly Events profile screen with an availability toggle, skill chips and tagged experience" loading="lazy"></div>
-      <div class="phone"><img src="assets/mostly-events/me-job-freelance.png" alt="Job detail screen showing a Freelance Type section with three sub-roles, each with its own day rate and vacancy count" loading="lazy"></div>
-      <div class="phone"><img src="assets/mostly-events/me-home.png" alt="Mostly Events home screen with job categories and featured event listings" loading="lazy"></div>
+      <div class="phone"><div class="scr"><img src="assets/mostly-events/r-my-jobs.png" alt="Recruiter My Jobs screen listing event roles with applicant counts" loading="lazy"></div></div>
+      <div class="phone"><div class="scr"><img src="assets/mostly-events/r-home.png" alt="Recruiter dashboard with recruitment overview and candidate engagement metrics" loading="lazy"></div></div>
+      <div class="phone"><div class="scr"><img src="assets/mostly-events/r-job-desc.png" alt="Recruiter job description screen with an event photo" loading="lazy"></div></div>
     </div>
   </header>
 
@@ -316,176 +247,148 @@
     <h2>Event staffing isn't one job. It's a crew.</h2>
     <div class="prose">
       <p class="lead">A wedding needs a planner, a decorator, servers and a photographer — usually for a single day, often hired separately.</p>
-      <p>I looked at how Naukri, Indeed and similar boards handle this. They all share one assumption: <strong>one listing = one role, one salary, one Apply button.</strong> That works for full-time hiring. It breaks for event gig work, where the same event post has to advertise several roles at several rates, and a freelancer needs to know their odds for <em>their</em> role — not the listing as a whole.</p>
+      <p>I studied how Naukri, Indeed and similar boards handle this. They all share one assumption: <strong>one listing = one role, one salary, one Apply button.</strong> That works for full-time hiring. It breaks for event work, where a single event post has to advertise several roles at several day-rates, and a freelancer needs to know their odds for <em>their</em> role — not the listing as a whole.</p>
     </div>
     <div class="pair">
-      <div class="card prob">
-        <span class="tag">Problem</span>
-        <p>Full-time hiring flows don't fit gig work. A wedding-day server and a full-time hospitality manager have completely different needs — day-rate vs. salary, one-off vs. ongoing, verify-in-a-day vs. a formal process. Forcing both down the same funnel serves neither.</p>
-      </div>
-      <div class="card appr">
-        <span class="tag">Approach</span>
-        <p>Give freelance listings the structure full-time listings don't need — multiple sub-roles per event, each with its own rate and vacancy count — while keeping full-time roles on the familiar apply-directly path.</p>
-      </div>
+      <div class="card prob"><span class="tag">Problem</span><p>Full-time hiring flows don't fit gig work. A wedding-day server and a full-time hospitality manager have completely different needs — day-rate vs. salary, one-off vs. ongoing, verify-in-a-day vs. a formal process. Forcing both down the same funnel serves neither.</p></div>
+      <div class="card appr"><span class="tag">Approach</span><p>Build a recruitment product around the <em>event</em>, not the role: one post that can carry several freelance sub-roles, each priced and counted on its own — with a familiar apply-directly path kept for full-time hires.</p></div>
     </div>
   </section>
 
   <section id="research" class="rv">
     <span class="snum">02 — Research &amp; requirements</span>
     <h2>What I learned before designing a screen.</h2>
-    <div class="prose">
-      <p>I started by mapping requirements with the product team, then pulled apart the incumbents — Naukri, Indeed, WorkIndia and a few gig apps — to see what they optimise for and where event work falls through the cracks. Three findings shaped everything that followed.</p>
-    </div>
+    <div class="prose"><p>Requirements mapping with the product team, plus a teardown of the incumbents. Three findings shaped both sides of the app.</p></div>
     <ol class="findings">
-      <li>
-        <span class="n">01</span>
-        <div><b>Job boards optimise for one number: salary.</b>
-        <p>Gig workers weigh a different set — day rate, how many vacancies, distance, and how quickly they'll be paid. The listing has to surface those, not a monthly CTC.</p></div>
-      </li>
-      <li>
-        <span class="n">02</span>
-        <div><b>A gig CV isn't a CV.</b>
-        <p>Event freelancers work company-to-company with no single employer history. A standard résumé form has no slot for how they actually work — so the profile needed rethinking, not restyling.</p></div>
-      </li>
-      <li>
-        <span class="n">03</span>
-        <div><b>Trust is the real blocker.</b>
-        <p>Booking a stranger for a wedding day is a leap for an employer. Verification has to be a quick, visible signal — not a form long enough to stall someone picking up last-minute work.</p></div>
-      </li>
+      <li><span class="n">01</span><div><b>Job boards optimise for one number: salary.</b><p>Gig workers weigh a different set — day rate, vacancy count, distance, and how quickly they'll be paid. The listing has to surface those.</p></div></li>
+      <li><span class="n">02</span><div><b>A gig CV isn't a CV.</b><p>Event freelancers work company-to-company with no single employer history. A standard résumé form has no slot for how they actually work.</p></div></li>
+      <li><span class="n">03</span><div><b>Trust runs both ways.</b><p>An employer booking a stranger for a wedding day needs a signal fast; a freelancer needs to know the company is real. Verification had to be light on each side, but tailored — an ID check for a person, a business document for a company.</p></div></li>
     </ol>
-    <div class="prose" style="margin-top:26px">
-      <p>So the job-seeker side had to get three things right: <strong>role-level clarity</strong> on the listing, <strong>a profile built for gig work</strong>, and <strong>low-friction verification</strong>.</p>
-    </div>
   </section>
 
   <section id="listing" class="rv">
     <span class="snum">03 — One listing, many roles</span>
-    <h2>The detail page that does double duty.</h2>
+    <h2>The idea that shaped both sides.</h2>
+    <div class="split">
+      <div class="prose">
+        <p>When a recruiter posts a freelance event job, they don't pick one role — they add a <strong>Freelance Type</strong> for each: Hospitality Management, F&amp;B, a Shadow. Each carries its own title, day-rate range and number of vacancies.</p>
+        <p>On the job-seeker side, that same post reads as several distinct opportunities — a decorator and a server open the listing and see different pay and different competition. One post staffs the whole crew, without becoming five posts to manage.</p>
+      </div>
+      <div class="single"><div class="phone"><div class="scr full"><img src="assets/mostly-events/r-post-freelance.png" alt="Recruiter posting a freelance event job: a Freelance Type list with Hospitality Management, Food and Beverages and Shadow, each with a day-rate range and vacancy count, plus an Add new type control" loading="lazy"></div></div></div>
+    </div>
+    <div class="feat">
+      <div class="card"><h3><span class="k">₹</span>Per-role day rate</h3><p>Each sub-role gets its own ₹-per-day range — set as a number or a band — not one blended rate for the listing.</p></div>
+      <div class="card"><h3><span class="k">#</span>Independent vacancy counts</h3><p>“2 Vacancies” for décor, “1” for a shadow role — set by the recruiter, visible to the applicant before they apply.</p></div>
+      <div class="card"><h3><span class="k">▸</span>Four post types</h3><p>Full-Time, Freelancing, Internship and Project Manager — each with a posting form built for that kind of hire.</p></div>
+      <div class="card"><h3><span class="k">?</span>Screening per listing</h3><p>Custom questions — free-text and yes/no — surface as a “Career Fit Assessment” before a candidate can submit.</p></div>
+    </div>
+  </section>
+
+  <section id="recruiter" class="rv">
+    <span class="snum">04 — The recruiter product</span>
+    <h2>Post the job, then work the pipeline.</h2>
     <div class="prose">
-      <p>Job Detail serves both listing types from one layout. For a full-time role it's a standard description and a single Apply button. For a freelance event it adds a <strong>Freelance Type</strong> section under the same description — each sub-role priced and counted on its own, so a decorator and a server reading the same post see different pay and different competition.</p>
+      <p>The bulk of the design work. An event company signs up, verifies with a business document, and lands on a dashboard built around one question — <strong>who do I still need to hire?</strong></p>
+    </div>
+    <div class="showcase two">
+      <div><div class="phone"><div class="scr full"><img src="assets/mostly-events/r-home.png" alt="Recruiter dashboard: KYC verification progress, a recruitment overview with total, open, closed and draft job counts, recent jobs, and candidate engagement metrics" loading="lazy"></div></div>
+        <div class="cap"><span class="badge">Dashboard</span> open roles, drafts, applicants and hires at a glance</div></div>
+      <div><div class="phone"><div class="scr"><img src="assets/mostly-events/r-submit-job.png" alt="Submit New Job screen: choose Full-Time Jobs, Freelancing, Internships or Project Manager" loading="lazy"></div></div>
+        <div class="cap"><span class="badge">Post a job</span> a different form for each kind of hire</div></div>
     </div>
 
-    <div class="showcase two">
-      <div>
-        <div class="phone"><img src="assets/mostly-events/me-job-standard.png" alt="Standard job detail screen ending in a single Apply Now button" loading="lazy"></div>
-        <div class="cap"><span class="badge">Full-time</span> one role, one rate, direct apply</div>
-      </div>
-      <div>
-        <div class="phone"><img src="assets/mostly-events/me-job-freelance.png" alt="Freelance job detail with a Freelance Type section: Hospitality Management and Food &amp; Beverages at 300 to 500 rupees a day, Shadow at 1200 to 1500, each with a vacancy count and a radio selector" loading="lazy"></div>
-        <div class="cap"><span class="badge">Freelance</span> same page, plus a per-role rate &amp; vacancy selector</div>
-      </div>
+    <div class="gal">
+      <div class="item"><div class="phone"><div class="scr"><img src="assets/mostly-events/r-my-jobs.png" alt="My Jobs: current, closed and draft event roles with applicant counts and an Action control" loading="lazy"></div></div><div class="cap">My Jobs — current / closed / draft</div></div>
+      <div class="item"><div class="phone"><div class="scr"><img src="assets/mostly-events/r-job-applicants.png" alt="Applicant list for one role, each candidate card showing a rating and a Rate-as control" loading="lazy"></div></div><div class="cap">Applicants for a role</div></div>
+      <div class="item"><div class="phone"><div class="scr"><img src="assets/mostly-events/r-applicant-detail.png" alt="Applicant detail: profile, experience, skills, résumé and a Career Fit Assessment with a relocation question" loading="lazy"></div></div><div class="cap">Applicant detail + fit assessment</div></div>
+      <div class="item"><div class="phone"><div class="scr"><img src="assets/mostly-events/r-applicants.png" alt="All applicants across roles with search and filters" loading="lazy"></div></div><div class="cap">All applicants, searchable</div></div>
     </div>
 
     <div class="feat">
-      <div class="card"><h3><span class="k">₹</span>Per-role day rate</h3><p>Each sub-role — Hospitality Management, F&amp;B, Shadow — carries its own ₹-per-day range, not one blended rate for the whole listing.</p></div>
-      <div class="card"><h3><span class="k">#</span>Independent vacancy counts</h3><p>“2 Vacancies” for one role, “1 Vacancy” for another — visible before applying, so a candidate can judge their odds for the specific role.</p></div>
-      <div class="card"><h3><span class="k">?</span>Per-listing screening questions</h3><p>Employers can attach custom pre-apply questions to a listing, surfaced under a “Career Fit Assessment” before submission.</p></div>
-      <div class="card"><h3><span class="k">⌘</span>Save &amp; share on the page</h3><p>Bookmark and share sit on the detail screen itself — a listing you're not ready to commit to doesn't have to be re-found later.</p></div>
+      <div class="card"><h3>An assessment, not just a rating</h3><p>For each candidate the recruiter records <strong>Good Fit / Maybe / Not A Right Fit</strong> against the specific role — a lightweight shortlist that survives across the whole applicant pool.</p></div>
+      <div class="card"><h3>The event-industry vocabulary, built in</h3><p>Roles, skills and filters use the language of the trade — Décor Designer, Runner, Shadow, Vendor Management — so a post takes seconds to scope, not a paragraph to write.</p></div>
     </div>
   </section>
 
-  <section id="flow" class="rv">
-    <span class="snum">04 — The application flow</span>
-    <h2>Two apply paths, one shared shape.</h2>
-    <div class="prose">
-      <p>A full-time role is a direct apply. A freelance role adds one deliberate step — pick which role and rate you're applying for, since one listing can offer several. The branch happens <strong>at</strong> Job Detail, not before: the same browse and search feeds both, and the paths only diverge once a candidate commits to a specific role.</p>
-    </div>
-
-    <div class="flowbox">
-      <svg viewBox="0 0 720 250" role="img" aria-label="Flow: Home to Job Detail, then branching into a full-time direct apply or a freelance pick-role-and-rate step, both leading through screening questions to Applied.">
-        <defs>
-          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0 0 L10 5 L0 10 z" fill="var(--line-strong)"/>
-          </marker>
-        </defs>
-        <g class="fnode"><rect x="8" y="98" width="120" height="54" rx="10"/><text x="68" y="120" text-anchor="middle">Home</text><text x="68" y="137" text-anchor="middle" class="sub">browse / search</text></g>
-        <path class="fedge" d="M128 125 H180"/>
-        <g class="fnode hi"><rect x="180" y="98" width="130" height="54" rx="10"/><text x="245" y="120" text-anchor="middle">Job Detail</text><text x="245" y="137" text-anchor="middle" class="sub">role, venue, pay</text></g>
-        <path class="fedge" d="M310 118 C 350 118, 350 44, 396 44"/>
-        <path class="fedge" d="M310 132 C 350 132, 350 206, 396 206"/>
-        <text x="330" y="72" class="fbranch">full-time</text>
-        <text x="330" y="182" class="fbranch">freelance</text>
-        <g class="fnode"><rect x="396" y="18" width="150" height="52" rx="10"/><text x="471" y="40" text-anchor="middle">Apply directly</text><text x="471" y="56" text-anchor="middle" class="sub">one role, one rate</text></g>
-        <g class="fnode hi"><rect x="396" y="180" width="150" height="52" rx="10"/><text x="471" y="202" text-anchor="middle">Pick role &amp; rate</text><text x="471" y="218" text-anchor="middle" class="sub">decor · F&amp;B · shadow</text></g>
-        <path class="fedge" d="M546 44 C 580 44, 580 112, 600 112"/>
-        <path class="fedge" d="M546 206 C 580 206, 580 138, 600 138"/>
-        <g class="fnode"><rect x="600" y="98" width="112" height="54" rx="10"/><text x="656" y="120" text-anchor="middle">Screening</text><text x="656" y="137" text-anchor="middle" class="sub">optional</text></g>
-        <path class="fedge" d="M656 152 V 184 H 656"/>
-        <g class="fnode"><rect x="600" y="184" width="112" height="44" rx="10"/><text x="656" y="211" text-anchor="middle">Applied</text></g>
-      </svg>
-    </div>
-
-    <div class="note">
-      <b>From usability testing:</b> <span class="todo">[Anjali — one concrete thing a test round changed: a step you cut, a label people misread, an order you flipped. One or two sentences.]</span>
-    </div>
-  </section>
-
-  <section id="profile" class="rv">
-    <span class="snum">05 — A profile built for gig workers</span>
+  <section id="jobseeker" class="rv">
+    <span class="snum">05 — The job-seeker side</span>
     <h2>Built for people who work gig to gig.</h2>
-    <div class="showcase two">
-      <div class="single"><div class="phone"><img src="assets/mostly-events/me-profile.png" alt="Profile screen: availability toggle, personal details, biography, skill chips, tagged experience entries, education, résumé, social links, portfolio link and a free-text references field" loading="lazy"></div></div>
+    <div class="split">
       <div class="prose">
-        <p>Event freelancers rarely have a single-employer résumé, so the profile doesn't assume one.</p>
-        <div class="feat" style="grid-template-columns:1fr; margin-top:8px">
-          <div class="card"><h3>Availability toggle</h3><p>One tap to show you're open for work — the signal employers scan for first.</p></div>
-          <div class="card"><h3>Tagged experience, not job titles</h3><p>Each past gig carries role tags (“Wedding Planner”, “Vendor Management”) so a search matches on what you did, not where.</p></div>
-          <div class="card"><h3>Portfolio link + free-text references</h3><p>A dedicated portfolio field, plus a “References / Companies” field for names a résumé template has no slot for.</p></div>
-        </div>
+        <p>Free for freelancers. The profile drops the single-employer résumé assumption — an availability toggle, tagged experience instead of job titles, a portfolio link, and a free-text “References / Companies” field.</p>
+        <p>Applying to a freelance role adds one step — pick the sub-role and rate — then any screening questions. After that, a plain-language status tracker shows exactly where the application stands, mirroring the stages the recruiter moves them through.</p>
       </div>
+      <div class="single"><div class="phone"><div class="scr full"><img src="assets/mostly-events/js-applied.png" alt="Job-seeker application tracker: Application Submitted, Profile Viewed, Under Review, Hired or Not Hired, Job Closed — each with a date" loading="lazy"></div></div></div>
+    </div>
+    <div class="showcase two">
+      <div><div class="phone"><div class="scr"><img src="assets/mostly-events/js-my-jobs.png" alt="Job-seeker My Jobs: Active, Saved and Applied jobs, with an application status and a Hired chip" loading="lazy"></div></div><div class="cap"><span class="badge">My Jobs</span> active, saved and applied</div></div>
+      <div><div class="phone"><div class="scr"><img src="assets/mostly-events/js-screening.png" alt="Career Fit Assessment: employer screening questions including a relocation yes/no" loading="lazy"></div></div><div class="cap"><span class="badge">Screening</span> the employer's questions, before submit</div></div>
+    </div>
+    <div class="note">
+      <b>From usability testing:</b> <span class="todo">[Anjali — one concrete thing a test round changed: a step you cut, a label people misread, an order you flipped.]</span>
     </div>
   </section>
 
   <section id="trust" class="rv">
-    <span class="snum">06 — Trust before the first shift</span>
-    <h2>Verification as two short steps, not a wall.</h2>
-    <div class="showcase two">
-      <div class="prose">
-        <p>Booking a stranger for a wedding-day shift is a real trust problem. KYC here is deliberately minimal — a photo and an ID upload, each confirmed independently — rather than a long form that would stall someone trying to pick up gig work quickly.</p>
-        <p>It reads as a checklist: two items, two green ticks, one “Request for Verify”. Enough of a signal for an employer, light enough that a candidate finishes it before they lose interest.</p>
-      </div>
-      <div class="single"><div class="phone"><img src="assets/mostly-events/me-kyc.png" alt="KYC verification screen with two steps — Upload Your Photo and Upload Your ID Proof — each marked with a green tick, above a Request for Verify button" loading="lazy"></div></div>
+    <span class="snum">06 — Two-sided trust</span>
+    <h2>Different verification for a person and a company.</h2>
+    <div class="prose">
+      <p>Both sides verify, but not with the same thing. A freelancer completes a <strong>photo + ID</strong> check — two steps, two ticks. A company uploads a <strong>business document like GST</strong> to prove it's real. Each check is short enough not to stall sign-up, and each is the right signal for who's on the other end.</p>
+    </div>
+  </section>
+
+  <section id="model" class="rv">
+    <span class="snum">07 — The business model</span>
+    <h2>Free to find work. Pay to hire at volume.</h2>
+    <div class="prose">
+      <p>Job-seekers never pay. Recruiters get a free tier and upgrade as they post more — the paid plans lift the caps on <strong>applicant visibility</strong> and <strong>postings per month</strong>, which is what an event company actually runs out of in a busy season.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier"><div class="name">Free</div><div class="price">₹0</div><ul><li>First 50 applicants / post</li><li>2 posts / month</li></ul></div>
+      <div class="tier"><div class="name">Starter</div><div class="price">₹299<span style="font-size:11px;color:var(--ink-faint)">/mo</span></div><ul><li>First 100 applicants / post</li><li>5 posts / month</li></ul></div>
+      <div class="tier"><div class="name">Pro</div><div class="price">₹1,599<span style="font-size:11px;color:var(--ink-faint)">/6mo</span></div><ul><li>First 100 applicants / post</li><li>10 posts / month</li><li>Saves ~11%</li></ul></div>
+      <div class="tier"><div class="name">Elite</div><div class="price">₹2,999<span style="font-size:11px;color:var(--ink-faint)">/yr</span></div><ul><li>Unlimited applicant visibility</li><li>10 posts / month</li><li>Saves ~16%</li></ul></div>
+    </div>
+    <div class="showcase two" style="margin-top:30px">
+      <div><div class="phone"><div class="scr full"><img src="assets/mostly-events/fig-recruiter-packages.png" alt="The four recruiter subscription tiers as gradient cards" loading="lazy"></div></div></div>
+      <div><div class="phone"><div class="scr"><img src="assets/mostly-events/fig-recruiter-onboarding.png" alt="Recruiter onboarding screens: The World's Only Recruitment Platform Built Specifically For The Event and Wedding Industry" loading="lazy"></div></div>
+        <div class="cap"><span class="badge">Onboarding</span> the pitch: one platform for event hiring</div></div>
     </div>
   </section>
 
   <section id="system" class="rv">
-    <span class="snum">07 — Design system</span>
-    <h2>Structure first, brand second.</h2>
-    <div class="prose">
-      <p>This project is at the wireframe stage — grey placeholder imagery, no final brand colour. That's an honest limitation, not a hidden one. What's already real: the type family, the ink tones, spacing and the component patterns, so visual design can move fast on a settled structure rather than starting from a blank file.</p>
-    </div>
+    <span class="snum">08 — Design system</span>
+    <h2>A calm, industry-specific visual language.</h2>
+    <div class="prose"><p>One typeface carrying the whole hierarchy, a mint-to-slate gradient as the palette, and a set of line illustrations for the empty and onboarding states. Values below are the file's own named palette, not eyeballed from screenshots.</p></div>
     <div class="ds">
       <div class="block">
         <div class="aa">Aa Bb</div>
         <div class="meta-line">Type family &nbsp; <span>Raleway — 400 / 500 / 600 / 700</span></div>
-        <div class="meta-line">Hierarchy &nbsp; <span>one family; weight and size carry it, no second face</span></div>
+        <div class="meta-line">Hierarchy &nbsp; <span>one family; weight and size carry it</span></div>
+        <div class="meta-line" style="margin-top:14px">Role taxonomy</div>
+        <div class="taxo"><span>Production</span><span>Décor Designer</span><span>Hospitality</span><span>F&amp;B</span><span>Logistics</span><span>Photography</span><span>Vendor Mgmt</span><span>Runner</span><span>Shadow</span></div>
       </div>
       <div class="block">
-        <div class="swatches">
-          <i style="background:#1C2541"></i><i style="background:#3A506B"></i><i style="background:#EDEDED"></i><i style="background:#000"></i><i style="background:#fff;box-shadow:inset 0 0 0 1px var(--line)"></i>
-        </div>
-        <div class="swrow"><span>Ink</span><span>Secondary</span><span>Placeholder</span><span>Black</span><span>Base</span></div>
-        <div class="meta-line" style="margin-top:14px"><span>No bright accent yet — CTAs use the same navy ink as body text. Consistent with a wireframe, called out rather than invented.</span></div>
+        <img src="assets/mostly-events/me-palette.png" alt="Generic Gradient palette: #3BCAAE, #17AFA9, #0F949D, #207A8B, #2C6073, #2F4858" style="border-radius:10px;border:1px solid var(--line)">
+        <div class="meta-line" style="margin-top:12px"><span>“Generic Gradient” — mint #3BCAAE through slate #2F4858. Primary actions use #17AFA9.</span></div>
       </div>
     </div>
   </section>
 
   <section id="outcome" class="rv">
-    <span class="snum">08 — Outcome &amp; what's next</span>
+    <span class="snum">09 — Outcome &amp; what's next</span>
     <h2>Where it landed.</h2>
     <div class="prose">
-      <p>The job-seeker side is live at <a href="https://mostlyevents.com" target="_blank" rel="noopener">mostlyevents.com</a>. <span class="todo" style="font-family:var(--mono);font-size:12px;color:var(--accent)">[Anjali — add one real number here: sign-ups, listings, applications, or employer feedback. Even directional.]</span></p>
-      <p>The freelance role-and-rate model is the part I'm proudest of — a small structural change to one screen that lets a single post staff an entire crew, without turning the listing into five listings.</p>
+      <p>Both sides are designed end to end and the product is live at <a href="https://mostlyevents.com" target="_blank" rel="noopener">mostlyevents.com</a>. <span class="todo" style="font-family:var(--mono);font-size:12px;color:var(--accent)">[Anjali — one real number here: recruiters signed up, jobs posted, applications, hires.]</span></p>
+      <p>The part I'm proudest of is the “one listing, many roles” model — it's a small structural decision on one screen that shapes how both sides of the whole product work.</p>
     </div>
     <ul class="status">
-      <li>Job-seeker flow (this file) <span class="pill live">Live</span></li>
-      <li>Freelance role / rate model <span class="pill ship">Shipped</span></li>
-      <li>Recruiter-facing side <span class="pill next">Next</span></li>
-      <li>High-fidelity visual design <span class="pill next">Next</span></li>
+      <li>Recruiter product — post, verify, manage, assess <span class="pill ship">Designed</span></li>
+      <li>Job-seeker side — profile, apply, track <span class="pill ship">Designed</span></li>
+      <li>Live product <span class="pill live">mostlyevents.com</span></li>
+      <li>High-fidelity imagery on every screen <span class="pill next">In progress</span></li>
     </ul>
-    <div class="prose" style="margin-top:26px">
-      <p><strong>What I'd do next:</strong> take the role picker back to more event freelancers to test the rate-comparison moment, then move the whole job-seeker side into high-fidelity alongside the recruiter flow.</p>
-    </div>
+    <div class="prose" style="margin-top:24px"><p><strong>What I'd do next:</strong> take the freelance role picker back to more event freelancers to test the rate-comparison moment, and finish the visual pass so every screen carries real photography, not placeholders.</p></div>
   </section>
 
 </div>
@@ -493,32 +396,22 @@
 <footer>
   <div class="wrap">
     <div class="nextcase">
-      <div>
-        <div class="l">Next case study</div>
-        <div class="t">Verified Beauty Providers</div>
-      </div>
+      <div><div class="l">Next case study</div><div class="t">Verified Beauty Providers</div></div>
       <a class="go" href="verified-beauty-providers.html">Read it &rarr;</a>
     </div>
     <div class="foot-links">
-      <a href="index.html">&larr; Back to portfolio</a>
-      <span class="sep">·</span>
-      <a href="mailto:palanjali0853@gmail.com">palanjali0853@gmail.com</a>
-      <span class="sep">·</span>
+      <a href="index.html">&larr; Back to portfolio</a><span class="sep">·</span>
+      <a href="mailto:palanjali0853@gmail.com">palanjali0853@gmail.com</a><span class="sep">·</span>
       <a href="https://linkedin.com/in/anjali-paal" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <p class="foot-fine">Mostly Events — job-seeker side of a dual-sided events-industry job app, live at mostlyevents.com. This case study reflects the project at the wireframe stage; screens and scope will change as visual design and the recruiter side are built.</p>
+    <p class="foot-fine">Mostly Events — a two-sided recruitment app for the events industry, live at mostlyevents.com. Screens shown are from the working Figma file; the visual pass to full high-fidelity imagery is still in progress.</p>
   </div>
 </footer>
 
 <script>
   (function () {
-    var tt = document.getElementById("tt");
-    var root = document.documentElement;
-    var KEY = "ap-theme";
-    try {
-      var saved = localStorage.getItem(KEY);
-      if (saved) root.setAttribute("data-theme", saved);
-    } catch (e) {}
+    var tt = document.getElementById("tt"), root = document.documentElement, KEY = "ap-theme";
+    try { var s = localStorage.getItem(KEY); if (s) root.setAttribute("data-theme", s); } catch (e) {}
     tt.addEventListener("click", function () {
       var dark = matchMedia("(prefers-color-scheme: dark)").matches;
       var cur = root.getAttribute("data-theme") || (dark ? "dark" : "light");
@@ -529,15 +422,8 @@
   })();
   (function () {
     var els = [].slice.call(document.querySelectorAll(".rv"));
-    if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      els.forEach(function (e) { e.classList.add("in"); });
-      return;
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
-      });
-    }, { rootMargin: "0px 0px -8% 0px" });
+    if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) { els.forEach(function (e) { e.classList.add("in"); }); return; }
+    var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
     els.forEach(function (e) { io.observe(e); });
   })();
 </script>
