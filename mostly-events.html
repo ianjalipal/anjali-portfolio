@@ -22,246 +22,199 @@
 <style>
   :root{
     --bg:#000000;
-    --surface:#0A0C0B;
-    --surface-2:#101312;
-    --ink:#FAFAFA;
-    --ink-mid:#8C938F;
-    --ink-dim:#565C59;
-    --line:rgba(255,255,255,.09);
-    --line-2:rgba(255,255,255,.16);
+    --ink:#FFFFFF;
+    --grey:#8A8A8A;          /* body + description (reference is #808080; nudged for contrast) */
+    --dim:#5A5A5A;
+    --line:rgba(255,255,255,.10);
+    --line-2:rgba(255,255,255,.20);
     --accent:#3BCAAE;
-    --accent-deep:#17AFA9;
+    --surface:#0B0B0B;
     --display:"Clash Display","Arial Narrow",system-ui,sans-serif;
     --sans:"Inter",-apple-system,"Segoe UI",Roboto,sans-serif;
     --mono:"Space Mono",ui-monospace,Menlo,monospace;
+    --wrap:1400px;
+    --pad:clamp(20px,4vw,40px);
   }
   *{ box-sizing:border-box; }
   html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; overflow-x:hidden; }
-  body{ margin:0; background:var(--bg); color:var(--ink-mid); font-family:var(--sans); font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body{ margin:0; background:var(--bg); color:var(--grey); font-family:var(--sans); font-size:18px; line-height:1.3; font-weight:500; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
   body::before{
     content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
-    background-image:
-      linear-gradient(rgba(255,255,255,.026) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.026) 1px, transparent 1px);
-    background-size:56px 56px;
-    -webkit-mask-image:radial-gradient(ellipse 120% 70% at 50% 0%, #000 25%, transparent 75%);
-    mask-image:radial-gradient(ellipse 120% 70% at 50% 0%, #000 25%, transparent 75%);
+    background-image:linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 130% 60% at 50% 0%, #000 20%, transparent 72%);
+    mask-image:radial-gradient(ellipse 130% 60% at 50% 0%, #000 20%, transparent 72%);
   }
   img{ max-width:100%; display:block; }
   a{ color:var(--ink); text-decoration:none; }
   a:hover{ color:var(--accent); }
   ::selection{ background:var(--accent); color:#000; }
   :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:3px; }
-
-  .shell{ position:relative; z-index:1; max-width:1000px; margin:0 auto; padding:0 clamp(20px,5vw,44px); }
-  .prose{ max-width:620px; }
-  .prose p + p{ margin-top:20px; }
   p{ margin:0; }
   strong{ color:var(--ink); font-weight:600; }
-  em{ color:var(--ink); font-style:normal; border-bottom:1px solid var(--accent); }
+  em{ color:var(--ink); font-style:normal; }
+
+  .wrap{ position:relative; z-index:1; max-width:var(--wrap); margin:0 auto; padding:0 var(--pad); }
 
   /* nav */
   .nav{
     position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between; gap:16px;
-    padding:16px clamp(20px,5vw,44px); background:linear-gradient(#000, rgba(0,0,0,.55)); backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line); font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    padding:18px var(--pad); background:linear-gradient(#000, rgba(0,0,0,.5)); backdrop-filter:blur(6px);
+    font-family:var(--mono); font-size:12px; letter-spacing:.02em; text-transform:uppercase; color:var(--grey);
   }
-  .nav a{ color:var(--ink-mid); }
+  .nav a{ color:var(--grey); }
   .nav a:hover{ color:var(--accent); }
-  .nav .pill{ border:1px solid var(--line-2); border-radius:999px; padding:7px 14px; color:var(--ink); display:inline-flex; align-items:center; gap:7px; }
+  .nav .pill{ border:1px solid var(--line-2); border-radius:60px; padding:9px 18px; color:var(--ink); display:inline-flex; align-items:center; gap:7px; transition:border-color .2s, color .2s; }
   .nav .pill:hover{ border-color:var(--accent); color:var(--accent); }
+  #clock{ font-variant-numeric:tabular-nums; }
 
-  /* hero */
-  .hero{ padding:clamp(56px,12vw,120px) 0 clamp(36px,5vw,56px); text-align:left; }
-  .hero .eyebrow{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:clamp(28px,5vw,46px); }
+  /* hero — centred */
+  .hero{ text-align:center; padding:clamp(70px,11vw,130px) 0 0; }
+  .hero .eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); margin-bottom:clamp(30px,5vw,52px); }
   h1.title{
     font-family:var(--display); font-weight:600; text-transform:uppercase;
-    font-size:clamp(54px,14vw,150px); line-height:.88; letter-spacing:-.01em; color:var(--ink); margin:0 0 clamp(24px,4vw,38px);
+    font-size:clamp(44px,9.4vw,120px); line-height:.76; letter-spacing:-.013em; color:var(--ink);
+    margin:0 auto clamp(24px,3vw,36px); max-width:16ch;
   }
-  .line{ display:block; overflow:hidden; }
-  .line > span{ display:block; }
-  .dek{ font-size:clamp(16px,2vw,20px); line-height:1.62; color:var(--ink-mid); max-width:58ch; margin:0 0 30px; }
-  .dek b{ color:var(--ink); font-weight:500; }
+  .hero .desc{
+    font-family:var(--sans); font-weight:500; font-size:clamp(17px,1.6vw,20px); line-height:1.27;
+    color:var(--grey); max-width:52ch; margin:0 auto clamp(30px,4vw,44px);
+  }
   .btn{
-    font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:700;
-    background:var(--ink); color:#000; border-radius:999px; padding:13px 24px; display:inline-flex; align-items:center; gap:8px; transition:transform .2s ease;
+    font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; font-weight:700;
+    background:var(--ink); color:#000; border-radius:60px; padding:15px 26px; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .25s ease;
   }
   .btn:hover{ color:#000; transform:translateY(-2px); }
 
-  /* cover shot — isometric phone grid */
-  .cover{ margin-top:clamp(44px,8vw,80px); }
+  /* cover — full-width landscape */
+  .cover{ margin-top:clamp(48px,7vw,80px); }
+  .cover figure{ margin:0; border-radius:12px; overflow:hidden; }
+  .cover img{ width:100%; aspect-ratio:1421/901; object-fit:cover; }
+  /* fallback composition until hero-cover.png exists */
   .iso{
-    position:relative; border:1px solid var(--line); border-radius:18px; overflow:hidden;
-    background:radial-gradient(120% 120% at 30% 0%, rgba(59,202,174,.10), transparent 60%), var(--surface);
-    padding:clamp(30px,6vw,70px) 0; min-height:clamp(300px,44vw,520px);
-    perspective:1500px; perspective-origin:50% 40%;
+    position:relative; border-radius:12px; overflow:hidden; aspect-ratio:1421/901;
+    background:radial-gradient(120% 130% at 30% -10%, rgba(59,202,174,.12), transparent 55%), var(--surface);
+    border:1px solid var(--line); perspective:1600px; perspective-origin:50% 38%;
   }
   .iso__grid{
-    display:grid; grid-template-columns:repeat(5,150px); gap:18px; width:max-content; margin:0 auto;
-    transform:rotateX(52deg) rotateZ(-42deg); transform-origin:center; will-change:transform;
+    position:absolute; left:50%; top:52%; transform:translate(-50%,-50%) rotateX(52deg) rotateZ(-42deg);
+    display:grid; grid-template-columns:repeat(5,150px); gap:18px; width:max-content; will-change:transform;
   }
   .iso.tight .iso__grid{ grid-template-columns:repeat(4,150px); }
-  .iso__grid .p{ border-radius:14px; overflow:hidden; border:2px solid #1c1f1e; box-shadow:0 20px 40px -20px rgba(0,0,0,.8); background:#fff; height:150px;
-    transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; }
+  .iso__grid .p{ border-radius:14px; overflow:hidden; border:2px solid #1c1f1e; box-shadow:0 20px 40px -20px rgba(0,0,0,.8); background:#fff; height:150px; transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s; }
   .iso__grid .p img{ width:100%; }
-  .iso__grid .p:hover{ transform:translateZ(60px) scale(1.04); box-shadow:0 30px 60px -20px rgba(0,0,0,.9), 0 0 0 1px rgba(59,202,174,.5); z-index:3; }
-  .iso::after{
-    content:""; position:absolute; inset:0; pointer-events:none;
-    background:radial-gradient(120% 90% at 50% 45%, transparent 40%, rgba(0,0,0,.55) 90%);
-  }
-  @media (max-width:640px){ .iso__grid{ grid-template-columns:repeat(4,110px); gap:12px; } .iso__grid .p{ height:110px; } }
+  .iso__grid .p:hover{ transform:translateZ(60px) scale(1.04); box-shadow:0 30px 60px -18px rgba(0,0,0,.9), 0 0 0 1px rgba(59,202,174,.5); z-index:3; }
+  .iso::after{ content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(120% 85% at 50% 45%, transparent 38%, rgba(0,0,0,.5) 92%); }
+  @media (max-width:640px){ .iso__grid{ grid-template-columns:repeat(4,104px); gap:12px; } .iso__grid .p{ height:104px; } }
 
-  /* meta */
-  .meta{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line);
-    border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-top:clamp(44px,7vw,72px);
-  }
-  .meta div{ background:var(--bg); padding:20px 22px; }
-  .meta dt{ font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:8px; }
-  .meta dd{ margin:0; font-size:13px; font-weight:500; color:var(--ink); }
+  /* meta — 4 items across */
+  .meta{ display:flex; flex-wrap:wrap; gap:24px 40px; justify-content:space-between; margin-top:clamp(44px,6vw,72px); }
+  .meta div{ display:flex; flex-direction:column; gap:8px; }
+  .meta dt{ font-family:var(--sans); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--grey); }
+  .meta dd{ margin:0; font-family:var(--display); font-weight:600; font-size:clamp(18px,2vw,24px); text-transform:uppercase; color:var(--ink); line-height:1; }
   .meta dd a{ color:var(--accent); }
-  @media (max-width:680px){ .meta{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:760px){ .meta{ gap:24px 32px; } .meta div{ flex:1 1 40%; } }
 
-  /* sections */
-  section{ padding:clamp(72px,13vw,150px) 0 0; }
-  .slabel{ font-family:var(--display); font-weight:600; font-size:clamp(15px,2vw,20px); letter-spacing:.06em; text-transform:uppercase; color:var(--ink); margin-bottom:clamp(24px,4vw,40px); }
-  .prose.body{ font-size:clamp(16px,1.8vw,19px); line-height:1.62; color:var(--ink-mid); }
-  .prose.body strong{ color:var(--ink); }
-  .result{ list-style:none; margin:34px 0 0; padding:0; }
-  .result li{ padding:12px 0 12px 24px; position:relative; font-size:clamp(15px,1.7vw,17px); color:var(--ink-mid); border-top:1px solid var(--line); }
-  .result li:last-child{ border-bottom:1px solid var(--line); }
-  .result li::before{ content:"—"; position:absolute; left:0; color:var(--accent); }
-  .result li b{ color:var(--ink); font-family:var(--display); font-weight:600; }
-  .todo{ font-family:var(--mono); font-size:11px; color:var(--accent); }
+  /* sections — 2-column: label left, body right */
+  section{ padding:clamp(70px,10vw,130px) 0 0; }
+  .sec{ display:grid; grid-template-columns:300px minmax(0,704px); justify-content:space-between; gap:40px; }
+  @media (max-width:960px){ .sec{ grid-template-columns:1fr; gap:20px; } }
+  .slabel{ font-family:var(--display); font-weight:600; font-size:18px; line-height:1.1; letter-spacing:.01em; text-transform:uppercase; color:var(--ink); margin:0; }
+  .sbody p{ font-size:18px; line-height:1.3; color:var(--grey); }
+  .sbody p + p{ margin-top:1.35em; }
+  .sbody .result{ list-style:none; margin:1.6em 0 0; padding:0; }
+  .sbody .result li{ font-size:18px; line-height:1.3; color:var(--grey); position:relative; padding-left:22px; margin:.5em 0; }
+  .sbody .result li::before{ content:"—"; position:absolute; left:0; color:var(--grey); }
+  .sbody .result li b{ color:var(--ink); font-weight:600; }
+  .sbody .quote{ font-size:18px; line-height:1.3; color:var(--grey); }
+  .sbody .quote p + p{ margin-top:1em; }
+  .sbody .qby{ margin-top:1.6em; font-family:var(--mono); font-size:12px; letter-spacing:.04em; text-transform:uppercase; color:var(--dim); }
+  .sbody .qby b{ color:var(--ink); }
+  .todo{ font-family:var(--mono); font-size:12px; color:var(--accent); }
 
-  /* count-up metrics */
-  .metrics{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; margin-top:clamp(28px,4vw,40px); }
-  @media (max-width:680px){ .metrics{ grid-template-columns:1fr; } }
-  .metrics div{ background:var(--bg); padding:26px 24px; }
-  .metrics .num{ font-family:var(--display); font-weight:600; font-size:clamp(36px,6vw,58px); line-height:1; color:var(--ink); font-variant-numeric:tabular-nums; }
-  .metrics .num .suf{ color:var(--accent); }
-  .metrics .cap2{ font-size:12px; color:var(--ink-mid); margin-top:8px; max-width:24ch; }
-
-  /* draggable strip */
-  .gal{ display:flex; gap:14px; overflow-x:auto; padding:6px 2px 14px; scroll-snap-type:x proximity; margin-top:clamp(28px,4vw,40px); cursor:grab; }
-  .gal.dragging{ cursor:grabbing; scroll-snap-type:none; }
-  .gal.dragging *{ pointer-events:none; }
-  .gal::-webkit-scrollbar{ height:5px; }
-  .gal::-webkit-scrollbar-thumb{ background:var(--line-2); border-radius:3px; }
-  .gal .g{ flex:0 0 auto; width:clamp(180px,44vw,230px); scroll-snap-align:center; border-radius:16px; overflow:hidden; border:2px solid #1c1f1e; background:#fff; }
-  .gal .g img{ width:100%; display:block; }
-
-  .fcard .drop .p{ transition:transform .4s cubic-bezier(.2,.7,.3,1); }
-  .fcard:hover .drop .p:first-child{ transform:rotate(-8deg) translateY(4px); }
-  .fcard:hover .drop .p:last-child{ transform:rotate(6deg) translateY(-8px); }
-
-  /* section imagery */
-  .shot{ margin-top:clamp(36px,6vw,60px); }
-  .collage{
-    display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:clamp(150px,22vw,210px); gap:8px;
-    background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:12px;
-  }
-  .collage img{ width:100%; height:100%; object-fit:cover; object-position:top center; border-radius:9px;
-    transition:object-position 1.4s cubic-bezier(.33,.02,.29,1), filter .3s ease; }
-  .collage img:hover{ object-position:bottom center; filter:brightness(1.05); }
-  .collage .cell{ border-radius:9px; background:linear-gradient(135deg,var(--accent-deep),#0F949D); display:grid; place-items:center; color:#04211F; font-family:var(--display); font-weight:600; font-size:clamp(13px,1.6vw,17px); line-height:1.15; text-align:center; padding:14px; }
-  @media (max-width:640px){ .collage{ grid-template-columns:1fr 1fr; } }
+  /* section image — spans full content width, sits under the whole 2-col block */
+  .shot{ margin-top:clamp(40px,6vw,72px); border-radius:10px; overflow:hidden; }
+  .shot img{ width:100%; border-radius:10px; }
+  .shot.stack{ display:grid; gap:clamp(20px,3vw,36px); border-radius:0; overflow:visible; }
 
   .fcard{
-    position:relative; overflow:hidden; border-radius:18px; padding:clamp(30px,5vw,56px);
-    min-height:clamp(320px,42vw,440px); display:flex; flex-direction:column; justify-content:space-between;
-    background:linear-gradient(135deg,#0E4E52,#17AFA9 70%,#3BCAAE);
+    position:relative; overflow:hidden; border-radius:12px; padding:clamp(32px,5vw,60px);
+    min-height:clamp(320px,40vw,460px); display:flex; flex-direction:column; justify-content:space-between;
+    background:linear-gradient(135deg,#0E4E52,#17AFA9 68%,#3BCAAE);
   }
-  .fcard.slate{ background:linear-gradient(135deg,#111A1C,#1F3B3B 70%,#2C6073); }
-  .fcard h3{ font-family:var(--display); font-weight:600; font-size:clamp(22px,3.4vw,36px); line-height:1.05; text-transform:uppercase; color:#fff; max-width:15ch; margin:0; position:relative; z-index:2; }
-  .fcard .kick{ font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.7); position:relative; z-index:2; }
-  .fcard .foot{ font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#fff; position:relative; z-index:2; }
-  .fcard .drop{
-    position:absolute; right:clamp(-60px,-6vw,-20px); bottom:clamp(-50px,-5vw,-10px); display:flex; z-index:1;
-    filter:drop-shadow(0 40px 60px rgba(0,0,0,.45));
-  }
-  .fcard .drop .p{ width:clamp(120px,20vw,190px); border-radius:22px; border:6px solid #10201F; overflow:hidden; background:#fff; }
+  .fcard.slate{ background:linear-gradient(135deg,#111A1C,#1F3B3B 68%,#2C6073); }
+  .fcard .kick{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.7); position:relative; z-index:2; }
+  .fcard h3{ font-family:var(--display); font-weight:600; font-size:clamp(24px,3.4vw,40px); line-height:1.02; text-transform:uppercase; color:#fff; max-width:16ch; margin:0; position:relative; z-index:2; }
+  .fcard .foot{ font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#fff; position:relative; z-index:2; }
+  .fcard .drop{ position:absolute; right:clamp(-56px,-5vw,-16px); bottom:clamp(-46px,-5vw,-8px); display:flex; z-index:1; filter:drop-shadow(0 40px 60px rgba(0,0,0,.45)); }
+  .fcard .drop .p{ width:clamp(120px,17vw,180px); border-radius:22px; border:6px solid #10201F; overflow:hidden; background:#fff; transition:transform .4s cubic-bezier(.2,.7,.3,1); }
   .fcard .drop .p:first-child{ transform:rotate(-8deg) translateY(14px); }
-  .fcard .drop .p:last-child{ transform:rotate(6deg); margin-left:-40px; }
+  .fcard .drop .p:last-child{ transform:rotate(6deg); margin-left:-38px; }
+  .fcard:hover .drop .p:first-child{ transform:rotate(-8deg) translateY(2px); }
+  .fcard:hover .drop .p:last-child{ transform:rotate(6deg) translateY(-10px); }
   .fcard .drop .p img{ width:100%; }
 
-  .stack{ display:grid; gap:clamp(20px,3vw,32px); }
+  .collage{ display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:clamp(150px,20vw,200px); gap:8px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:12px; }
+  .collage img{ width:100%; height:100%; object-fit:cover; object-position:top center; border-radius:8px; transition:object-position 1.4s cubic-bezier(.33,.02,.29,1), filter .3s; }
+  .collage img:hover{ object-position:bottom center; filter:brightness(1.06); }
+  .collage .cell{ border-radius:8px; background:linear-gradient(135deg,#17AFA9,#0F949D); display:grid; place-items:center; text-align:center; padding:14px; color:#04211F; font-family:var(--display); font-weight:600; font-size:clamp(13px,1.5vw,16px); line-height:1.15; }
+  @media (max-width:640px){ .collage{ grid-template-columns:1fr 1fr; } }
 
-  /* tiers (inside design & results) */
-  .tiers{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:clamp(20px,3vw,28px); }
-  @media (max-width:820px){ .tiers{ grid-template-columns:1fr 1fr; } }
-  @media (max-width:520px){ .tiers{ grid-template-columns:1fr; } }
-  .tier{ border:1px solid var(--line); border-radius:12px; background:var(--surface); padding:18px; }
-  .tier .name{ font-family:var(--display); font-weight:600; color:var(--ink); font-size:14px; text-transform:uppercase; letter-spacing:.04em; }
-  .tier .price{ font-family:var(--display); font-weight:600; font-size:22px; color:var(--accent); margin:5px 0 10px; }
-  .tier ul{ list-style:none; margin:0; padding:0; font-size:11.5px; color:var(--ink-mid); }
-  .tier li{ padding:3px 0 3px 14px; position:relative; }
-  .tier li::before{ content:"\203A"; position:absolute; left:0; color:var(--accent); }
+  .tiers{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; position:relative; z-index:2; }
+  @media (max-width:640px){ .tiers{ grid-template-columns:1fr 1fr; } }
+  .tier{ border:1px solid rgba(255,255,255,.2); border-radius:10px; background:rgba(0,0,0,.15); padding:16px; }
+  .tier .n{ font-family:var(--display); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:#fff; }
+  .tier .pr{ font-family:var(--display); font-weight:600; font-size:20px; color:#fff; margin:4px 0 8px; }
+  .tier ul{ list-style:none; margin:0; padding:0; font-size:11px; line-height:1.5; color:rgba(255,255,255,.85); }
 
-  /* testimonial */
-  .quote{ font-family:var(--display); font-weight:500; font-size:clamp(20px,3vw,32px); line-height:1.28; color:var(--ink-mid); max-width:22ch; }
-  .quote p + p{ margin-top:1em; }
-  .quote strong{ color:var(--ink); }
-  .qby{ margin-top:26px; font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-dim); }
-  .qby b{ color:var(--ink); }
-
-  /* marquee + more works */
-  .marquee{ display:block; margin-top:clamp(72px,12vw,140px); border-top:1px solid var(--line); border-bottom:1px solid var(--line); overflow:hidden; padding:clamp(24px,5vw,40px) 0; }
-  .mq-track{ display:inline-flex; white-space:nowrap; will-change:transform; animation:mq 22s linear infinite; }
-  .mq-track span{ font-family:var(--display); font-weight:600; font-size:clamp(28px,7vw,80px); text-transform:uppercase; color:var(--ink); padding:0 .4em; }
-  .mq-track span.dim{ color:transparent; -webkit-text-stroke:1px var(--ink-dim); }
+  /* marquee + works */
+  .marquee{ display:block; margin-top:clamp(80px,12vw,150px); overflow:hidden; padding:clamp(24px,4vw,40px) 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .mq{ display:inline-flex; white-space:nowrap; will-change:transform; animation:mq 24s linear infinite; }
+  .mq span{ font-family:var(--display); font-weight:600; font-size:clamp(40px,7vw,90px); line-height:.78; text-transform:uppercase; color:var(--ink); padding:0 .35em; }
+  .mq span.o{ color:transparent; -webkit-text-stroke:1px var(--dim); }
+  .marquee:hover .mq{ animation-play-state:paused; }
   @keyframes mq{ to{ transform:translateX(-50%); } }
 
-  .works{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(16px,3vw,28px); margin-top:clamp(36px,6vw,56px); }
+  .works{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(16px,2vw,24px); margin-top:clamp(40px,6vw,64px); }
   @media (max-width:720px){ .works{ grid-template-columns:1fr; } }
-  .work{
-    position:relative; overflow:hidden; border-radius:16px; border:1px solid var(--line);
-    aspect-ratio:16/10; display:flex; align-items:flex-end; padding:24px;
-    background:linear-gradient(160deg,#151A19,#0C0E0D);
-  }
-  .work.vbp{ background:linear-gradient(160deg,#241820,#0D0A0C); }
-  .work .wt{ font-family:var(--display); font-weight:600; font-size:clamp(18px,2.6vw,26px); text-transform:uppercase; color:var(--ink); position:relative; z-index:2; }
-  .work .wk{ font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-dim); display:block; margin-top:4px; }
+  .work{ position:relative; overflow:hidden; border-radius:12px; border:1px solid var(--line); aspect-ratio:16/10; display:flex; align-items:flex-end; padding:26px; background:linear-gradient(160deg,#141918,#0B0D0C); transition:transform .3s cubic-bezier(.2,.7,.3,1); }
+  .work.vbp{ background:linear-gradient(160deg,#231721,#0C090B); }
+  .work:hover{ transform:translateY(-4px); }
+  .work .wt{ font-family:var(--display); font-weight:600; font-size:clamp(18px,2.4vw,26px); text-transform:uppercase; color:var(--ink); }
+  .work .wk{ font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--dim); display:block; margin-top:5px; }
   .work:hover .wt{ color:var(--accent); }
-  .work .arw{ position:absolute; top:22px; right:22px; color:var(--ink-dim); }
+  .work .arw{ position:absolute; top:24px; right:24px; color:var(--dim); }
   .work:hover .arw{ color:var(--accent); }
 
-  footer{ padding:clamp(48px,8vw,80px) 0; }
-  .foot-links{ display:flex; gap:22px; flex-wrap:wrap; font-family:var(--mono); font-size:12px; letter-spacing:.04em; text-transform:uppercase; }
-  .foot-links a{ color:var(--ink-mid); }
+  footer{ padding:clamp(60px,9vw,100px) 0 clamp(40px,6vw,64px); }
+  .foot-links{ display:flex; gap:24px; flex-wrap:wrap; font-family:var(--mono); font-size:12px; letter-spacing:.03em; text-transform:uppercase; }
+  .foot-links a{ color:var(--grey); }
   .foot-links a:hover{ color:var(--accent); }
-  .foot-fine{ margin-top:22px; font-size:12px; color:var(--ink-dim); max-width:72ch; }
+  .foot-fine{ margin-top:24px; font-size:12px; line-height:1.5; color:var(--dim); max-width:72ch; }
 
-  .toTop{
-    position:fixed; left:clamp(16px,3vw,32px); bottom:clamp(16px,3vw,32px); z-index:45;
-    width:46px; height:46px; border-radius:50%; border:1px solid var(--line-2); background:rgba(0,0,0,.7); backdrop-filter:blur(6px);
-    color:var(--ink); display:grid; place-items:center; cursor:pointer; opacity:0; transform:translateY(10px);
-    transition:opacity .3s ease, transform .3s ease, border-color .2s;
-  }
+  .toTop{ position:fixed; left:clamp(16px,3vw,32px); bottom:clamp(16px,3vw,32px); z-index:45; width:46px; height:46px; border-radius:50%; border:1px solid var(--line-2); background:rgba(0,0,0,.7); backdrop-filter:blur(6px); color:var(--ink); display:grid; place-items:center; cursor:pointer; opacity:0; transform:translateY(10px); transition:opacity .3s, transform .3s, border-color .2s; }
   .toTop.on{ opacity:1; transform:none; }
   .toTop:hover{ border-color:var(--accent); color:var(--accent); }
 
-  /* ---- the one load animation: slide into place, opacity stays 1 (matches reference) ---- */
-  .nav{ animation:me-drop .85s cubic-bezier(.16,1,.3,1) .4s both; }
-  @keyframes me-drop{ from{ transform:translateY(-160px); } to{ transform:translateY(0); } }
-  [data-hero]{ animation:me-rise .9s cubic-bezier(.16,1,.3,1) both; }
-  .hero .eyebrow{ --rise:70px; animation-delay:.05s; }
-  h1.title{ --rise:160px; animation-delay:0s; }
-  .hero .dek{ --rise:70px; animation-delay:.12s; }
-  .hero > .btn{ --rise:50px; animation-delay:.18s; }
-  .hero .cover{ --rise:40px; animation-delay:.24s; }
-  .hero .meta{ --rise:40px; animation-delay:.3s; }
-  @keyframes me-rise{ from{ transform:translateY(var(--rise,60px)); } to{ transform:translateY(0); } }
-
-  .work,.pill,.btn,.tier{ transition:transform .3s cubic-bezier(.2,.7,.3,1), border-color .2s ease, color .2s ease; }
-  .work:hover{ transform:translateY(-4px); }
+  /* the one load animation — slide into place, opacity constant (reference) */
+  .nav{ animation:drop .85s cubic-bezier(.16,1,.3,1) .4s both; }
+  @keyframes drop{ from{ transform:translateY(-160px); } to{ transform:translateY(0); } }
+  [data-h]{ animation:rise .9s cubic-bezier(.16,1,.3,1) both; }
+  .hero .eyebrow{ --r:70px; animation-delay:.05s; }
+  h1.title{ --r:160px; animation-delay:0s; }
+  .hero .desc{ --r:70px; animation-delay:.12s; }
+  .hero .btn{ --r:50px; animation-delay:.18s; }
+  .hero .cover{ --r:40px; animation-delay:.24s; }
+  .hero .meta{ --r:40px; animation-delay:.3s; }
+  @keyframes rise{ from{ transform:translateY(var(--r,60px)); } to{ transform:translateY(0); } }
 
   @media (prefers-reduced-motion:reduce){
     html{ scroll-behavior:auto; }
-    .mq-track{ animation:none; }
-    .toTop,.work,.pill,.btn{ transition:none; }
-    .nav,[data-hero]{ animation:none; }
-    .iso__grid{ transform:rotateX(46deg) rotateZ(-38deg); }
+    .mq{ animation:none; }
+    .nav,[data-h]{ animation:none; }
+    .toTop,.work,.btn,.pill{ transition:none; }
+    .iso__grid{ transform:translate(-50%,-50%) rotateX(46deg) rotateZ(-38deg); }
   }
 </style>
 </head>
@@ -273,57 +226,60 @@
   <a class="pill" href="https://mostlyevents.com" target="_blank" rel="noopener">Live &#8599;</a>
 </nav>
 
-<div class="shell">
+<div class="wrap">
 
   <header class="hero">
-    <div class="eyebrow" data-hero>Case Study &nbsp;/&nbsp; Events-industry recruitment</div>
-    <h1 class="title" data-hero>
-      <span class="line"><span>Mostly</span></span>
-      <span class="line"><span>Events</span></span>
-    </h1>
-    <p class="dek" data-hero>A recruitment app built only for the events industry — where one event post staffs a whole crew. A décor lead, servers, a coordinator, a photographer, all from one listing. I designed <b>both sides solo</b> at Developer Bazaar: the recruiter product for event companies and the job-seeker app for freelancers.</p>
-    <a class="btn" data-hero href="https://mostlyevents.com" target="_blank" rel="noopener">Live preview &#8599;</a>
+    <div class="eyebrow" data-h>Case Study &nbsp;/&nbsp; Events-industry recruitment</div>
+    <h1 class="title" data-h>Mostly Events</h1>
+    <p class="desc" data-h>A recruitment app built only for the events industry — where one event post staffs a whole crew. A décor lead, servers, a coordinator, a photographer, all from one listing. I designed <strong>both sides solo</strong> at Developer Bazaar: the recruiter product for event companies and the job-seeker app for freelancers.</p>
+    <a class="btn" data-h href="https://mostlyevents.com" target="_blank" rel="noopener">Live preview &#8599;</a>
 
-    <div class="cover" data-hero>
+    <div class="cover" data-h>
+      <!-- swap for <figure><img src="assets/mostly-events/hero-cover.png" alt="Mostly Events on a phone"></figure> when the mockup is ready -->
       <div class="iso">
         <div class="iso__grid" data-iso>
           <div class="p"><img src="assets/mostly-events/r-home.png" alt="Recruiter dashboard" loading="lazy"></div>
           <div class="p"><img src="assets/mostly-events/r-my-jobs.png" alt="My Jobs" loading="lazy"></div>
           <div class="p"><img src="assets/mostly-events/r-job-desc.png" alt="Job description" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/r-post-freelance.png" alt="Freelance posting form" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/r-applicants.png" alt="Applicants list" loading="lazy"></div>
+          <div class="p"><img src="assets/mostly-events/r-post-freelance.png" alt="Freelance posting" loading="lazy"></div>
+          <div class="p"><img src="assets/mostly-events/r-applicants.png" alt="Applicants" loading="lazy"></div>
           <div class="p"><img src="assets/mostly-events/r-applicant-detail.png" alt="Applicant detail" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/js-my-jobs.png" alt="Job-seeker My Jobs" loading="lazy"></div>
+          <div class="p"><img src="assets/mostly-events/js-my-jobs.png" alt="Job-seeker jobs" loading="lazy"></div>
           <div class="p"><img src="assets/mostly-events/js-applied.png" alt="Application tracker" loading="lazy"></div>
           <div class="p"><img src="assets/mostly-events/r-job-applicants.png" alt="Role applicants" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/js-screening.png" alt="Screening questions" loading="lazy"></div>
+          <div class="p"><img src="assets/mostly-events/js-screening.png" alt="Screening" loading="lazy"></div>
         </div>
       </div>
     </div>
 
-    <dl class="meta" data-hero>
+    <dl class="meta" data-h>
       <div><dt>Year</dt><dd>2024</dd></div>
-      <div><dt>Role</dt><dd>Sole designer — both sides</dd></div>
-      <div><dt>Category</dt><dd>Recruitment · Native mobile</dd></div>
-      <div><dt>Duration</dt><dd>~3 months <span class="todo">[confirm]</span></dd></div>
+      <div><dt>Role</dt><dd>Sole designer</dd></div>
+      <div><dt>Category</dt><dd>Recruitment · Mobile</dd></div>
+      <div><dt>Duration</dt><dd>~3 Months <span class="todo">[confirm]</span></dd></div>
     </dl>
   </header>
 
   <section id="scope">
-    <h2 class="slabel reveal">Project Scope</h2>
-    <div class="prose body reveal">
-      <p>Design the job-seeker and recruiter sides of Mostly Events end to end — from requirements with the product team through wireframes, high-fidelity screens and usability testing. Native mobile, built for how event companies actually staff a wedding: many roles, many rates, one post.</p>
-      <p>Benchmarked against Naukri, Indeed and gig-work apps. Delivered user flows, screens and the shared component library the team assembled from, with hand-off to engineering.</p>
+    <div class="sec">
+      <h2 class="slabel reveal">Project Scope</h2>
+      <div class="sbody reveal">
+        <p>Design the job-seeker and recruiter sides of Mostly Events end to end — from requirements with the product team through wireframes, high-fidelity screens and usability testing. Native mobile, built for how event companies actually staff a wedding: many roles, many rates, one post.</p>
+        <p>Benchmarked against Naukri, Indeed and gig-work apps. Delivered user flows, screens and the shared component library the team assembled from, with hand-off to engineering.</p>
+      </div>
     </div>
   </section>
 
   <section id="problem">
-    <h2 class="slabel reveal">Problem Statement</h2>
-    <div class="prose body reveal">
-      <p>Generic job boards assume one listing is one role, one salary, one Apply button. Event staffing isn't like that — a single wedding needs a planner, a decorator, servers and a photographer, usually for one day, often hired separately.</p>
-      <p>Recruiters were forced to post five listings for one event; freelancers couldn't judge their odds for the specific role they wanted. And a full-time hospitality manager and a wedding-day server have completely different needs — salary vs. day-rate, a formal process vs. verify-in-a-day. <strong>Goal: make one event post carry a whole crew, and give each side the right amount of structure.</strong></p>
+    <div class="sec">
+      <h2 class="slabel reveal">Problem Statement</h2>
+      <div class="sbody reveal">
+        <p>Generic job boards assume one listing is one role, one salary, one Apply button. Event staffing isn't like that — a single wedding needs a planner, a decorator, servers and a photographer, usually for one day, often hired separately.</p>
+        <p>Recruiters were forced to post five listings for one event; freelancers couldn't judge their odds for the specific role they wanted. And a full-time hospitality manager and a wedding-day server have completely different needs — salary vs. day-rate, a formal process vs. verify-in-a-day. <strong>Goal: make one event post carry a whole crew, and give each side the right amount of structure.</strong></p>
+      </div>
     </div>
     <div class="shot reveal">
+      <!-- swap for shot-problem.png -->
       <div class="iso tight">
         <div class="iso__grid" data-iso>
           <div class="p"><img src="assets/mostly-events/r-submit-job.png" alt="" loading="lazy"></div>
@@ -340,101 +296,87 @@
   </section>
 
   <section id="research">
-    <h2 class="slabel reveal">Research &amp; Ideation</h2>
-    <div class="prose body reveal">
-      <p>I mapped requirements with the product team, then pulled apart the incumbents — Naukri, Indeed, WorkIndia and a few gig apps — to see what they optimise for and where event work falls through the cracks. Three findings drove the design:</p>
-      <p><strong>Job boards optimise for salary</strong>, but gig workers weigh day rate, vacancy count, distance and speed of payment. <strong>A gig CV isn't a CV</strong> — event freelancers work company-to-company with no single employer history. <strong>Trust runs both ways</strong> — an employer needs a fast signal, a freelancer needs the company to be real.</p>
-      <p>From there I ran ideation across both sides — flows, sketches and low-fi wireframes — validating the “event as the unit” model before high-fidelity. The recruiter posting form and the job-seeker listing were designed together, so the same structure reads correctly from both directions.</p>
+    <div class="sec">
+      <h2 class="slabel reveal">Research &amp; Ideation</h2>
+      <div class="sbody reveal">
+        <p>I mapped requirements with the product team, then pulled apart the incumbents — Naukri, Indeed, WorkIndia and a few gig apps — to see what they optimise for and where event work falls through the cracks. Three findings drove the design:</p>
+        <p><strong>Job boards optimise for salary</strong>, but gig workers weigh day rate, vacancy count, distance and speed of payment. <strong>A gig CV isn't a CV</strong> — event freelancers work company-to-company with no single employer history. <strong>Trust runs both ways</strong> — an employer needs a fast signal, a freelancer needs the company to be real.</p>
+        <p>From there I ran ideation across both sides — flows, sketches and low-fi wireframes — validating the “event as the unit” model before high-fidelity. The recruiter posting form and the job-seeker listing were designed together, so the same structure reads correctly from both directions.</p>
+      </div>
     </div>
     <div class="shot reveal">
+      <!-- swap for shot-model.png -->
       <div class="fcard slate">
         <span class="kick">The core decision</span>
         <h3>One event post. Many priced sub-roles.</h3>
         <span class="foot">Recruiter adds a Freelance Type &rarr; job-seeker sees distinct opportunities</span>
         <div class="drop">
-          <div class="p"><img src="assets/mostly-events/r-post-freelance.png" alt="Recruiter freelance posting with a Freelance Type list" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/js-my-jobs.png" alt="Job-seeker listing view" loading="lazy"></div>
+          <div class="p"><img src="assets/mostly-events/r-post-freelance.png" alt="Recruiter freelance posting" loading="lazy"></div>
+          <div class="p"><img src="assets/mostly-events/js-my-jobs.png" alt="Job-seeker listing" loading="lazy"></div>
         </div>
       </div>
     </div>
   </section>
 
   <section id="design">
-    <h2 class="slabel reveal">Design &amp; Results</h2>
-    <div class="prose body reveal">
-      <p>I designed both apps end to end in Figma and built the shared component library the team assembles screens from — one typeface carrying the hierarchy, a mint-to-slate palette (#3BCAAE → #2F4858), and line illustrations for onboarding and empty states.</p>
-      <p>When a recruiter posts a freelance event job, they add a <em>Freelance Type</em> for each sub-role — Hospitality Management, F&amp;B, a Shadow — each with its own day-rate range and vacancy count. On the job-seeker side that same post reads as several distinct opportunities. One post staffs the crew without becoming five posts to manage.</p>
-      <p>Recruiters verify with a business document and land on a dashboard built around one question — <strong>who do I still need to hire?</strong> — with a Good&nbsp;Fit / Maybe / Not&nbsp;A&nbsp;Fit assessment against each role. Job-seekers stay free, and see a plain-language status tracker that mirrors the recruiter's pipeline.</p>
+    <div class="sec">
+      <h2 class="slabel reveal">Design &amp; Results</h2>
+      <div class="sbody reveal">
+        <p>I designed both apps end to end in Figma and built the shared component library the team assembles screens from — one typeface carrying the hierarchy, a mint-to-slate palette (#3BCAAE → #2F4858), and line illustrations for onboarding and empty states.</p>
+        <p>When a recruiter posts a freelance event job, they add a <em>Freelance Type</em> for each sub-role — Hospitality Management, F&amp;B, a Shadow — each with its own day-rate range and vacancy count. On the job-seeker side that same post reads as several distinct opportunities. One post staffs the crew without becoming five posts to manage.</p>
+        <p>Recruiters verify with a business document and land on a dashboard built around one question — <strong>who do I still need to hire?</strong> — with a Good&nbsp;Fit / Maybe / Not&nbsp;A&nbsp;Fit assessment against each role. Job-seekers stay free, and see a plain-language status tracker that mirrors the recruiter's pipeline.</p>
+        <ul class="result reveal">
+          <li><b>Both sides</b> of the marketplace designed solo — recruiter product and job-seeker app.</li>
+          <li><b>4 post types</b>, each with a purpose-built form: Full-Time, Freelancing, Internship, Project Manager.</li>
+          <li><b>Free for job-seekers</b>; four recruiter tiers gated on applicant visibility and postings per month.</li>
+          <li><b>45+ screens</b> across the two apps, live at mostlyevents.com. <span class="todo">[Anjali — add real numbers: recruiters signed up, jobs posted, applications, hires.]</span></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="metrics reveal">
-      <div><div class="num"><span class="count" data-to="2">0</span></div><div class="cap2">sides of the marketplace, designed solo</div></div>
-      <div><div class="num"><span class="count" data-to="4">0</span></div><div class="cap2">post types, each with its own form</div></div>
-      <div><div class="num"><span class="count" data-to="45">0</span><span class="suf">+</span></div><div class="cap2">screens across the two apps</div></div>
-    </div>
-
-    <div class="stack shot">
+    <div class="shot stack">
       <div class="collage reveal">
         <img src="assets/mostly-events/r-home.png" alt="Recruiter dashboard" loading="lazy">
         <img src="assets/mostly-events/r-job-applicants.png" alt="Applicants for a role" loading="lazy">
-        <img src="assets/mostly-events/r-applicant-detail.png" alt="Applicant detail with fit assessment" loading="lazy">
+        <img src="assets/mostly-events/r-applicant-detail.png" alt="Applicant detail" loading="lazy">
         <img src="assets/mostly-events/r-company-profile.png" alt="Company profile" loading="lazy">
         <div class="cell">Both sides,<br>one component library</div>
-        <img src="assets/mostly-events/js-applied.png" alt="Job-seeker application tracker" loading="lazy">
+        <img src="assets/mostly-events/js-applied.png" alt="Application tracker" loading="lazy">
       </div>
-
-      <div class="gal reveal" aria-label="Screens — drag to scroll">
-        <div class="g"><img src="assets/mostly-events/r-submit-job.png" alt="Submit a new job" loading="lazy"></div>
-        <div class="g"><img src="assets/mostly-events/r-post-freelance.png" alt="Freelance posting with Freelance Type list" loading="lazy"></div>
-        <div class="g"><img src="assets/mostly-events/r-my-jobs.png" alt="My Jobs" loading="lazy"></div>
-        <div class="g"><img src="assets/mostly-events/r-applicants.png" alt="All applicants" loading="lazy"></div>
-        <div class="g"><img src="assets/mostly-events/js-my-jobs.png" alt="Job-seeker My Jobs" loading="lazy"></div>
-        <div class="g"><img src="assets/mostly-events/js-screening.png" alt="Career fit assessment" loading="lazy"></div>
-      </div>
-
       <div class="fcard reveal">
         <span class="kick">The business model</span>
         <h3>Free to find work. Pay to hire at volume.</h3>
         <div class="tiers">
-          <div class="tier"><div class="name">Free</div><div class="price">&#8377;0</div><ul><li>50 applicants / post</li><li>2 posts / month</li></ul></div>
-          <div class="tier"><div class="name">Starter</div><div class="price">&#8377;299</div><ul><li>100 applicants / post</li><li>5 posts / month</li></ul></div>
-          <div class="tier"><div class="name">Pro</div><div class="price">&#8377;1,599</div><ul><li>100 applicants / post</li><li>10 posts / month</li></ul></div>
-          <div class="tier"><div class="name">Elite</div><div class="price">&#8377;2,999</div><ul><li>Unlimited applicants</li><li>10 posts / month</li></ul></div>
+          <div class="tier"><div class="n">Free</div><div class="pr">&#8377;0</div><ul><li>50 applicants / post</li><li>2 posts / month</li></ul></div>
+          <div class="tier"><div class="n">Starter</div><div class="pr">&#8377;299</div><ul><li>100 applicants / post</li><li>5 posts / month</li></ul></div>
+          <div class="tier"><div class="n">Pro</div><div class="pr">&#8377;1,599</div><ul><li>100 applicants / post</li><li>10 posts / month</li></ul></div>
+          <div class="tier"><div class="n">Elite</div><div class="pr">&#8377;2,999</div><ul><li>Unlimited applicants</li><li>10 posts / month</li></ul></div>
         </div>
       </div>
-
-      <figure class="wideshot reveal" style="margin:0">
-        <img src="assets/mostly-events/fig-recruiter-onboarding.png" alt="Recruiter onboarding: the world's only recruitment platform built specifically for the event and wedding industry" loading="lazy" style="width:100%;border-radius:16px;border:1px solid var(--line)">
-      </figure>
+      <div class="reveal"><img src="assets/mostly-events/fig-recruiter-onboarding.png" alt="Recruiter onboarding screens" loading="lazy" style="width:100%;border-radius:10px;border:1px solid var(--line)"></div>
     </div>
-
-    <ul class="result reveal">
-      <li><b>Both sides</b> of the marketplace designed solo — recruiter product and job-seeker app.</li>
-      <li><b>4 post types</b>, each with a purpose-built form: Full-Time, Freelancing, Internship, Project Manager.</li>
-      <li><b>1 pricing model</b> — free for job-seekers, four recruiter tiers gated on applicant visibility and postings per month.</li>
-      <li><b>45+ screens</b> across the two apps, live at mostlyevents.com. <span class="todo">[Anjali — add real numbers: recruiters signed up, jobs posted, applications, hires.]</span></li>
-    </ul>
   </section>
 
   <section id="testimonial">
-    <h2 class="slabel reveal">Testimonial</h2>
-    <blockquote class="quote reveal">
-      <p class="todo" style="font-size:12px">[Anjali — drop in a line from your Developer Bazaar lead or the client here, or delete this section. A rough shape:]</p>
-      <p>“Anjali took Mostly Events from a rough brief to a shipped two-sided app almost single-handedly. She dug into how event staffing actually works and turned it into a product decision — one post, many roles — that shaped the whole build.”</p>
-    </blockquote>
-    <div class="qby reveal">&mdash; <b>[Name, Title]</b>, Developer Bazaar Technologies</div>
+    <div class="sec">
+      <h2 class="slabel reveal">Testimonial</h2>
+      <div class="sbody reveal">
+        <blockquote class="quote">
+          <p class="todo" style="font-size:12px">[Anjali — a line from your Developer Bazaar lead or the client, or delete this section. Draft:]</p>
+          <p>“Anjali took Mostly Events from a rough brief to a shipped two-sided app almost single-handedly. She dug into how event staffing actually works and turned it into a product decision — one post, many roles — that shaped the whole build.”</p>
+        </blockquote>
+        <div class="qby">&mdash; <b>[Name, Title]</b>, Developer Bazaar Technologies</div>
+      </div>
+    </div>
   </section>
 
 </div>
 
 <a class="marquee" href="verified-beauty-providers.html" aria-label="More works">
-  <div class="mq-track">
-    <span>More Works</span><span class="dim">More Works</span>
-    <span>More Works</span><span class="dim">More Works</span>
-  </div>
+  <div class="mq"><span>More Works</span><span class="o">More Works</span><span>More Works</span><span class="o">More Works</span></div>
 </a>
 
-<div class="shell">
+<div class="wrap">
   <div class="works">
     <a class="work vbp" href="verified-beauty-providers.html">
       <span class="arw">&#8599;</span>
@@ -448,7 +390,7 @@
 </div>
 
 <footer>
-  <div class="shell">
+  <div class="wrap">
     <div class="foot-links">
       <a href="index.html">&larr; Back to portfolio</a>
       <a href="mailto:palanjali0853@gmail.com">palanjali0853@gmail.com</a>
@@ -464,82 +406,40 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
   (function () {
-    // live clock in the nav (matches the reference)
     var clock = document.getElementById("clock");
-    function tick() {
-      var d = new Date(), p = function (n) { return (n < 10 ? "0" : "") + n; };
-      clock.textContent = p(d.getHours()) + ":" + p(d.getMinutes()) + ":" + p(d.getSeconds());
-    }
+    function tick() { var d = new Date(), p = function (n) { return (n < 10 ? "0" : "") + n; };
+      clock.textContent = p(d.getHours()) + ":" + p(d.getMinutes()) + ":" + p(d.getSeconds()); }
     tick(); setInterval(tick, 1000);
 
     var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    // back-to-top
     var toTop = document.getElementById("toTop");
-    toTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
-    });
+    toTop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); });
     addEventListener("scroll", function () { toTop.classList.toggle("on", scrollY > 700); }, { passive: true });
 
-    // drag-to-scroll the screen strip
-    document.querySelectorAll(".gal").forEach(function (gal) {
-      var down = false, sx = 0, sl = 0, moved = 0;
-      gal.addEventListener("pointerdown", function (e) { down = true; moved = 0; sx = e.clientX; sl = gal.scrollLeft; gal.setPointerCapture(e.pointerId); });
-      gal.addEventListener("pointermove", function (e) {
-        if (!down) return;
-        var dx = e.clientX - sx; moved += Math.abs(dx);
-        if (moved > 6) gal.classList.add("dragging");
-        gal.scrollLeft = sl - dx;
-      });
-      function end(e) { down = false; gal.classList.remove("dragging"); try { gal.releasePointerCapture(e.pointerId); } catch (er) {} }
-      gal.addEventListener("pointerup", end);
-      gal.addEventListener("pointercancel", end);
-    });
-
-    if (!window.gsap || reduce) {
-      document.querySelectorAll(".count").forEach(function (el) { el.textContent = el.dataset.to; });
-      return;
-    }
+    if (!window.gsap || reduce) return;
     gsap.registerPlugin(ScrollTrigger);
 
-    // rAF fires only when the page is actually rendering — a background load can
-    // never get stuck with .reveal elements hidden
-    requestAnimationFrame(function setup() {
-      gsap.set(".reveal", { opacity: 0, y: 20 });
-      ScrollTrigger.batch(".reveal", {
-        start: "top 90%",
-        onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, duration: 0.55, stagger: 0.08, ease: "power2.out", overwrite: true }); }
-      });
+    requestAnimationFrame(function () {
+      gsap.set(".reveal", { opacity: 0, y: 18 });
+      ScrollTrigger.batch(".reveal", { start: "top 92%",
+        onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, duration: 0.55, stagger: 0.08, ease: "power2.out", overwrite: true }); } });
       ScrollTrigger.refresh();
       gsap.utils.toArray(".reveal").forEach(function (el) {
-        if (el.getBoundingClientRect().top < innerHeight * 0.9) gsap.set(el, { opacity: 1, y: 0 });
+        if (el.getBoundingClientRect().top < innerHeight * 0.92) gsap.set(el, { opacity: 1, y: 0 });
       });
 
-      // parallax drift on the isometric grids
-      gsap.utils.toArray("[data-iso]").forEach(function (grid) {
-        gsap.fromTo(grid, { yPercent: 7 }, {
-          yPercent: -7, ease: "none",
-          scrollTrigger: { trigger: grid.closest(".iso"), start: "top bottom", end: "bottom top", scrub: 0.8 }
-        });
+      gsap.utils.toArray("[data-iso]").forEach(function (g) {
+        gsap.to(g, { yPercent: -6, ease: "none",
+          scrollTrigger: { trigger: g.closest(".iso"), start: "top bottom", end: "bottom top", scrub: 0.8 } });
       });
 
-      // count-up
-      gsap.utils.toArray(".count").forEach(function (el) {
-        var to = +el.dataset.to, obj = { v: 0 };
-        ScrollTrigger.create({
-          trigger: el, start: "top 92%", once: true,
-          onEnter: function () { gsap.to(obj, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = Math.round(obj.v); } }); }
-        });
-      });
-
-      // cursor tilt on the feature cards
       if (matchMedia("(pointer:fine)").matches) {
         document.querySelectorAll(".fcard").forEach(function (card) {
           var raf = 0, rx = 0, ry = 0;
           card.addEventListener("pointermove", function (e) {
             var r = card.getBoundingClientRect();
-            rx = ((e.clientX - r.left) / r.width - 0.5) * 6;
-            ry = ((e.clientY - r.top) / r.height - 0.5) * -6;
+            rx = ((e.clientX - r.left) / r.width - 0.5) * 5;
+            ry = ((e.clientY - r.top) / r.height - 0.5) * -5;
             if (!raf) raf = requestAnimationFrame(function () { raf = 0; card.style.transform = "perspective(1000px) rotateY(" + rx.toFixed(2) + "deg) rotateX(" + ry.toFixed(2) + "deg)"; });
           });
           card.addEventListener("pointerleave", function () { card.style.transform = ""; });
@@ -547,11 +447,8 @@
       }
 
       setTimeout(function () {
-        var rv = document.querySelector(".slabel.reveal");
-        if (rv && getComputedStyle(rv).opacity === "0") {
-          gsap.set(".reveal", { clearProps: "opacity,transform" });
-          document.querySelectorAll(".count").forEach(function (el) { el.textContent = el.dataset.to; });
-        }
+        var r = document.querySelector(".slabel.reveal");
+        if (r && getComputedStyle(r).opacity === "0") gsap.set(".reveal", { clearProps: "opacity,transform" });
       }, 4000);
     });
   })();
