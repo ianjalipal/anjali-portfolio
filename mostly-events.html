@@ -101,8 +101,10 @@
     transform:rotateX(52deg) rotateZ(-42deg); transform-origin:center; will-change:transform;
   }
   .iso.tight .iso__grid{ grid-template-columns:repeat(4,150px); }
-  .iso__grid .p{ border-radius:14px; overflow:hidden; border:2px solid #1c1f1e; box-shadow:0 20px 40px -20px rgba(0,0,0,.8); background:#fff; height:150px; }
+  .iso__grid .p{ border-radius:14px; overflow:hidden; border:2px solid #1c1f1e; box-shadow:0 20px 40px -20px rgba(0,0,0,.8); background:#fff; height:150px;
+    transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease; }
   .iso__grid .p img{ width:100%; }
+  .iso__grid .p:hover{ transform:translateZ(60px) scale(1.04); box-shadow:0 30px 60px -20px rgba(0,0,0,.9), 0 0 0 1px rgba(59,202,174,.5); z-index:3; }
   .iso::after{
     content:""; position:absolute; inset:0; pointer-events:none;
     background:radial-gradient(120% 90% at 50% 45%, transparent 40%, rgba(0,0,0,.55) 90%);
@@ -132,13 +134,36 @@
   .result li b{ color:var(--ink); font-family:var(--display); font-weight:600; }
   .todo{ font-family:var(--mono); font-size:11px; color:var(--accent); }
 
+  /* count-up metrics */
+  .metrics{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; margin-top:clamp(28px,4vw,40px); }
+  @media (max-width:680px){ .metrics{ grid-template-columns:1fr; } }
+  .metrics div{ background:var(--bg); padding:26px 24px; }
+  .metrics .num{ font-family:var(--display); font-weight:600; font-size:clamp(36px,6vw,58px); line-height:1; color:var(--ink); font-variant-numeric:tabular-nums; }
+  .metrics .num .suf{ color:var(--accent); }
+  .metrics .cap2{ font-size:12px; color:var(--ink-mid); margin-top:8px; max-width:24ch; }
+
+  /* draggable strip */
+  .gal{ display:flex; gap:14px; overflow-x:auto; padding:6px 2px 14px; scroll-snap-type:x proximity; margin-top:clamp(28px,4vw,40px); cursor:grab; }
+  .gal.dragging{ cursor:grabbing; scroll-snap-type:none; }
+  .gal.dragging *{ pointer-events:none; }
+  .gal::-webkit-scrollbar{ height:5px; }
+  .gal::-webkit-scrollbar-thumb{ background:var(--line-2); border-radius:3px; }
+  .gal .g{ flex:0 0 auto; width:clamp(180px,44vw,230px); scroll-snap-align:center; border-radius:16px; overflow:hidden; border:2px solid #1c1f1e; background:#fff; }
+  .gal .g img{ width:100%; display:block; }
+
+  .fcard .drop .p{ transition:transform .4s cubic-bezier(.2,.7,.3,1); }
+  .fcard:hover .drop .p:first-child{ transform:rotate(-8deg) translateY(4px); }
+  .fcard:hover .drop .p:last-child{ transform:rotate(6deg) translateY(-8px); }
+
   /* section imagery */
   .shot{ margin-top:clamp(36px,6vw,60px); }
   .collage{
     display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:clamp(150px,22vw,210px); gap:8px;
     background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:12px;
   }
-  .collage img{ width:100%; height:100%; object-fit:cover; object-position:top center; border-radius:9px; }
+  .collage img{ width:100%; height:100%; object-fit:cover; object-position:top center; border-radius:9px;
+    transition:object-position 1.4s cubic-bezier(.33,.02,.29,1), filter .3s ease; }
+  .collage img:hover{ object-position:bottom center; filter:brightness(1.05); }
   .collage .cell{ border-radius:9px; background:linear-gradient(135deg,var(--accent-deep),#0F949D); display:grid; place-items:center; color:#04211F; font-family:var(--display); font-weight:600; font-size:clamp(13px,1.6vw,17px); line-height:1.15; text-align:center; padding:14px; }
   @media (max-width:640px){ .collage{ grid-template-columns:1fr 1fr; } }
 
@@ -342,6 +367,12 @@
       <p>Recruiters verify with a business document and land on a dashboard built around one question — <strong>who do I still need to hire?</strong> — with a Good&nbsp;Fit / Maybe / Not&nbsp;A&nbsp;Fit assessment against each role. Job-seekers stay free, and see a plain-language status tracker that mirrors the recruiter's pipeline.</p>
     </div>
 
+    <div class="metrics reveal">
+      <div><div class="num"><span class="count" data-to="2">0</span></div><div class="cap2">sides of the marketplace, designed solo</div></div>
+      <div><div class="num"><span class="count" data-to="4">0</span></div><div class="cap2">post types, each with its own form</div></div>
+      <div><div class="num"><span class="count" data-to="45">0</span><span class="suf">+</span></div><div class="cap2">screens across the two apps</div></div>
+    </div>
+
     <div class="stack shot">
       <div class="collage reveal">
         <img src="assets/mostly-events/r-home.png" alt="Recruiter dashboard" loading="lazy">
@@ -350,6 +381,15 @@
         <img src="assets/mostly-events/r-company-profile.png" alt="Company profile" loading="lazy">
         <div class="cell">Both sides,<br>one component library</div>
         <img src="assets/mostly-events/js-applied.png" alt="Job-seeker application tracker" loading="lazy">
+      </div>
+
+      <div class="gal reveal" aria-label="Screens — drag to scroll">
+        <div class="g"><img src="assets/mostly-events/r-submit-job.png" alt="Submit a new job" loading="lazy"></div>
+        <div class="g"><img src="assets/mostly-events/r-post-freelance.png" alt="Freelance posting with Freelance Type list" loading="lazy"></div>
+        <div class="g"><img src="assets/mostly-events/r-my-jobs.png" alt="My Jobs" loading="lazy"></div>
+        <div class="g"><img src="assets/mostly-events/r-applicants.png" alt="All applicants" loading="lazy"></div>
+        <div class="g"><img src="assets/mostly-events/js-my-jobs.png" alt="Job-seeker My Jobs" loading="lazy"></div>
+        <div class="g"><img src="assets/mostly-events/js-screening.png" alt="Career fit assessment" loading="lazy"></div>
       </div>
 
       <div class="fcard reveal">
@@ -420,6 +460,8 @@
 
 <button class="toTop" id="toTop" type="button" aria-label="Back to top">&uarr;</button>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
   (function () {
     // live clock in the nav (matches the reference)
@@ -430,13 +472,88 @@
     }
     tick(); setInterval(tick, 1000);
 
+    var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     // back-to-top
     var toTop = document.getElementById("toTop");
-    var smooth = !matchMedia("(prefers-reduced-motion: reduce)").matches;
     toTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
     });
     addEventListener("scroll", function () { toTop.classList.toggle("on", scrollY > 700); }, { passive: true });
+
+    // drag-to-scroll the screen strip
+    document.querySelectorAll(".gal").forEach(function (gal) {
+      var down = false, sx = 0, sl = 0, moved = 0;
+      gal.addEventListener("pointerdown", function (e) { down = true; moved = 0; sx = e.clientX; sl = gal.scrollLeft; gal.setPointerCapture(e.pointerId); });
+      gal.addEventListener("pointermove", function (e) {
+        if (!down) return;
+        var dx = e.clientX - sx; moved += Math.abs(dx);
+        if (moved > 6) gal.classList.add("dragging");
+        gal.scrollLeft = sl - dx;
+      });
+      function end(e) { down = false; gal.classList.remove("dragging"); try { gal.releasePointerCapture(e.pointerId); } catch (er) {} }
+      gal.addEventListener("pointerup", end);
+      gal.addEventListener("pointercancel", end);
+    });
+
+    if (!window.gsap || reduce) {
+      document.querySelectorAll(".count").forEach(function (el) { el.textContent = el.dataset.to; });
+      return;
+    }
+    gsap.registerPlugin(ScrollTrigger);
+
+    // rAF fires only when the page is actually rendering — a background load can
+    // never get stuck with .reveal elements hidden
+    requestAnimationFrame(function setup() {
+      gsap.set(".reveal", { opacity: 0, y: 20 });
+      ScrollTrigger.batch(".reveal", {
+        start: "top 90%",
+        onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, duration: 0.55, stagger: 0.08, ease: "power2.out", overwrite: true }); }
+      });
+      ScrollTrigger.refresh();
+      gsap.utils.toArray(".reveal").forEach(function (el) {
+        if (el.getBoundingClientRect().top < innerHeight * 0.9) gsap.set(el, { opacity: 1, y: 0 });
+      });
+
+      // parallax drift on the isometric grids
+      gsap.utils.toArray("[data-iso]").forEach(function (grid) {
+        gsap.fromTo(grid, { yPercent: 7 }, {
+          yPercent: -7, ease: "none",
+          scrollTrigger: { trigger: grid.closest(".iso"), start: "top bottom", end: "bottom top", scrub: 0.8 }
+        });
+      });
+
+      // count-up
+      gsap.utils.toArray(".count").forEach(function (el) {
+        var to = +el.dataset.to, obj = { v: 0 };
+        ScrollTrigger.create({
+          trigger: el, start: "top 92%", once: true,
+          onEnter: function () { gsap.to(obj, { v: to, duration: 1.1, ease: "power2.out", onUpdate: function () { el.textContent = Math.round(obj.v); } }); }
+        });
+      });
+
+      // cursor tilt on the feature cards
+      if (matchMedia("(pointer:fine)").matches) {
+        document.querySelectorAll(".fcard").forEach(function (card) {
+          var raf = 0, rx = 0, ry = 0;
+          card.addEventListener("pointermove", function (e) {
+            var r = card.getBoundingClientRect();
+            rx = ((e.clientX - r.left) / r.width - 0.5) * 6;
+            ry = ((e.clientY - r.top) / r.height - 0.5) * -6;
+            if (!raf) raf = requestAnimationFrame(function () { raf = 0; card.style.transform = "perspective(1000px) rotateY(" + rx.toFixed(2) + "deg) rotateX(" + ry.toFixed(2) + "deg)"; });
+          });
+          card.addEventListener("pointerleave", function () { card.style.transform = ""; });
+        });
+      }
+
+      setTimeout(function () {
+        var rv = document.querySelector(".slabel.reveal");
+        if (rv && getComputedStyle(rv).opacity === "0") {
+          gsap.set(".reveal", { clearProps: "opacity,transform" });
+          document.querySelectorAll(".count").forEach(function (el) { el.textContent = el.dataset.to; });
+        }
+      }, 4000);
+    });
   })();
 </script>
 
