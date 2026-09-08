@@ -165,13 +165,6 @@
   .collage .cell{ border-radius:8px; background:linear-gradient(135deg,#17AFA9,#0F949D); display:grid; place-items:center; text-align:center; padding:14px; color:#04211F; font-family:var(--display); font-weight:600; font-size:clamp(13px,1.5vw,16px); line-height:1.15; }
   @media (max-width:640px){ .collage{ grid-template-columns:1fr 1fr; } }
 
-  .tiers{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; position:relative; z-index:2; }
-  @media (max-width:640px){ .tiers{ grid-template-columns:1fr 1fr; } }
-  .tier{ border:1px solid rgba(255,255,255,.2); border-radius:10px; background:rgba(0,0,0,.15); padding:16px; }
-  .tier .n{ font-family:var(--display); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:#fff; }
-  .tier .pr{ font-family:var(--display); font-weight:600; font-size:20px; color:#fff; margin:4px 0 8px; }
-  .tier ul{ list-style:none; margin:0; padding:0; font-size:11px; line-height:1.5; color:rgba(255,255,255,.85); }
-
   /* marquee + works */
   .marquee{ display:block; margin-top:clamp(80px,12vw,150px); overflow:hidden; padding:clamp(24px,4vw,40px) 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .mq{ display:inline-flex; white-space:nowrap; will-change:transform; animation:mq 24s linear infinite; }
@@ -332,7 +325,7 @@
         <ul class="result reveal">
           <li><b>Both sides</b> of the marketplace designed solo — recruiter product and job-seeker app.</li>
           <li><b>4 post types</b>, each with a purpose-built form: Full-Time, Freelancing, Internship, Project Manager.</li>
-          <li><b>Free for job-seekers</b>; four recruiter tiers gated on applicant visibility and postings per month.</li>
+          <li><b>Free for job-seekers</b> on every flow — apply, track and get screened at no cost.</li>
           <li><b>45+ screens</b> across the two apps, live at mostlyevents.com. <span class="todo">[Anjali — add real numbers: recruiters signed up, jobs posted, applications, hires.]</span></li>
         </ul>
       </div>
@@ -346,16 +339,6 @@
         <img src="assets/mostly-events/r-company-profile.png" alt="Company profile" loading="lazy">
         <div class="cell">Both sides,<br>one component library</div>
         <img src="assets/mostly-events/js-applied.png" alt="Application tracker" loading="lazy">
-      </div>
-      <div class="fcard reveal">
-        <span class="kick">The business model</span>
-        <h3>Free to find work. Pay to hire at volume.</h3>
-        <div class="tiers">
-          <div class="tier"><div class="n">Free</div><div class="pr">&#8377;0</div><ul><li>50 applicants / post</li><li>2 posts / month</li></ul></div>
-          <div class="tier"><div class="n">Starter</div><div class="pr">&#8377;299</div><ul><li>100 applicants / post</li><li>5 posts / month</li></ul></div>
-          <div class="tier"><div class="n">Pro</div><div class="pr">&#8377;1,599</div><ul><li>100 applicants / post</li><li>10 posts / month</li></ul></div>
-          <div class="tier"><div class="n">Elite</div><div class="pr">&#8377;2,999</div><ul><li>Unlimited applicants</li><li>10 posts / month</li></ul></div>
-        </div>
       </div>
       <div class="reveal"><img src="assets/mostly-events/fig-recruiter-onboarding.png" alt="Recruiter onboarding screens" loading="lazy" style="width:100%;border-radius:10px;border:1px solid var(--line)"></div>
     </div>
