@@ -406,6 +406,16 @@
           scrollTrigger: { trigger: g.closest(".iso"), start: "top bottom", end: "bottom top", scrub: 0.8 } });
       });
 
+      // cover image — zoom-out + parallax on scroll (reference behaviour)
+      var coverImg = document.querySelector(".cover img");
+      if (coverImg) {
+        gsap.set(coverImg, { willChange: "transform" });
+        gsap.fromTo(coverImg, { scale: 1.1 }, {
+          scale: 1, ease: "none",
+          scrollTrigger: { trigger: coverImg.closest(".cover"), start: "top bottom", end: "center center", scrub: 0.9 }
+        });
+      }
+
       if (matchMedia("(pointer:fine)").matches) {
         document.querySelectorAll(".fcard").forEach(function (card) {
           var raf = 0, rx = 0, ry = 0;
