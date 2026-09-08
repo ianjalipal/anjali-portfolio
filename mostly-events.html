@@ -135,11 +135,11 @@
   /* section imagery */
   .shot{ margin-top:clamp(36px,6vw,60px); }
   .collage{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:8px; background:var(--surface);
-    border:1px solid var(--line); border-radius:16px; padding:12px;
+    display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:clamp(150px,22vw,210px); gap:8px;
+    background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:12px;
   }
-  .collage img,.collage .cell{ border-radius:9px; overflow:hidden; height:100%; object-fit:cover; }
-  .collage .cell{ background:linear-gradient(135deg,var(--accent-deep),#0F949D); display:grid; place-items:center; color:#04211F; font-family:var(--display); font-weight:600; font-size:clamp(13px,1.6vw,17px); text-align:center; padding:14px; min-height:120px; }
+  .collage img{ width:100%; height:100%; object-fit:cover; object-position:top center; border-radius:9px; }
+  .collage .cell{ border-radius:9px; background:linear-gradient(135deg,var(--accent-deep),#0F949D); display:grid; place-items:center; color:#04211F; font-family:var(--display); font-weight:600; font-size:clamp(13px,1.6vw,17px); line-height:1.15; text-align:center; padding:14px; }
   @media (max-width:640px){ .collage{ grid-template-columns:1fr 1fr; } }
 
   .fcard{
