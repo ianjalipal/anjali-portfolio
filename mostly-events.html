@@ -94,7 +94,7 @@
   /* cover — full-width landscape */
   .cover{ margin-top:clamp(48px,7vw,80px); }
   .cover figure{ margin:0; border-radius:12px; overflow:hidden; }
-  .cover img{ width:100%; aspect-ratio:1421/901; object-fit:cover; }
+  .cover img{ width:100%; height:auto; aspect-ratio:1421/901; object-fit:cover; display:block; }
   /* fallback composition until hero-cover.png exists */
   .iso{
     position:relative; border-radius:12px; overflow:hidden; aspect-ratio:1421/901;
@@ -232,21 +232,7 @@
     <a class="btn" data-h href="https://mostlyevents.com" target="_blank" rel="noopener">Live preview &#8599;</a>
 
     <div class="cover" data-h>
-      <!-- swap for <figure><img src="assets/mostly-events/hero-cover.png" alt="Mostly Events on a phone"></figure> when the mockup is ready -->
-      <div class="iso">
-        <div class="iso__grid" data-iso>
-          <div class="p"><img src="assets/mostly-events/r-home.png" alt="Recruiter dashboard" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/r-my-jobs.png" alt="My Jobs" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/r-job-desc.png" alt="Job description" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/r-post-freelance.png" alt="Freelance posting" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/r-applicants.png" alt="Applicants" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/r-applicant-detail.png" alt="Applicant detail" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/js-my-jobs.png" alt="Job-seeker jobs" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/js-applied.png" alt="Application tracker" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/r-job-applicants.png" alt="Role applicants" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/js-screening.png" alt="Screening" loading="lazy"></div>
-        </div>
-      </div>
+      <figure><img src="assets/mostly-events/hero-cover.jpg" alt="Mostly Events — job-seeker and recruiter apps, with the one-post-many-roles model" width="1421" height="901"></figure>
     </div>
 
     <dl class="meta" data-h>
