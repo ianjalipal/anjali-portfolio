@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Mostly Events — Case Study | Anjali Pal</title>
+<title>JayHyzmat — Case Study | Anjali Pal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<meta name="description" content="Mostly Events — a recruitment app built only for the events industry, where one event post staffs a whole crew. Both sides designed solo at Developer Bazaar Technologies. By Anjali Pal.">
+<meta name="description" content="JayHyzmat — a building-materials marketplace for Turkmenistan. Browse construction supplies, compare by price and distance, order to site. Product design end to end — UX, UI and the design system. By Anjali Pal.">
 <meta name="author" content="Anjali Pal">
-<meta name="theme-color" content="#FAFAFA">
-<link rel="canonical" href="https://ianjalipal.github.io/anjali-portfolio/mostly-events.html">
+<link rel="canonical" href="https://ianjalipal.github.io/anjali-portfolio/jay-hyzmat.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mostly Events — Events-Industry Recruitment App (Case Study)">
-<meta property="og:description" content="One listing, many roles: designing both sides of a recruitment app built only for weddings and events. By Anjali Pal.">
-<meta property="og:url" content="https://ianjalipal.github.io/anjali-portfolio/mostly-events.html">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2317AFA9'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Arial,sans-serif'%20font-size='15'%20font-weight='800'%20text-anchor='middle'%20fill='%23fff'%3EME%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="JayHyzmat — Building-Materials Marketplace (Case Study)">
+<meta property="og:description" content="Designing a spec-first, distance-aware marketplace for construction supplies — UX, UI and the design system. By Anjali Pal.">
+<meta property="og:url" content="https://ianjalipal.github.io/anjali-portfolio/jay-hyzmat.html">
+<meta name="theme-color" content="#FAFAFA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%231F5E4A'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Arial,sans-serif'%20font-size='14'%20font-weight='800'%20text-anchor='middle'%20fill='%23fff'%3EJH%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -22,13 +22,14 @@
     --bg:#FAFAFA;
     --card:#FFFFFF;
     --ink:#16181F;
-    --grey:#6B7280;          /* body + description (homepage --ink-2) */
-    --dim:#9AA0AC;           /* homepage --ink-3 */
+    --grey:#6B7280;
+    --dim:#9AA0AC;
     --line:#ECECEC;
     --line-2:#E2E2E6;
-    --accent:#0E9E93;        /* Mostly Events mint — links, hover, on white */
-    --accent-bright:#3BCAAE; /* fills */
-    --accent-soft:#E7F6F4;
+    --accent:#1F5E4A;        /* JayHyzmat green — links, hover, on white */
+    --accent-bright:#2E8B5F;
+    --accent-soft:#E7F1EC;
+    --orange:#E8912F;        /* JayHyzmat action orange */
     --surface:#F4F4F6;
     --r:32px;
     --r-md:20px;
@@ -47,8 +48,8 @@
   body::before{
     content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
     background:
-      radial-gradient(38% 30% at 88% 4%, rgba(59,202,174,.12), transparent 70%),
-      radial-gradient(34% 30% at 6% 96%, rgba(59,202,174,.09), transparent 70%);
+      radial-gradient(38% 30% at 88% 4%, rgba(31,94,74,.10), transparent 70%),
+      radial-gradient(34% 30% at 6% 96%, rgba(232,145,47,.08), transparent 70%);
   }
   img{ max-width:100%; display:block; }
   a{ color:inherit; text-decoration:none; }
@@ -82,7 +83,7 @@
   }
   .hero .desc{
     font-size:clamp(15px,1.4vw,17px); line-height:1.6;
-    color:var(--grey); max-width:56ch; margin:0 auto clamp(26px,3.4vw,38px);
+    color:var(--grey); max-width:58ch; margin:0 auto clamp(26px,3.4vw,38px);
   }
   .btn{
     font-size:13.5px; font-weight:600; letter-spacing:-.01em;
@@ -91,14 +92,13 @@
   }
   .btn:hover{ color:#fff; transform:translateY(-2px); box-shadow:var(--shadow); }
 
-  /* cover — full-width landscape */
+  /* cover */
   .cover{ margin-top:clamp(40px,6vw,72px); }
   .cover figure{ margin:0; border-radius:var(--r-md); overflow:hidden; box-shadow:var(--shadow); }
   .cover img{ width:100%; height:auto; aspect-ratio:1421/901; object-fit:cover; display:block; }
-  /* fallback composition until hero-cover.png exists */
   .iso{
     position:relative; border-radius:var(--r-md); overflow:hidden; aspect-ratio:1421/901;
-    background:radial-gradient(120% 130% at 30% -10%, rgba(59,202,174,.16), transparent 55%), var(--surface);
+    background:radial-gradient(120% 130% at 30% -10%, rgba(31,94,74,.14), transparent 55%), var(--surface);
     border:1px solid var(--line); box-shadow:var(--shadow-lg); perspective:1600px; perspective-origin:50% 38%;
   }
   .iso__grid{
@@ -107,12 +107,12 @@
   }
   .iso.tight .iso__grid{ grid-template-columns:repeat(4,150px); }
   .iso__grid .p{ border-radius:var(--r-sm); overflow:hidden; border:1px solid var(--line-2); box-shadow:0 22px 44px -22px rgba(22,24,31,.28); background:#fff; height:150px; transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s; }
-  .iso__grid .p img{ width:100%; }
-  .iso__grid .p:hover{ transform:translateZ(60px) scale(1.04); box-shadow:0 34px 64px -18px rgba(22,24,31,.4), 0 0 0 1px rgba(14,158,147,.55); z-index:3; }
+  .iso__grid .p img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+  .iso__grid .p:hover{ transform:translateZ(60px) scale(1.04); box-shadow:0 34px 64px -18px rgba(22,24,31,.4), 0 0 0 1px rgba(31,94,74,.55); z-index:3; }
   .iso::after{ content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(120% 85% at 50% 45%, transparent 45%, rgba(244,244,246,.55) 94%); }
   @media (max-width:640px){ .iso__grid{ grid-template-columns:repeat(4,104px); gap:12px; } .iso__grid .p{ height:104px; } }
 
-  /* meta — 4 items across */
+  /* meta */
   .meta{ display:flex; flex-wrap:wrap; gap:24px 40px; justify-content:space-between; margin-top:clamp(40px,6vw,64px); }
   .meta div{ display:flex; flex-direction:column; gap:6px; }
   .meta dt{ font-size:12px; font-weight:600; color:var(--dim); }
@@ -120,7 +120,7 @@
   .meta dd a{ color:var(--accent); }
   @media (max-width:760px){ .meta{ gap:20px 28px; } .meta div{ flex:1 1 40%; } }
 
-  /* sections — 2-column: label left, body right */
+  /* sections */
   section{ padding:clamp(60px,9vw,112px) 0 0; }
   .sec{ display:grid; grid-template-columns:260px minmax(0,640px); justify-content:space-between; gap:40px; }
   @media (max-width:960px){ .sec{ grid-template-columns:1fr; gap:16px; } }
@@ -129,15 +129,15 @@
   .sbody p + p{ margin-top:1.2em; }
   .sbody .result{ list-style:none; margin:1.5em 0 0; padding:0; }
   .sbody .result li{ font-size:clamp(15px,1.4vw,17px); line-height:1.55; color:var(--grey); position:relative; padding-left:20px; margin:.5em 0; }
-  .sbody .result li::before{ content:"—"; position:absolute; left:0; color:var(--accent); }
+  .sbody .result li::before{ content:"—"; position:absolute; left:0; color:var(--orange); }
   .sbody .result li b{ color:var(--ink); font-weight:700; }
   .sbody .quote{ font-family:var(--serif); font-style:italic; font-size:clamp(18px,2vw,22px); line-height:1.4; color:var(--ink); }
   .sbody .quote p + p{ margin-top:.7em; }
   .sbody .qby{ margin-top:1.4em; font-size:13px; font-weight:600; color:var(--dim); }
   .sbody .qby b{ color:var(--ink); font-weight:700; }
-  .todo{ font-size:12px; color:var(--accent); font-weight:600; }
+  .todo{ font-size:12px; color:var(--orange); font-weight:600; }
 
-  /* section image — spans full content width, sits under the whole 2-col block */
+  /* section image */
   .shot{ margin-top:clamp(36px,5vw,64px); border-radius:var(--r-md); overflow:hidden; }
   .shot img{ width:100%; border-radius:var(--r-md); }
   .shot.stack{ display:grid; gap:clamp(18px,3vw,32px); border-radius:0; overflow:visible; }
@@ -145,14 +145,14 @@
   .fcard{
     position:relative; overflow:hidden; border-radius:var(--r-md); padding:clamp(28px,5vw,56px);
     min-height:clamp(300px,38vw,440px); display:flex; flex-direction:column; justify-content:space-between;
-    background:linear-gradient(135deg,#0E4E52,#17AFA9 68%,#3BCAAE);
+    background:linear-gradient(135deg,#123D30,#1F5E4A 62%,#2E8B5F);
   }
-  .fcard.slate{ background:linear-gradient(135deg,#14343A,#1F5D63 68%,#2E8C86); }
+  .fcard.warm{ background:linear-gradient(135deg,#7A3C10,#C9762A 60%,#E8912F); }
   .fcard .kick{ font-size:12px; font-weight:600; color:rgba(255,255,255,.75); position:relative; z-index:2; }
   .fcard h3{ font-weight:800; font-size:clamp(22px,3vw,34px); line-height:1.1; letter-spacing:-.03em; color:#fff; max-width:18ch; margin:0; position:relative; z-index:2; }
   .fcard .foot{ font-size:12px; font-weight:600; color:rgba(255,255,255,.9); position:relative; z-index:2; }
   .fcard .drop{ position:absolute; right:clamp(-56px,-5vw,-16px); bottom:clamp(-46px,-5vw,-8px); display:flex; z-index:1; filter:drop-shadow(0 40px 60px rgba(0,0,0,.45)); }
-  .fcard .drop .p{ width:clamp(120px,17vw,180px); border-radius:20px; border:6px solid #fff; overflow:hidden; background:#fff; transition:transform .4s cubic-bezier(.2,.7,.3,1); }
+  .fcard .drop .p{ width:clamp(120px,17vw,170px); border-radius:20px; border:6px solid #fff; overflow:hidden; background:#fff; transition:transform .4s cubic-bezier(.2,.7,.3,1); }
   .fcard .drop .p:first-child{ transform:rotate(-8deg) translateY(14px); }
   .fcard .drop .p:last-child{ transform:rotate(6deg); margin-left:-38px; }
   .fcard:hover .drop .p:first-child{ transform:rotate(-8deg) translateY(2px); }
@@ -161,8 +161,8 @@
 
   .collage{ display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:clamp(150px,20vw,200px); gap:8px; background:var(--card); border:1px solid var(--line); border-radius:var(--r-md); padding:12px; box-shadow:var(--shadow); }
   .collage img{ width:100%; height:100%; object-fit:cover; object-position:top center; border-radius:var(--r-sm); transition:object-position 1.4s cubic-bezier(.33,.02,.29,1), filter .3s; }
-  .collage img:hover{ object-position:bottom center; filter:brightness(1.06); }
-  .collage .cell{ border-radius:var(--r-sm); background:linear-gradient(135deg,#17AFA9,#0F949D); display:grid; place-items:center; text-align:center; padding:14px; color:#04211F; font-weight:700; font-size:clamp(13px,1.5vw,15px); line-height:1.2; letter-spacing:-.01em; }
+  .collage img:hover{ object-position:bottom center; filter:brightness(1.05); }
+  .collage .cell{ border-radius:var(--r-sm); background:linear-gradient(135deg,#1F5E4A,#2E8B5F); display:grid; place-items:center; text-align:center; padding:14px; color:#fff; font-weight:700; font-size:clamp(13px,1.5vw,15px); line-height:1.2; letter-spacing:-.01em; }
   @media (max-width:640px){ .collage{ grid-template-columns:1fr 1fr; } }
 
   /* marquee + works */
@@ -176,7 +176,7 @@
   .works{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(14px,2vw,20px); margin-top:clamp(36px,6vw,56px); }
   @media (max-width:720px){ .works{ grid-template-columns:1fr; } }
   .work{ position:relative; overflow:hidden; border-radius:var(--r-md); border:1px solid var(--line); aspect-ratio:16/10; display:flex; align-items:flex-end; padding:24px; background:var(--card); box-shadow:var(--shadow); transition:transform .22s ease, box-shadow .22s ease; }
-  .work.vbp{ background:linear-gradient(160deg,#FBF6F9,#fff); }
+  .work.me{ background:linear-gradient(160deg,#EAF6F4,#fff); }
   .work:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); }
   .work .wt{ font-weight:800; font-size:clamp(16px,2vw,21px); letter-spacing:-.02em; color:var(--ink); }
   .work .wk{ font-size:12px; font-weight:600; color:var(--dim); display:block; margin-top:4px; }
@@ -194,7 +194,7 @@
   .toTop.on{ opacity:1; transform:none; }
   .toTop:hover{ border-color:var(--accent); color:var(--accent); }
 
-  /* the one load animation — slide into place, opacity constant (reference) */
+  /* load animation */
   .nav{ animation:drop .85s cubic-bezier(.16,1,.3,1) .4s both; }
   @keyframes drop{ from{ transform:translateY(-160px); } to{ transform:translateY(0); } }
   [data-h]{ animation:rise .9s cubic-bezier(.16,1,.3,1) both; }
@@ -220,26 +220,40 @@
 <nav class="nav">
   <a href="index.html">&larr; Portfolio</a>
   <span id="clock" aria-hidden="true">--:--:--</span>
-  <a class="pill" href="https://mostlyevents.com" target="_blank" rel="noopener">Live &#8599;</a>
+  <a class="pill" href="#scope">Overview &darr;</a>
 </nav>
 
 <div class="wrap">
 
   <header class="hero">
     <div class="eyebrow" data-h>Case study</div>
-    <h1 class="title" data-h>Mostly Events</h1>
-    <p class="desc" data-h>A recruitment app built only for the events industry — where one event post staffs a whole crew. A décor lead, servers, a coordinator, a photographer, all from one listing. I designed <strong>both sides solo</strong> at Developer Bazaar: the recruiter product for event companies and the job-seeker app for freelancers.</p>
-    <a class="btn" data-h href="https://mostlyevents.com" target="_blank" rel="noopener">Live preview &#8599;</a>
+    <h1 class="title" data-h>JayHyzmat</h1>
+    <p class="desc" data-h>A building-materials marketplace for Turkmenistan — where trade buyers browse construction supplies, compare by <strong>price and distance</strong>, and order to site. I designed the product end to end: <strong>UX, UI and the design system</strong>.</p>
+    <a class="btn" data-h href="#design">See the screens &darr;</a>
 
     <div class="cover" data-h>
-      <figure><img src="assets/mostly-events/hero-cover.jpg" alt="Mostly Events — job-seeker and recruiter apps, with the one-post-many-roles model" width="1421" height="901"></figure>
+      <!-- swap for assets/jay-hyzmat/hero-cover.jpg when a composed banner is ready -->
+      <div class="iso">
+        <div class="iso__grid" data-iso>
+          <div class="p"><img src="assets/jay-hyzmat/sign-up.png" alt="Sign up" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/home.png" alt="Home" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/categories.png" alt="Categories" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/sub-categories.png" alt="Sub categories" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/search-results.png" alt="Search results" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/product-detail.png" alt="Product detail" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/cart.png" alt="Cart" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/checkout-address.png" alt="Checkout address" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/order-placed.png" alt="Order placed" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/dashboard.png" alt="Account dashboard" loading="lazy"></div>
+        </div>
+      </div>
     </div>
 
     <dl class="meta" data-h>
-      <div><dt>Year</dt><dd>2024</dd></div>
-      <div><dt>Role</dt><dd>Sole designer</dd></div>
-      <div><dt>Category</dt><dd>Recruitment · Mobile</dd></div>
-      <div><dt>Duration</dt><dd>~3 Months <span class="todo">[confirm]</span></dd></div>
+      <div><dt>Year</dt><dd>2024 <span class="todo">[confirm]</span></dd></div>
+      <div><dt>Role</dt><dd>Product designer</dd></div>
+      <div><dt>Scope</dt><dd>UX · UI · Design system</dd></div>
+      <div><dt>Category</dt><dd>E-commerce · Mobile</dd></div>
     </dl>
   </header>
 
@@ -247,8 +261,8 @@
     <div class="sec">
       <h2 class="slabel reveal">Project Scope</h2>
       <div class="sbody reveal">
-        <p>Design the job-seeker and recruiter sides of Mostly Events end to end — from requirements with the product team through wireframes, high-fidelity screens and usability testing. Native mobile, built for how event companies actually staff a wedding: many roles, many rates, one post.</p>
-        <p>Benchmarked against Naukri, Indeed and gig-work apps. Delivered user flows, screens and the shared component library the team assembled from, with hand-off to engineering.</p>
+        <p>Design JayHyzmat end to end — a native mobile marketplace for construction supplies in Turkmenistan. The build covers the full shopping lifecycle: sign-up and verification, a deep category browse, spec-first product pages, cart and a stepped checkout, order tracking, account management and in-app support.</p>
+        <p>My role spanned the whole product: <strong>UX</strong> — information architecture, user flows and wireframes; <strong>UI</strong> — every high-fidelity screen; and the <strong>design system</strong> — colour, type, spacing and radius tokens plus the component library the app is assembled from.</p>
       </div>
     </div>
   </section>
@@ -257,22 +271,21 @@
     <div class="sec">
       <h2 class="slabel reveal">Problem Statement</h2>
       <div class="sbody reveal">
-        <p>Generic job boards assume one listing is one role, one salary, one Apply button. Event staffing isn't like that — a single wedding needs a planner, a decorator, servers and a photographer, usually for one day, often hired separately.</p>
-        <p>Recruiters were forced to post five listings for one event; freelancers couldn't judge their odds for the specific role they wanted. And a full-time hospitality manager and a wedding-day server have completely different needs — salary vs. day-rate, a formal process vs. verify-in-a-day. <strong>Goal: make one event post carry a whole crew, and give each side the right amount of structure.</strong></p>
+        <p>Buying building materials in Turkmenistan means calling around suppliers one at a time — with no way to see who stocks what, at what price, or how far away it is. For trade buyers ordering by the pallet, <strong>distance and delivery matter as much as price</strong>: a cheaper valve two cities away isn't actually cheaper.</p>
+        <p>There was also no single, trusted place to compare products on real specifications — diameter, material, power rating, country of origin — the details a purchase actually turns on. <strong>Goal: put the local supply catalogue in one app, with the filters that decide a trade purchase built in — price, distance, brand and spec.</strong></p>
       </div>
     </div>
     <div class="shot reveal">
-      <!-- swap for shot-problem.png -->
       <div class="iso tight">
         <div class="iso__grid" data-iso>
-          <div class="p"><img src="assets/mostly-events/r-submit-job.png" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/r-post-freelance.png" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/js-my-jobs.png" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/r-my-jobs.png" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/js-screening.png" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/r-job-desc.png" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/js-applied.png" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/r-applicants.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/categories.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/sub-categories.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/search-results.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/filters.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/product-detail.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/cart.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/checkout-address.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/wishlist-empty.png" alt="" loading="lazy"></div>
         </div>
       </div>
     </div>
@@ -282,20 +295,18 @@
     <div class="sec">
       <h2 class="slabel reveal">Research &amp; Ideation</h2>
       <div class="sbody reveal">
-        <p>I mapped requirements with the product team, then pulled apart the incumbents — Naukri, Indeed, WorkIndia and a few gig apps — to see what they optimise for and where event work falls through the cracks. Three findings drove the design:</p>
-        <p><strong>Job boards optimise for salary</strong>, but gig workers weigh day rate, vacancy count, distance and speed of payment. <strong>A gig CV isn't a CV</strong> — event freelancers work company-to-company with no single employer history. <strong>Trust runs both ways</strong> — an employer needs a fast signal, a freelancer needs the company to be real.</p>
-        <p>From there I ran ideation across both sides — flows, sketches and low-fi wireframes — validating the “event as the unit” model before high-fidelity. The recruiter posting form and the job-seeker listing were designed together, so the same structure reads correctly from both directions.</p>
+        <p>I mapped the catalogue structure with the team. Construction categories nest deep — <em>Building Materials</em> alone splits into Metal Doors, Fire Doors, Metal Railings, MDF Doors, Ceramic Slab Tiles, Laminate Parquet and Galvanized Sheet — so browse needed three levels: category → sub-category → filtered results.</p>
+        <p>Benchmarking large e-commerce and trade-supply apps surfaced three principles: buyers <strong>shop by spec, not by picture</strong>, so every product needs a full characteristics table; <strong>distance is a first-class filter</strong>, not an afterthought, because delivery reach decides the order; and <strong>trust comes from detail</strong> — verified reviews and clear availability counts let a buyer commit without a phone call.</p>
       </div>
     </div>
     <div class="shot reveal">
-      <!-- swap for shot-model.png -->
-      <div class="fcard slate">
+      <div class="fcard">
         <span class="kick">The core decision</span>
-        <h3>One event post. Many priced sub-roles.</h3>
-        <span class="foot">Recruiter adds a Freelance Type &rarr; job-seeker sees distinct opportunities</span>
+        <h3>Spec-first, distance-aware — built for how trade buyers actually decide.</h3>
+        <span class="foot">Full characteristics table on every product &nbsp;&middot;&nbsp; price, brand, diameter and distance filters</span>
         <div class="drop">
-          <div class="p"><img src="assets/mostly-events/r-post-freelance.png" alt="Recruiter freelance posting" loading="lazy"></div>
-          <div class="p"><img src="assets/mostly-events/js-my-jobs.png" alt="Job-seeker listing" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/filters.png" alt="Filter sheet" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/product-detail.png" alt="Product detail with characteristics" loading="lazy"></div>
         </div>
       </div>
     </div>
@@ -305,28 +316,29 @@
     <div class="sec">
       <h2 class="slabel reveal">Design &amp; Results</h2>
       <div class="sbody reveal">
-        <p>I designed both apps end to end in Figma and built the shared component library the team assembles screens from — one typeface carrying the hierarchy, a mint-to-slate palette (#3BCAAE → #2F4858), and line illustrations for onboarding and empty states.</p>
-        <p>When a recruiter posts a freelance event job, they add a <em>Freelance Type</em> for each sub-role — Hospitality Management, F&amp;B, a Shadow — each with its own day-rate range and vacancy count. On the job-seeker side that same post reads as several distinct opportunities. One post staffs the crew without becoming five posts to manage.</p>
-        <p>Recruiters verify with a business document and land on a dashboard built around one question — <strong>who do I still need to hire?</strong> — with a Good&nbsp;Fit / Maybe / Not&nbsp;A&nbsp;Fit assessment against each role. Job-seekers stay free, and see a plain-language status tracker that mirrors the recruiter's pipeline.</p>
+        <p>Every product page carries a full <strong>characteristics table</strong> and verified reviews, so a buyer can decide without calling the supplier. Browse runs category → sub-category → results, with a filter sheet covering price range, brand, diameter, colour and rating — plus the distance filter for delivery reach.</p>
+        <p>Checkout is a three-step stepper — <em>Cart → Address → Order Summary</em> — with saved addresses and a clear order-placed confirmation carrying an order number. The account area covers order history, addresses, password, notification and language preferences, and an in-app <strong>live chat</strong> for support.</p>
+        <p>Underneath sits a full <strong>design system</strong>: a green/orange palette with success, warning and error ramps; a mobile type scale; spacing and radius tokens; and a component library with every interactive state drawn — default / filled / error inputs, five bottom-navigation states, and empty states for cart and wishlist.</p>
         <ul class="result reveal">
-          <li><b>Both sides</b> of the marketplace designed solo — recruiter product and job-seeker app.</li>
-          <li><b>4 post types</b>, each with a purpose-built form: Full-Time, Freelancing, Internship, Project Manager.</li>
-          <li><b>Free for job-seekers</b> on every flow — apply, track and get screened at no cost.</li>
-          <li><b>45+ screens</b> across the two apps, live at mostlyevents.com. <span class="todo">[Anjali — add real numbers: recruiters signed up, jobs posted, applications, hires.]</span></li>
+          <li><b>Full product designed end to end</b> — UX, UI and the design system.</li>
+          <li><b>3-level catalogue browse</b> — category → sub-category → filtered results, tuned for deep construction taxonomies.</li>
+          <li><b>Spec-first product page</b> with a full characteristics table, reviews and availability, plus a distance-aware filter set.</li>
+          <li><b>Design system &amp; component library</b> — tokens for colour, type, spacing and radius; every input, nav and empty state drawn.</li>
+          <li><b>50+ screens</b> across auth, browse, product, cart, checkout, orders, account and support. <span class="todo">[Anjali — confirm screen count, launch status and any usage numbers]</span></li>
         </ul>
       </div>
     </div>
 
     <div class="shot stack">
       <div class="collage reveal">
-        <img src="assets/mostly-events/r-home.png" alt="Recruiter dashboard" loading="lazy">
-        <img src="assets/mostly-events/r-job-applicants.png" alt="Applicants for a role" loading="lazy">
-        <img src="assets/mostly-events/r-applicant-detail.png" alt="Applicant detail" loading="lazy">
-        <img src="assets/mostly-events/r-company-profile.png" alt="Company profile" loading="lazy">
-        <div class="cell">Both sides,<br>one component library</div>
-        <img src="assets/mostly-events/js-applied.png" alt="Application tracker" loading="lazy">
+        <img src="assets/jay-hyzmat/home.png" alt="Home" loading="lazy">
+        <img src="assets/jay-hyzmat/sub-categories.png" alt="Sub categories" loading="lazy">
+        <img src="assets/jay-hyzmat/product-detail.png" alt="Product detail" loading="lazy">
+        <img src="assets/jay-hyzmat/checkout-address.png" alt="Checkout" loading="lazy">
+        <div class="cell">One design system,<br>every state drawn</div>
+        <img src="assets/jay-hyzmat/live-chat.png" alt="Live chat support" loading="lazy">
       </div>
-      <div class="reveal"><img src="assets/mostly-events/fig-recruiter-onboarding.png" alt="Recruiter onboarding screens" loading="lazy" style="width:100%;border-radius:10px;border:1px solid var(--line)"></div>
+      <div class="reveal"><img src="assets/jay-hyzmat/design-system.png" alt="JayHyzmat design system — colour, type, spacing, radius, grid, shadows and components" loading="lazy" style="width:100%;border-radius:var(--r-md);border:1px solid var(--line)"></div>
     </div>
   </section>
 
@@ -335,29 +347,29 @@
       <h2 class="slabel reveal">Testimonial</h2>
       <div class="sbody reveal">
         <blockquote class="quote">
-          <p class="todo" style="font-size:12px">[Anjali — a line from your Developer Bazaar lead or the client, or delete this section. Draft:]</p>
-          <p>“Anjali took Mostly Events from a rough brief to a shipped two-sided app almost single-handedly. She dug into how event staffing actually works and turned it into a product decision — one post, many roles — that shaped the whole build.”</p>
+          <p class="todo" style="font-size:12px">[Anjali — a line from the client or your lead on JayHyzmat, or delete this section. Placeholder:]</p>
+          <p>&ldquo;Anjali designed JayHyzmat from the ground up — the flows, every screen and the system that keeps it consistent. She understood that our buyers shop on specs and delivery distance, and built the whole product around that.&rdquo;</p>
         </blockquote>
-        <div class="qby">&mdash; <b>[Name, Title]</b>, Developer Bazaar Technologies</div>
+        <div class="qby">&mdash; <b>[Name, Title]</b>, JayHyzmat</div>
       </div>
     </div>
   </section>
 
 </div>
 
-<a class="marquee" href="verified-beauty-providers.html" aria-label="More works">
+<a class="marquee" href="mostly-events.html" aria-label="More works">
   <div class="mq"><span>More Works</span><span class="o">More Works</span><span>More Works</span><span class="o">More Works</span></div>
 </a>
 
 <div class="wrap">
   <div class="works">
-    <a class="work vbp" href="verified-beauty-providers.html">
+    <a class="work me" href="mostly-events.html">
+      <span class="arw">&#8599;</span>
+      <span><span class="wt">Mostly Events</span><span class="wk">Two-Sided Recruitment App</span></span>
+    </a>
+    <a class="work" href="verified-beauty-providers.html">
       <span class="arw">&#8599;</span>
       <span><span class="wt">Verified Beauty Providers</span><span class="wk">Marketplace &amp; Design System</span></span>
-    </a>
-    <a class="work" href="index.html#projects">
-      <span class="arw">&#8599;</span>
-      <span><span class="wt">All projects</span><span class="wk">Back to the portfolio</span></span>
     </a>
   </div>
 </div>
@@ -369,7 +381,7 @@
       <a href="mailto:palanjali0853@gmail.com">palanjali0853@gmail.com</a>
       <a href="https://linkedin.com/in/anjali-paal" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <p class="foot-fine">Mostly Events — a two-sided recruitment app for the events industry, live at mostlyevents.com. Screens shown are from the working Figma file; the visual pass to full high-fidelity imagery is still in progress.</p>
+    <p class="foot-fine">JayHyzmat — a building-materials marketplace for Turkmenistan (jayhyzmat.tm). Screens shown are exported from the design file. Currency shown is Turkmenistan manat (TMT).</p>
   </div>
 </footer>
 
@@ -406,7 +418,6 @@
           scrollTrigger: { trigger: g.closest(".iso"), start: "top bottom", end: "bottom top", scrub: 0.8 } });
       });
 
-      // cover image — zoom-out + parallax on scroll (reference behaviour)
       var coverImg = document.querySelector(".cover img");
       if (coverImg) {
         gsap.set(coverImg, { willChange: "transform" });
