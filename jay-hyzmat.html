@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JayHyzmat — Case Study | Anjali Pal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="JayHyzmat — a building-materials marketplace for Turkmenistan. Browse construction supplies, compare by price and distance, order to site. Product design end to end — UX, UI and the design system. By Anjali Pal.">
+<meta name="author" content="Anjali Pal">
+<link rel="canonical" href="https://ianjalipal.github.io/anjali-portfolio/jay-hyzmat.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JayHyzmat — Building-Materials Marketplace (Case Study)">
+<meta property="og:description" content="Designing a spec-first, distance-aware marketplace for construction supplies — UX, UI and the design system. By Anjali Pal.">
+<meta property="og:url" content="https://ianjalipal.github.io/anjali-portfolio/jay-hyzmat.html">
+<meta name="theme-color" content="#FAFAFA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%231F5E4A'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Arial,sans-serif'%20font-size='14'%20font-weight='800'%20text-anchor='middle'%20fill='%23fff'%3EJH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAFA;
+    --card:#FFFFFF;
+    --ink:#16181F;
+    --grey:#6B7280;
+    --dim:#9AA0AC;
+    --line:#ECECEC;
+    --line-2:#E2E2E6;
+    --accent:#1F5E4A;        /* JayHyzmat green — links, hover, on white */
+    --accent-bright:#2E8B5F;
+    --accent-soft:#E7F1EC;
+    --orange:#E8912F;        /* JayHyzmat action orange */
+    --surface:#F4F4F6;
+    --r:32px;
+    --r-md:20px;
+    --r-sm:13px;
+    --shadow:0 14px 40px -22px rgba(22,24,31,.14);
+    --shadow-lg:0 34px 70px -30px rgba(22,24,31,.22);
+    --font:"Inter",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --hand:"Caveat","Inter",cursive;
+    --serif:"Instrument Serif",Georgia,serif;
+    --wrap:1180px;
+    --pad:clamp(20px,4vw,40px);
+  }
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; overflow-x:hidden; }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:var(--font); font-size:15px; line-height:1.55; letter-spacing:-.011em; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body::before{
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(38% 30% at 88% 4%, rgba(31,94,74,.10), transparent 70%),
+      radial-gradient(34% 30% at 6% 96%, rgba(232,145,47,.08), transparent 70%);
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  a:hover{ color:var(--accent); }
+  ::selection{ background:var(--accent); color:#fff; }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:8px; }
+  p{ margin:0; }
+  strong{ color:var(--ink); font-weight:700; }
+  em{ color:var(--ink); font-style:normal; font-weight:600; }
+
+  .wrap{ position:relative; z-index:1; max-width:var(--wrap); margin:0 auto; padding:0 var(--pad); }
+
+  /* nav */
+  .nav{
+    position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:16px var(--pad); background:linear-gradient(var(--bg), rgba(250,250,250,.6)); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    font-size:13px; font-weight:600; letter-spacing:-.01em; color:var(--grey);
+  }
+  .nav a{ color:var(--grey); }
+  .nav a:hover{ color:var(--accent); }
+  .nav .pill{ border:1px solid var(--line-2); border-radius:999px; padding:8px 16px; color:var(--accent); box-shadow:var(--shadow); display:inline-flex; align-items:center; gap:6px; transition:border-color .2s, color .2s, transform .16s ease; }
+  .nav .pill:hover{ border-color:var(--accent); transform:translateY(-1px); }
+  #clock{ font-variant-numeric:tabular-nums; color:var(--dim); font-size:12.5px; font-weight:600; }
+
+  /* hero — centred */
+  .hero{ text-align:center; padding:clamp(56px,9vw,104px) 0 0; }
+  .hero .eyebrow{ font-family:var(--hand); font-size:22px; font-weight:700; line-height:1; color:var(--accent); display:inline-block; padding-bottom:4px; border-bottom:2px solid var(--accent); margin-bottom:clamp(22px,4vw,34px); }
+  h1.title{
+    font-weight:800; letter-spacing:-.035em; line-height:1.05; color:var(--ink);
+    font-size:clamp(38px,6.4vw,66px); margin:0 auto clamp(18px,2.4vw,26px);
+  }
+  .hero .desc{
+    font-size:clamp(15px,1.4vw,17px); line-height:1.6;
+    color:var(--grey); max-width:58ch; margin:0 auto clamp(26px,3.4vw,38px);
+  }
+  .btn{
+    font-size:13.5px; font-weight:600; letter-spacing:-.01em;
+    background:var(--ink); color:#fff; border-radius:999px; height:46px; padding:0 22px; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .16s ease, box-shadow .16s ease;
+  }
+  .btn:hover{ color:#fff; transform:translateY(-2px); box-shadow:var(--shadow); }
+
+  /* cover */
+  .cover{ margin-top:clamp(40px,6vw,72px); }
+  .cover figure{ margin:0; border-radius:var(--r-md); overflow:hidden; box-shadow:var(--shadow); }
+  .cover img{ width:100%; height:auto; aspect-ratio:1421/901; object-fit:cover; display:block; }
+  .iso{
+    position:relative; border-radius:var(--r-md); overflow:hidden; aspect-ratio:1421/901;
+    background:radial-gradient(120% 130% at 30% -10%, rgba(31,94,74,.14), transparent 55%), var(--surface);
+    border:1px solid var(--line); box-shadow:var(--shadow-lg); perspective:1600px; perspective-origin:50% 38%;
+  }
+  .iso__grid{
+    position:absolute; left:50%; top:52%; transform:translate(-50%,-50%) rotateX(52deg) rotateZ(-42deg);
+    display:grid; grid-template-columns:repeat(5,150px); gap:18px; width:max-content; will-change:transform;
+  }
+  .iso.tight .iso__grid{ grid-template-columns:repeat(4,150px); }
+  .iso__grid .p{ border-radius:var(--r-sm); overflow:hidden; border:1px solid var(--line-2); box-shadow:0 22px 44px -22px rgba(22,24,31,.28); background:#fff; height:150px; transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s; }
+  .iso__grid .p img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+  .iso__grid .p:hover{ transform:translateZ(60px) scale(1.04); box-shadow:0 34px 64px -18px rgba(22,24,31,.4), 0 0 0 1px rgba(31,94,74,.55); z-index:3; }
+  .iso::after{ content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(120% 85% at 50% 45%, transparent 45%, rgba(244,244,246,.55) 94%); }
+  @media (max-width:640px){ .iso__grid{ grid-template-columns:repeat(4,104px); gap:12px; } .iso__grid .p{ height:104px; } }
+
+  /* meta */
+  .meta{ display:flex; flex-wrap:wrap; gap:24px 40px; justify-content:space-between; margin-top:clamp(40px,6vw,64px); }
+  .meta div{ display:flex; flex-direction:column; gap:6px; }
+  .meta dt{ font-size:12px; font-weight:600; color:var(--dim); }
+  .meta dd{ margin:0; font-weight:800; font-size:clamp(15px,1.6vw,18px); letter-spacing:-.02em; color:var(--ink); line-height:1.15; }
+  .meta dd a{ color:var(--accent); }
+  @media (max-width:760px){ .meta{ gap:20px 28px; } .meta div{ flex:1 1 40%; } }
+
+  /* sections */
+  section{ padding:clamp(60px,9vw,112px) 0 0; }
+  .sec{ display:grid; grid-template-columns:260px minmax(0,640px); justify-content:space-between; gap:40px; }
+  @media (max-width:960px){ .sec{ grid-template-columns:1fr; gap:16px; } }
+  .slabel{ font-weight:800; font-size:clamp(19px,2.2vw,24px); line-height:1.15; letter-spacing:-.03em; color:var(--ink); margin:0; }
+  .sbody p{ font-size:clamp(15px,1.4vw,17px); line-height:1.62; color:var(--grey); }
+  .sbody p + p{ margin-top:1.2em; }
+  .sbody .result{ list-style:none; margin:1.5em 0 0; padding:0; }
+  .sbody .result li{ font-size:clamp(15px,1.4vw,17px); line-height:1.55; color:var(--grey); position:relative; padding-left:20px; margin:.5em 0; }
+  .sbody .result li::before{ content:"—"; position:absolute; left:0; color:var(--orange); }
+  .sbody .result li b{ color:var(--ink); font-weight:700; }
+  .sbody .quote{ font-family:var(--serif); font-style:italic; font-size:clamp(18px,2vw,22px); line-height:1.4; color:var(--ink); }
+  .sbody .quote p + p{ margin-top:.7em; }
+  .sbody .qby{ margin-top:1.4em; font-size:13px; font-weight:600; color:var(--dim); }
+  .sbody .qby b{ color:var(--ink); font-weight:700; }
+  .todo{ font-size:12px; color:var(--orange); font-weight:600; }
+
+  /* section image */
+  .shot{ margin-top:clamp(36px,5vw,64px); border-radius:var(--r-md); overflow:hidden; }
+  .shot img{ width:100%; border-radius:var(--r-md); }
+  .shot.stack{ display:grid; gap:clamp(18px,3vw,32px); border-radius:0; overflow:visible; }
+
+  .fcard{
+    position:relative; overflow:hidden; border-radius:var(--r-md); padding:clamp(28px,5vw,56px);
+    min-height:clamp(300px,38vw,440px); display:flex; flex-direction:column; justify-content:space-between;
+    background:linear-gradient(135deg,#123D30,#1F5E4A 62%,#2E8B5F);
+  }
+  .fcard.warm{ background:linear-gradient(135deg,#7A3C10,#C9762A 60%,#E8912F); }
+  .fcard .kick{ font-size:12px; font-weight:600; color:rgba(255,255,255,.75); position:relative; z-index:2; }
+  .fcard h3{ font-weight:800; font-size:clamp(22px,3vw,34px); line-height:1.1; letter-spacing:-.03em; color:#fff; max-width:18ch; margin:0; position:relative; z-index:2; }
+  .fcard .foot{ font-size:12px; font-weight:600; color:rgba(255,255,255,.9); position:relative; z-index:2; }
+  .fcard .drop{ position:absolute; right:clamp(-56px,-5vw,-16px); bottom:clamp(-46px,-5vw,-8px); display:flex; z-index:1; filter:drop-shadow(0 40px 60px rgba(0,0,0,.45)); }
+  .fcard .drop .p{ width:clamp(120px,17vw,170px); border-radius:20px; border:6px solid #fff; overflow:hidden; background:#fff; transition:transform .4s cubic-bezier(.2,.7,.3,1); }
+  .fcard .drop .p:first-child{ transform:rotate(-8deg) translateY(14px); }
+  .fcard .drop .p:last-child{ transform:rotate(6deg); margin-left:-38px; }
+  .fcard:hover .drop .p:first-child{ transform:rotate(-8deg) translateY(2px); }
+  .fcard:hover .drop .p:last-child{ transform:rotate(6deg) translateY(-10px); }
+  .fcard .drop .p img{ width:100%; }
+
+  .collage{ display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:clamp(150px,20vw,200px); gap:8px; background:var(--card); border:1px solid var(--line); border-radius:var(--r-md); padding:12px; box-shadow:var(--shadow); }
+  .collage img{ width:100%; height:100%; object-fit:cover; object-position:top center; border-radius:var(--r-sm); transition:object-position 1.4s cubic-bezier(.33,.02,.29,1), filter .3s; }
+  .collage img:hover{ object-position:bottom center; filter:brightness(1.05); }
+  .collage .cell{ border-radius:var(--r-sm); background:linear-gradient(135deg,#1F5E4A,#2E8B5F); display:grid; place-items:center; text-align:center; padding:14px; color:#fff; font-weight:700; font-size:clamp(13px,1.5vw,15px); line-height:1.2; letter-spacing:-.01em; }
+  @media (max-width:640px){ .collage{ grid-template-columns:1fr 1fr; } }
+
+  /* marquee + works */
+  .marquee{ display:block; margin-top:clamp(72px,11vw,132px); overflow:hidden; padding:clamp(22px,4vw,36px) 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .mq{ display:inline-flex; white-space:nowrap; will-change:transform; animation:mq 24s linear infinite; }
+  .mq span{ font-weight:800; font-size:clamp(38px,7vw,82px); line-height:1; letter-spacing:-.04em; color:var(--ink); padding:0 .35em; }
+  .mq span.o{ color:transparent; -webkit-text-stroke:1px var(--line-2); }
+  .marquee:hover .mq{ animation-play-state:paused; }
+  @keyframes mq{ to{ transform:translateX(-50%); } }
+
+  .works{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(14px,2vw,20px); margin-top:clamp(36px,6vw,56px); }
+  @media (max-width:720px){ .works{ grid-template-columns:1fr; } }
+  .work{ position:relative; overflow:hidden; border-radius:var(--r-md); border:1px solid var(--line); aspect-ratio:16/10; display:flex; align-items:flex-end; padding:24px; background:var(--card); box-shadow:var(--shadow); transition:transform .22s ease, box-shadow .22s ease; }
+  .work.me{ background:linear-gradient(160deg,#EAF6F4,#fff); }
+  .work:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+  .work .wt{ font-weight:800; font-size:clamp(16px,2vw,21px); letter-spacing:-.02em; color:var(--ink); }
+  .work .wk{ font-size:12px; font-weight:600; color:var(--dim); display:block; margin-top:4px; }
+  .work:hover .wt{ color:var(--accent); }
+  .work .arw{ position:absolute; top:22px; right:22px; color:var(--dim); }
+  .work:hover .arw{ color:var(--accent); }
+
+  footer{ padding:clamp(56px,8vw,88px) 0 clamp(36px,6vw,56px); }
+  .foot-links{ display:flex; gap:22px; flex-wrap:wrap; font-size:13px; font-weight:600; }
+  .foot-links a{ color:var(--grey); }
+  .foot-links a:hover{ color:var(--accent); }
+  .foot-fine{ margin-top:22px; font-size:12.5px; line-height:1.6; color:var(--dim); max-width:72ch; }
+
+  .toTop{ position:fixed; left:clamp(16px,3vw,32px); bottom:clamp(16px,3vw,32px); z-index:45; width:46px; height:46px; border-radius:50%; border:1px solid var(--line-2); background:rgba(255,255,255,.85); box-shadow:var(--shadow); backdrop-filter:blur(6px); color:var(--ink); display:grid; place-items:center; cursor:pointer; opacity:0; transform:translateY(10px); transition:opacity .3s, transform .3s, border-color .2s; }
+  .toTop.on{ opacity:1; transform:none; }
+  .toTop:hover{ border-color:var(--accent); color:var(--accent); }
+
+  /* load animation */
+  .nav{ animation:drop .85s cubic-bezier(.16,1,.3,1) .4s both; }
+  @keyframes drop{ from{ transform:translateY(-160px); } to{ transform:translateY(0); } }
+  [data-h]{ animation:rise .9s cubic-bezier(.16,1,.3,1) both; }
+  .hero .eyebrow{ --r:70px; animation-delay:.05s; }
+  h1.title{ --r:160px; animation-delay:0s; }
+  .hero .desc{ --r:70px; animation-delay:.12s; }
+  .hero .btn{ --r:50px; animation-delay:.18s; }
+  .hero .cover{ --r:40px; animation-delay:.24s; }
+  .hero .meta{ --r:40px; animation-delay:.3s; }
+  @keyframes rise{ from{ transform:translateY(var(--r,60px)); } to{ transform:translateY(0); } }
+
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    .mq{ animation:none; }
+    .nav,[data-h]{ animation:none; }
+    .toTop,.work,.btn,.pill{ transition:none; }
+    .iso__grid{ transform:translate(-50%,-50%) rotateX(46deg) rotateZ(-38deg); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">&larr; Portfolio</a>
+  <span id="clock" aria-hidden="true">--:--:--</span>
+  <a class="pill" href="#scope">Overview &darr;</a>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow" data-h>Case study</div>
+    <h1 class="title" data-h>JayHyzmat</h1>
+    <p class="desc" data-h>A building-materials marketplace for Turkmenistan — where trade buyers browse construction supplies, compare by <strong>price and distance</strong>, and order to site. I designed the product end to end: <strong>UX, UI and the design system</strong>.</p>
+    <a class="btn" data-h href="#design">See the screens &darr;</a>
+
+    <div class="cover" data-h>
+      <!-- swap for assets/jay-hyzmat/hero-cover.jpg when a composed banner is ready -->
+      <div class="iso">
+        <div class="iso__grid" data-iso>
+          <div class="p"><img src="assets/jay-hyzmat/sign-up.png" alt="Sign up" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/home.png" alt="Home" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/categories.png" alt="Categories" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/sub-categories.png" alt="Sub categories" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/search-results.png" alt="Search results" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/product-detail.png" alt="Product detail" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/cart.png" alt="Cart" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/checkout-address.png" alt="Checkout address" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/order-placed.png" alt="Order placed" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/dashboard.png" alt="Account dashboard" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <dl class="meta" data-h>
+      <div><dt>Year</dt><dd>2024 <span class="todo">[confirm]</span></dd></div>
+      <div><dt>Role</dt><dd>Product designer</dd></div>
+      <div><dt>Scope</dt><dd>UX · UI · Design system</dd></div>
+      <div><dt>Category</dt><dd>E-commerce · Mobile</dd></div>
+    </dl>
+  </header>
+
+  <section id="scope">
+    <div class="sec">
+      <h2 class="slabel reveal">Project Scope</h2>
+      <div class="sbody reveal">
+        <p>Design JayHyzmat end to end — a native mobile marketplace for construction supplies in Turkmenistan. The build covers the full shopping lifecycle: sign-up and verification, a deep category browse, spec-first product pages, cart and a stepped checkout, order tracking, account management and in-app support.</p>
+        <p>My role spanned the whole product: <strong>UX</strong> — information architecture, user flows and wireframes; <strong>UI</strong> — every high-fidelity screen; and the <strong>design system</strong> — colour, type, spacing and radius tokens plus the component library the app is assembled from.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="problem">
+    <div class="sec">
+      <h2 class="slabel reveal">Problem Statement</h2>
+      <div class="sbody reveal">
+        <p>Buying building materials in Turkmenistan means calling around suppliers one at a time — with no way to see who stocks what, at what price, or how far away it is. For trade buyers ordering by the pallet, <strong>distance and delivery matter as much as price</strong>: a cheaper valve two cities away isn't actually cheaper.</p>
+        <p>There was also no single, trusted place to compare products on real specifications — diameter, material, power rating, country of origin — the details a purchase actually turns on. <strong>Goal: put the local supply catalogue in one app, with the filters that decide a trade purchase built in — price, distance, brand and spec.</strong></p>
+      </div>
+    </div>
+    <div class="shot reveal">
+      <div class="iso tight">
+        <div class="iso__grid" data-iso>
+          <div class="p"><img src="assets/jay-hyzmat/categories.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/sub-categories.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/search-results.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/filters.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/product-detail.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/cart.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/checkout-address.png" alt="" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/wishlist-empty.png" alt="" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="sec">
+      <h2 class="slabel reveal">Research &amp; Ideation</h2>
+      <div class="sbody reveal">
+        <p>I mapped the catalogue structure with the team. Construction categories nest deep — <em>Building Materials</em> alone splits into Metal Doors, Fire Doors, Metal Railings, MDF Doors, Ceramic Slab Tiles, Laminate Parquet and Galvanized Sheet — so browse needed three levels: category → sub-category → filtered results.</p>
+        <p>Benchmarking large e-commerce and trade-supply apps surfaced three principles: buyers <strong>shop by spec, not by picture</strong>, so every product needs a full characteristics table; <strong>distance is a first-class filter</strong>, not an afterthought, because delivery reach decides the order; and <strong>trust comes from detail</strong> — verified reviews and clear availability counts let a buyer commit without a phone call.</p>
+      </div>
+    </div>
+    <div class="shot reveal">
+      <div class="fcard">
+        <span class="kick">The core decision</span>
+        <h3>Spec-first, distance-aware — built for how trade buyers actually decide.</h3>
+        <span class="foot">Full characteristics table on every product &nbsp;&middot;&nbsp; price, brand, diameter and distance filters</span>
+        <div class="drop">
+          <div class="p"><img src="assets/jay-hyzmat/filters.png" alt="Filter sheet" loading="lazy"></div>
+          <div class="p"><img src="assets/jay-hyzmat/product-detail.png" alt="Product detail with characteristics" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="design">
+    <div class="sec">
+      <h2 class="slabel reveal">Design &amp; Results</h2>
+      <div class="sbody reveal">
+        <p>Every product page carries a full <strong>characteristics table</strong> and verified reviews, so a buyer can decide without calling the supplier. Browse runs category → sub-category → results, with a filter sheet covering price range, brand, diameter, colour and rating — plus the distance filter for delivery reach.</p>
+        <p>Checkout is a three-step stepper — <em>Cart → Address → Order Summary</em> — with saved addresses and a clear order-placed confirmation carrying an order number. The account area covers order history, addresses, password, notification and language preferences, and an in-app <strong>live chat</strong> for support.</p>
+        <p>Underneath sits a full <strong>design system</strong>: a green/orange palette with success, warning and error ramps; a mobile type scale; spacing and radius tokens; and a component library with every interactive state drawn — default / filled / error inputs, five bottom-navigation states, and empty states for cart and wishlist.</p>
+        <ul class="result reveal">
+          <li><b>Full product designed end to end</b> — UX, UI and the design system.</li>
+          <li><b>3-level catalogue browse</b> — category → sub-category → filtered results, tuned for deep construction taxonomies.</li>
+          <li><b>Spec-first product page</b> with a full characteristics table, reviews and availability, plus a distance-aware filter set.</li>
+          <li><b>Design system &amp; component library</b> — tokens for colour, type, spacing and radius; every input, nav and empty state drawn.</li>
+          <li><b>50+ screens</b> across auth, browse, product, cart, checkout, orders, account and support. <span class="todo">[Anjali — confirm screen count, launch status and any usage numbers]</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="shot stack">
+      <div class="collage reveal">
+        <img src="assets/jay-hyzmat/home.png" alt="Home" loading="lazy">
+        <img src="assets/jay-hyzmat/sub-categories.png" alt="Sub categories" loading="lazy">
+        <img src="assets/jay-hyzmat/product-detail.png" alt="Product detail" loading="lazy">
+        <img src="assets/jay-hyzmat/checkout-address.png" alt="Checkout" loading="lazy">
+        <div class="cell">One design system,<br>every state drawn</div>
+        <img src="assets/jay-hyzmat/live-chat.png" alt="Live chat support" loading="lazy">
+      </div>
+      <div class="reveal"><img src="assets/jay-hyzmat/design-system.png" alt="JayHyzmat design system — colour, type, spacing, radius, grid, shadows and components" loading="lazy" style="width:100%;border-radius:var(--r-md);border:1px solid var(--line)"></div>
+    </div>
+  </section>
+
+  <section id="testimonial">
+    <div class="sec">
+      <h2 class="slabel reveal">Testimonial</h2>
+      <div class="sbody reveal">
+        <blockquote class="quote">
+          <p class="todo" style="font-size:12px">[Anjali — a line from the client or your lead on JayHyzmat, or delete this section. Placeholder:]</p>
+          <p>&ldquo;Anjali designed JayHyzmat from the ground up — the flows, every screen and the system that keeps it consistent. She understood that our buyers shop on specs and delivery distance, and built the whole product around that.&rdquo;</p>
+        </blockquote>
+        <div class="qby">&mdash; <b>[Name, Title]</b>, JayHyzmat</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<a class="marquee" href="mostly-events.html" aria-label="More works">
+  <div class="mq"><span>More Works</span><span class="o">More Works</span><span>More Works</span><span class="o">More Works</span></div>
+</a>
+
+<div class="wrap">
+  <div class="works">
+    <a class="work me" href="mostly-events.html">
+      <span class="arw">&#8599;</span>
+      <span><span class="wt">Mostly Events</span><span class="wk">Two-Sided Recruitment App</span></span>
+    </a>
+    <a class="work" href="verified-beauty-providers.html">
+      <span class="arw">&#8599;</span>
+      <span><span class="wt">Verified Beauty Providers</span><span class="wk">Marketplace &amp; Design System</span></span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="index.html">&larr; Back to portfolio</a>
+      <a href="mailto:palanjali0853@gmail.com">palanjali0853@gmail.com</a>
+      <a href="https://linkedin.com/in/anjali-paal" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="foot-fine">JayHyzmat — a building-materials marketplace for Turkmenistan (jayhyzmat.tm). Screens shown are exported from the design file. Currency shown is Turkmenistan manat (TMT).</p>
+  </div>
+</footer>
+
+<button class="toTop" id="toTop" type="button" aria-label="Back to top">&uarr;</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  (function () {
+    var clock = document.getElementById("clock");
+    function tick() { var d = new Date(), p = function (n) { return (n < 10 ? "0" : "") + n; };
+      clock.textContent = p(d.getHours()) + ":" + p(d.getMinutes()) + ":" + p(d.getSeconds()); }
+    tick(); setInterval(tick, 1000);
+
+    var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var toTop = document.getElementById("toTop");
+    toTop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); });
+    addEventListener("scroll", function () { toTop.classList.toggle("on", scrollY > 700); }, { passive: true });
+
+    if (!window.gsap || reduce) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    requestAnimationFrame(function () {
+      gsap.set(".reveal", { opacity: 0, y: 18 });
+      ScrollTrigger.batch(".reveal", { start: "top 92%",
+        onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, duration: 0.55, stagger: 0.08, ease: "power2.out", overwrite: true }); } });
+      ScrollTrigger.refresh();
+      gsap.utils.toArray(".reveal").forEach(function (el) {
+        if (el.getBoundingClientRect().top < innerHeight * 0.92) gsap.set(el, { opacity: 1, y: 0 });
+      });
+
+      gsap.utils.toArray("[data-iso]").forEach(function (g) {
+        gsap.to(g, { yPercent: -6, ease: "none",
+          scrollTrigger: { trigger: g.closest(".iso"), start: "top bottom", end: "bottom top", scrub: 0.8 } });
+      });
+
+      var coverImg = document.querySelector(".cover img");
+      if (coverImg) {
+        gsap.set(coverImg, { willChange: "transform" });
+        gsap.fromTo(coverImg, { scale: 1.1 }, {
+          scale: 1, ease: "none",
+          scrollTrigger: { trigger: coverImg.closest(".cover"), start: "top bottom", end: "center center", scrub: 0.9 }
+        });
+      }
+
+      if (matchMedia("(pointer:fine)").matches) {
+        document.querySelectorAll(".fcard").forEach(function (card) {
+          var raf = 0, rx = 0, ry = 0;
+          card.addEventListener("pointermove", function (e) {
+            var r = card.getBoundingClientRect();
+            rx = ((e.clientX - r.left) / r.width - 0.5) * 5;
+            ry = ((e.clientY - r.top) / r.height - 0.5) * -5;
+            if (!raf) raf = requestAnimationFrame(function () { raf = 0; card.style.transform = "perspective(1000px) rotateY(" + rx.toFixed(2) + "deg) rotateX(" + ry.toFixed(2) + "deg)"; });
+          });
+          card.addEventListener("pointerleave", function () { card.style.transform = ""; });
+        });
+      }
+
+      setTimeout(function () {
+        var r = document.querySelector(".slabel.reveal");
+        if (r && getComputedStyle(r).opacity === "0") gsap.set(".reveal", { clearProps: "opacity,transform" });
+      }, 4000);
+    });
+  })();
+</script>
+
+</body>
+</html>
