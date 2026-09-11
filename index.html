@@ -286,19 +286,14 @@
   }
   @media (prefers-reduced-motion: reduce) { .sticker-board .sk { transition: none; } }
 
-  /* ---- selected projects — full-bleed section, clean single-column cards ---- */
-  .c-projects {
-    width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
-    margin-top: clamp(48px, 7vw, 80px); margin-bottom: clamp(48px, 7vw, 80px);
-    padding: 0 var(--edge); box-sizing: border-box;
-  }
-  .proj-head { max-width: 1180px; margin: 0 auto; display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 0 var(--edge); }
+  /* ---- selected projects — contained in the bento card, horizontal scroll rail inside ---- */
+  .proj-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
   .proj-head a { font-size: 12.5px; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 5px; }
 
-  /* small cards, horizontal scroll rail */
+  /* small cards, horizontal scroll rail — bleeds to the card's own edges so it can scroll edge-to-edge */
   .proj-stack {
-    display: flex; gap: 20px; margin-top: 18px; padding: 4px var(--edge) 10px;
-    overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-left: var(--edge);
+    display: flex; gap: 20px; margin-top: 18px; padding-bottom: 14px;
+    overflow-x: auto; scroll-snap-type: x proximity;
     scrollbar-width: thin; scrollbar-color: var(--line-2) transparent;
   }
   .proj-stack::-webkit-scrollbar { height: 6px; }
@@ -521,10 +516,9 @@
       </div>
       <p class="board-hint">try moving things around :)</p>
     </section>
-    </div><!-- /.bento (part 1) -->
 
-    <!-- 5 · SELECTED PROJECTS — full-bleed, breaks out of the bento grid -->
-    <section class="c-projects rv" id="projects">
+    <!-- 5 · SELECTED PROJECTS -->
+    <section class="card c-projects rv" id="projects">
       <div class="proj-head">
         <span class="lbl">Selected Projects</span>
         <a href="resume.html">View all projects <span aria-hidden="true">→</span></a>
@@ -579,7 +573,6 @@
       <p class="proj-hint">scroll to explore →</p>
     </section>
 
-    <div class="bento"><!-- /.bento (part 2) -->
     <!-- 7 · CONTACT -->
     <section class="card c-contact rv" id="contact">
       <div class="contact-inner">
