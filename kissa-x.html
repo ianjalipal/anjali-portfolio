@@ -135,6 +135,7 @@
   .sec{ display:grid; grid-template-columns:260px minmax(0,640px); justify-content:space-between; gap:40px; }
   @media (max-width:960px){ .sec{ grid-template-columns:1fr; gap:16px; } }
   .slabel{ font-weight:800; font-size:clamp(19px,2.2vw,24px); line-height:1.15; letter-spacing:-.03em; color:var(--ink); margin:0; }
+  .slabel .arw{ color:var(--accent); font-weight:700; margin-right:2px; }
   .sbody p{ font-size:clamp(15px,1.4vw,17px); line-height:1.62; color:var(--grey); }
   .sbody p + p{ margin-top:1.2em; }
   .sbody .result{ list-style:none; margin:1.5em 0 0; padding:0; }
@@ -168,6 +169,46 @@
   .collage img:hover{ object-position:bottom center; filter:brightness(1.05); }
   .collage .cell{ border-radius:var(--r-sm); background:linear-gradient(135deg,#8A1620,#C21E29); display:grid; place-items:center; text-align:center; padding:14px; color:#fff; font-weight:700; font-size:clamp(13px,1.5vw,15px); line-height:1.2; letter-spacing:-.01em; }
   @media (max-width:640px){ .collage{ grid-template-columns:1fr 1fr; } }
+
+  /* sticky-note aside — reference-style commentary */
+  .note{
+    position:relative; display:inline-block; max-width:230px; background:var(--accent-soft);
+    border-radius:6px; padding:16px 18px 15px; margin:clamp(20px,3vw,32px) 0 0;
+    font-family:var(--hand); font-size:16px; line-height:1.35; color:#5A1015;
+    transform:rotate(-2.5deg); box-shadow:var(--shadow);
+  }
+  .note::before{ content:"📎"; position:absolute; top:-13px; left:16px; font-size:19px; transform:rotate(20deg); }
+
+  /* problem / solution twin circles */
+  .venn{ display:flex; justify-content:center; align-items:center; margin-top:clamp(28px,4vw,44px); flex-wrap:wrap; gap:0; }
+  .venn .circle{
+    width:min(280px,72vw); aspect-ratio:1; border-radius:50%; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:clamp(20px,4vw,34px) clamp(30px,6vw,46px); box-shadow:var(--shadow-lg); position:relative;
+  }
+  .venn .problem{ background:radial-gradient(circle at 32% 30%, #fff, var(--surface) 88%); margin-right:min(-24px,-4vw); z-index:1; padding-right:clamp(40px,8vw,60px); }
+  .venn .solution{ background:radial-gradient(circle at 68% 30%, #fff, var(--accent-soft) 88%); z-index:2; padding-left:clamp(40px,8vw,60px); }
+  .venn .circle b{ font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+  .venn .circle p{ font-size:13.5px; line-height:1.5; color:var(--grey); }
+  @media (max-width:560px){ .venn{ flex-direction:column; gap:16px; } .venn .problem{ margin-right:0; padding-right:clamp(20px,4vw,34px); } .venn .solution{ padding-left:clamp(20px,4vw,34px); } }
+
+  /* annotated screen — callouts either side of a centred phone */
+  .annotate{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:clamp(16px,3vw,32px); margin-top:clamp(36px,5vw,56px); }
+  .annotate .col{ display:flex; flex-direction:column; justify-content:space-around; height:100%; min-height:280px; gap:18px; }
+  .annotate .col.l{ align-items:flex-end; text-align:right; }
+  .annotate .col.r{ align-items:flex-start; text-align:left; }
+  .annotate .lbl{ font-size:12.5px; font-weight:600; color:var(--ink); position:relative; max-width:150px; padding:0 22px; }
+  .annotate .col.l .lbl::after{ content:""; position:absolute; right:0; top:50%; width:16px; height:1px; background:var(--accent); }
+  .annotate .col.r .lbl::after{ content:""; position:absolute; left:0; top:50%; width:16px; height:1px; background:var(--accent); }
+  .annotate .phone{ width:clamp(160px,26vw,220px); border-radius:26px; overflow:hidden; border:7px solid #17181C; box-shadow:var(--shadow-lg); }
+  .annotate .phone img{ width:100%; }
+  @media (max-width:700px){
+    .annotate{ grid-template-columns:1fr; justify-items:center; text-align:center; }
+    .annotate .col{ flex-direction:row; flex-wrap:wrap; justify-content:center; min-height:0; height:auto; }
+    .annotate .col.l, .annotate .col.r{ align-items:center; text-align:center; }
+    .annotate .lbl{ max-width:120px; padding:0; }
+    .annotate .col .lbl::after{ display:none; }
+    .annotate .phone{ order:-1; }
+  }
 
   /* marquee + works */
   .marquee{ display:block; margin-top:clamp(72px,11vw,132px); overflow:hidden; padding:clamp(22px,4vw,36px) 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
@@ -263,7 +304,7 @@
 
   <section id="scope">
     <div class="sec">
-      <h2 class="slabel reveal">Project Scope</h2>
+      <h2 class="slabel reveal"><span class="arw">&rarr;</span> Project Scope</h2>
       <div class="sbody reveal">
         <p>Design Kissa X end to end — a mobile movie and series streaming app spanning onboarding, discovery, playback context, subscription and account management. The build covers sign-up and verification, a content-first home, search and filtering, type-aware detail pages for films and series, a watchlist, multi-profile accounts and the subscription paywall.</p>
         <p>My role spanned the whole product: <strong>UX</strong> — information architecture, flows and every validation state; <strong>UI</strong> — every high-fidelity screen; and the <strong>design system</strong> — a dark, poster-forward visual language built to let the content lead.</p>
@@ -273,23 +314,22 @@
 
   <section id="problem">
     <div class="sec">
-      <h2 class="slabel reveal">Problem Statement</h2>
+      <h2 class="slabel reveal"><span class="arw">&rarr;</span> Problem Statement</h2>
       <div class="sbody reveal">
         <p>Streaming apps live or die on discovery. With a growing catalogue, a viewer needs to find something to watch in seconds, not scroll for ten minutes across every title. Films and series also carry different context — a film needs a runtime and a certificate, a series needs which episode you're on — but most catalogues flatten both into the same card.</p>
         <p>And a subscription product needs a paywall that converts without feeling like a wall: clear pricing, a visible choice between monthly and yearly, and a plain reason to say yes. <strong>Goal: content-first discovery that tells film and series apart, and a subscription flow honest enough to convert.</strong></p>
+        <div class="note reveal">Two very different jobs — find something to watch, and say yes to paying for it. Kissa X had to nail both.</div>
       </div>
     </div>
     <div class="shot reveal">
-      <div class="iso tight">
-        <div class="iso__grid" data-iso>
-          <div class="p"><img src="assets/kissa-x/onboarding-2.jpg" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/kissa-x/sign-up.jpg" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/kissa-x/otp-verification.jpg" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/kissa-x/home.jpg" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/kissa-x/search.jpg" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/kissa-x/movie-detail.jpg" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/kissa-x/watchlist.jpg" alt="" loading="lazy"></div>
-          <div class="p"><img src="assets/kissa-x/subscription.jpg" alt="" loading="lazy"></div>
+      <div class="venn">
+        <div class="circle problem">
+          <b>Problem</b>
+          <p>A growing catalogue with no fast way to decide what to watch, and film/series treated the same on every card.</p>
+        </div>
+        <div class="circle solution">
+          <b>Solution</b>
+          <p>Curated home rails, type-aware detail pages, and a paywall with visible pricing and a clear reason to subscribe.</p>
         </div>
       </div>
     </div>
@@ -297,10 +337,24 @@
 
   <section id="research">
     <div class="sec">
-      <h2 class="slabel reveal">Research &amp; Ideation</h2>
+      <h2 class="slabel reveal"><span class="arw">&rarr;</span> Research &amp; Ideation</h2>
       <div class="sbody reveal">
         <p>I benchmarked Netflix, Prime Video and Disney+ to see how they structure discovery and pricing, then mapped Kissa X's own catalogue against it. Three decisions followed.</p>
         <p><strong>Rails over search</strong> — Continue Watching, Trending Now, Upcoming Releases and Most Popular Series surface relevant titles before a viewer has to type anything. <strong>Detail pages branch by type</strong> — a film shows runtime, genre and certificate; a series shows a "More Episodes" rail with its own thumbnails and progress. And <strong>profiles are first-class</strong>, not a settings toggle — adding a profile sits right next to sign-up, the way a household actually shares one subscription.</p>
+        <div class="note reveal">The home screen carries the whole discovery strategy. Every label below earns its place on the first scroll.</div>
+      </div>
+    </div>
+    <div class="shot reveal">
+      <div class="annotate">
+        <div class="col l">
+          <div class="lbl">Featured title leads with genre and where you left off</div>
+          <div class="lbl">Continue Watching keeps unfinished titles one tap away</div>
+        </div>
+        <div class="phone"><img src="assets/kissa-x/home-annotated.jpg" alt="Kissa X home screen, annotated" loading="lazy"></div>
+        <div class="col r">
+          <div class="lbl">Resume playback straight from the hero banner</div>
+          <div class="lbl">Tap any card to jump back in — no menu required</div>
+        </div>
       </div>
     </div>
     <div class="shot reveal">
@@ -318,7 +372,7 @@
 
   <section id="design">
     <div class="sec">
-      <h2 class="slabel reveal">Design &amp; Results</h2>
+      <h2 class="slabel reveal"><span class="arw">&rarr;</span> Design &amp; Results</h2>
       <div class="sbody reveal">
         <p>Every home rail groups titles by intent rather than genre alone — <em>Continue Watching, Trending Now, Upcoming Releases, Most Popular Series</em> and <em>Discover More</em> — so the first screen does most of the recommending. Search adds category chips (Web Series, Film, Hollywood, Originals) over a Popular Search and Trending Movies rail, for the visits that start with a specific title in mind.</p>
         <p>The subscription screen puts <strong>Monthly against Yearly</strong> side by side with the saving obvious, backed by a plain checklist of what Premium unlocks — nothing to hunt for in fine print. Adding a household profile is a tap away from sign-up, each with its own avatar and watch history, and the watchlist screen separates Continue Watching, Recently Watched and saved trailers so a return visit picks up exactly where it left off.</p>
