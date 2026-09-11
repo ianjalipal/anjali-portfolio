@@ -286,18 +286,27 @@
   }
   @media (prefers-reduced-motion: reduce) { .sticker-board .sk { transition: none; } }
 
-  /* ---- selected projects — large editorial stack ---- */
+  /* ---- selected projects — tall pinned stack (ref: karolinahess.com/works) ---- */
   .proj-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
   .proj-head a { font-size: 12.5px; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 5px; }
-  .proj-stack { display: flex; flex-direction: column; gap: clamp(36px, 6vw, 56px); margin-top: 10px; }
-  .proj { display: block; position: relative; }
-  .proj .pimg {
-    display: block; position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--r-md); overflow: hidden;
-    border: 1px solid var(--line); box-shadow: var(--shadow); background: linear-gradient(155deg, #EEF2FB, #E2E8F6);
-    transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease;
+
+  .proj-scene { display: grid; grid-template-columns: minmax(0, 1fr); margin-top: 10px; }
+  .proj-pin, .proj-stack { grid-area: 1 / 1; }
+  .proj-pin {
+    position: sticky; top: 50%; transform: translateY(-50%); z-index: 1; align-self: start; justify-self: center;
+    margin: 0; text-align: center; font-weight: 800; letter-spacing: -.04em; line-height: .88;
+    font-size: clamp(46px, 9vw, 128px); color: var(--line-2); pointer-events: none; user-select: none; white-space: nowrap;
   }
-  .proj .pimg img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-  .proj:hover .pimg { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .proj-stack { position: relative; z-index: 2; display: flex; flex-direction: column; gap: clamp(56px, 9vw, 108px); }
+
+  .proj { display: block; position: relative; background: var(--bg); }
+  .proj .pimg {
+    display: block; position: relative; width: 100%; height: clamp(360px, 82vh, 760px); border-radius: var(--r-md); overflow: hidden;
+    border: 1px solid var(--line); box-shadow: var(--shadow); background: linear-gradient(155deg, #EEF2FB, #E2E8F6);
+    transition: box-shadow .35s ease;
+  }
+  .proj:hover .pimg { box-shadow: var(--shadow-lg); }
+  .proj .pimg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
   .proj .pimg.purple { background: linear-gradient(155deg, #EEE7FB, #E4DAF6); }
   .proj .pimg .mn { position: absolute; inset: 8%; border-radius: 12px; background: #fff; border: 1px solid #E3E7F0; display: grid; grid-template-columns: 18% 1fr; overflow: hidden; }
   .proj .pimg .mn .s { background: #14203A; }
@@ -308,14 +317,22 @@
     position: absolute; top: 14px; left: 14px; z-index: 2; font-size: 11px; font-weight: 700; letter-spacing: .04em;
     color: var(--ink); background: rgba(255,255,255,.85); backdrop-filter: blur(4px); border-radius: 999px; padding: 5px 10px;
   }
-  .pinfo { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; }
+  /* the floating pill — pinned to the bottom of the viewport for as long as its tall image is scrolling past */
+  .pill-wrap { position: relative; z-index: 1; height: 100%; display: flex; align-items: flex-end; justify-content: center; padding-bottom: clamp(16px, 3vw, 28px); pointer-events: none; }
+  .proj .view-pill {
+    position: sticky; bottom: clamp(16px, 3vw, 28px); pointer-events: auto;
+    display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 999px;
+    background: var(--ink); color: #fff; font-size: 13.5px; font-weight: 600; letter-spacing: -.01em;
+    box-shadow: var(--shadow-lg); transition: transform .16s ease;
+  }
+  .proj:hover .view-pill { transform: translateY(-2px); }
+
+  .pinfo { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 8px; margin-top: 18px; background: var(--bg); }
   .pi-top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
   .pinfo h4 { margin: 0; font-size: clamp(18px, 2.4vw, 23px); font-weight: 800; letter-spacing: -.02em; }
   .pinfo .pk { font-size: 12.5px; font-weight: 600; color: var(--accent); white-space: nowrap; }
   .pinfo p { margin: 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.6; max-width: 62ch; }
-  .pinfo .cta { margin-top: 2px; font-size: 12.5px; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 5px; }
-  .proj:hover .cta .a { transform: translateX(3px); }
-  .pinfo .cta .a { transition: transform .16s ease; }
+  @media (max-width: 700px) { .proj .pimg { height: clamp(320px, 68vh, 560px); } }
   .dots i:first-child { background: var(--accent); width: 20px; border-radius: 4px; }
 
   /* ---- contact ---- */
@@ -512,52 +529,65 @@
         <span class="lbl">Selected Projects</span>
         <a href="resume.html">View all projects <span aria-hidden="true">→</span></a>
       </div>
-      <div class="proj-stack">
-        <a class="proj rv" href="kissa-x.html">
-          <span class="pimg"><img src="assets/kissa-x/home.jpg" alt="Kissa X home screen" loading="lazy"></span>
-          <span class="pn">01</span>
-          <div class="pinfo">
-            <div class="pi-top"><h4>Kissa X</h4><span class="pk">Movie &amp; Series Streaming App</span></div>
-            <p>Content-first discovery, type-aware detail pages and an honest paywall — designed end to end with its own system.</p>
-            <span class="cta">View Case Study <span class="a">↗</span></span>
-          </div>
-        </a>
-        <a class="proj rv" href="jay-hyzmat.html">
-          <span class="pimg"><img src="assets/jay-hyzmat/home.png" alt="JayHyzmat home screen" loading="lazy"></span>
-          <span class="pn">02</span>
-          <div class="pinfo">
-            <div class="pi-top"><h4>JayHyzmat</h4><span class="pk">Building-Materials Marketplace</span></div>
-            <p>A spec-first, distance-aware marketplace for construction supplies — designed end to end with its own system.</p>
-            <span class="cta">View Case Study <span class="a">↗</span></span>
-          </div>
-        </a>
-        <a class="proj rv" href="mostly-events.html">
-          <span class="pimg"><img src="assets/mostly-events/hero-cover.jpg" alt="Mostly Events" loading="lazy"></span>
-          <span class="pn">03</span>
-          <div class="pinfo">
-            <div class="pi-top"><h4>Mostly Events</h4><span class="pk">Two-Sided Recruitment App</span></div>
-            <p>One listing, many roles — a two-sided recruitment app built only for weddings and events.</p>
-            <span class="cta">View Case Study <span class="a">↗</span></span>
-          </div>
-        </a>
-        <a class="proj rv" href="verified-beauty-providers.html">
-          <span class="pimg mock"><span class="mn"><span class="s"></span><span class="m"><i></i><i></i><i></i><i></i></span></span></span>
-          <span class="pn">04</span>
-          <div class="pinfo">
-            <div class="pi-top"><h4>Verified Beauty Providers</h4><span class="pk">Marketplace &amp; Design System</span></div>
-            <p>A verification-first beauty marketplace built straight from a 48-screen Figma system.</p>
-            <span class="cta">View Case Study <span class="a">↗</span></span>
-          </div>
-        </a>
-        <a class="proj rv" href="resume.html">
-          <span class="pimg mock purple"><span class="mn"><span class="s"></span><span class="m"><i></i><i></i><i></i><i></i></span></span></span>
-          <span class="pn">05</span>
-          <div class="pinfo">
-            <div class="pi-top"><h4>Polystox</h4><span class="pk">B2B Marketplace Platform</span></div>
-            <p>Trading platform for polymer manufacturers, traders, importers and exporters.</p>
-            <span class="cta">View Case Study <span class="a">↗</span></span>
-          </div>
-        </a>
+      <div class="proj-scene">
+        <h3 class="proj-pin" aria-hidden="true">Selected<br>Projects</h3>
+        <div class="proj-stack">
+          <a class="proj rv" href="kissa-x.html">
+            <span class="pimg">
+              <img src="assets/kissa-x/home.jpg" alt="Kissa X home screen" loading="lazy">
+              <span class="pill-wrap"><span class="view-pill">View Case Study <span class="a">↗</span></span></span>
+            </span>
+            <span class="pn">01</span>
+            <div class="pinfo">
+              <div class="pi-top"><h4>Kissa X</h4><span class="pk">Movie &amp; Series Streaming App</span></div>
+              <p>Content-first discovery, type-aware detail pages and an honest paywall — designed end to end with its own system.</p>
+            </div>
+          </a>
+          <a class="proj rv" href="jay-hyzmat.html">
+            <span class="pimg">
+              <img src="assets/jay-hyzmat/home.png" alt="JayHyzmat home screen" loading="lazy">
+              <span class="pill-wrap"><span class="view-pill">View Case Study <span class="a">↗</span></span></span>
+            </span>
+            <span class="pn">02</span>
+            <div class="pinfo">
+              <div class="pi-top"><h4>JayHyzmat</h4><span class="pk">Building-Materials Marketplace</span></div>
+              <p>A spec-first, distance-aware marketplace for construction supplies — designed end to end with its own system.</p>
+            </div>
+          </a>
+          <a class="proj rv" href="mostly-events.html">
+            <span class="pimg">
+              <img src="assets/mostly-events/hero-cover.jpg" alt="Mostly Events" loading="lazy">
+              <span class="pill-wrap"><span class="view-pill">View Case Study <span class="a">↗</span></span></span>
+            </span>
+            <span class="pn">03</span>
+            <div class="pinfo">
+              <div class="pi-top"><h4>Mostly Events</h4><span class="pk">Two-Sided Recruitment App</span></div>
+              <p>One listing, many roles — a two-sided recruitment app built only for weddings and events.</p>
+            </div>
+          </a>
+          <a class="proj rv" href="verified-beauty-providers.html">
+            <span class="pimg mock">
+              <span class="mn"><span class="s"></span><span class="m"><i></i><i></i><i></i><i></i></span></span>
+              <span class="pill-wrap"><span class="view-pill">View Case Study <span class="a">↗</span></span></span>
+            </span>
+            <span class="pn">04</span>
+            <div class="pinfo">
+              <div class="pi-top"><h4>Verified Beauty Providers</h4><span class="pk">Marketplace &amp; Design System</span></div>
+              <p>A verification-first beauty marketplace built straight from a 48-screen Figma system.</p>
+            </div>
+          </a>
+          <a class="proj rv" href="resume.html">
+            <span class="pimg mock purple">
+              <span class="mn"><span class="s"></span><span class="m"><i></i><i></i><i></i><i></i></span></span>
+              <span class="pill-wrap"><span class="view-pill">View Case Study <span class="a">↗</span></span></span>
+            </span>
+            <span class="pn">05</span>
+            <div class="pinfo">
+              <div class="pi-top"><h4>Polystox</h4><span class="pk">B2B Marketplace Platform</span></div>
+              <p>Trading platform for polymer manufacturers, traders, importers and exporters.</p>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
