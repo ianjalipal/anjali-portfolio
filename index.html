@@ -319,6 +319,14 @@
     position: absolute; top: 10px; left: 10px; z-index: 2; font-size: 10.5px; font-weight: 700; letter-spacing: .04em;
     color: var(--ink); background: rgba(255,255,255,.85); backdrop-filter: blur(4px); border-radius: 999px; padding: 4px 9px;
   }
+  .proj .pstatus {
+    position: absolute; top: 10px; right: 10px; z-index: 2; font-size: 10px; font-weight: 700; letter-spacing: .03em;
+    display: inline-flex; align-items: center; gap: 5px; color: var(--ink);
+    background: rgba(255,255,255,.85); backdrop-filter: blur(4px); border-radius: 999px; padding: 4px 9px 4px 7px;
+  }
+  .proj .pstatus .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--dim); flex-shrink: 0; }
+  .proj .pstatus.live .dot { background: #22C55E; }
+  .proj .pstatus.progress .dot { background: #F5A524; }
   .pinfo { display: flex; flex-direction: column; gap: 5px; margin-top: 14px; }
   .pi-top { display: flex; flex-direction: column; gap: 2px; }
   .pinfo h4 { margin: 0; font-size: 15.5px; font-weight: 800; letter-spacing: -.02em; }
@@ -526,6 +534,7 @@
         <a class="proj rv" href="clear-start-tax.html">
           <span class="pimg"><img src="assets/clear-start-tax/dashboard.jpg" alt="Clear Start Tax client dashboard" loading="lazy"></span>
           <span class="pn">01</span>
+          <span class="pstatus"><span class="dot"></span>Concept</span>
           <div class="pinfo">
             <div class="pi-top"><h4>Clear Start Tax</h4><span class="pk">Client Portal Dashboard</span></div>
             <p>A guided client dashboard for a tax-debt relief company — case status, payments, documents and appointments in one place.</p>
@@ -535,6 +544,7 @@
         <a class="proj rv" href="kissa-x.html">
           <span class="pimg"><img src="assets/kissa-x/home.jpg" alt="Kissa X home screen" loading="lazy"></span>
           <span class="pn">02</span>
+          <span class="pstatus"><span class="dot"></span>Concept</span>
           <div class="pinfo">
             <div class="pi-top"><h4>Kissa X</h4><span class="pk">Movie &amp; Series Streaming App</span></div>
             <p>Content-first discovery, type-aware detail pages and an honest paywall — designed end to end with its own system.</p>
@@ -544,6 +554,7 @@
         <a class="proj rv" href="jay-hyzmat.html">
           <span class="pimg"><img src="assets/jay-hyzmat/home.png" alt="JayHyzmat home screen" loading="lazy"></span>
           <span class="pn">03</span>
+          <span class="pstatus"><span class="dot"></span>Concept</span>
           <div class="pinfo">
             <div class="pi-top"><h4>JayHyzmat</h4><span class="pk">Building-Materials Marketplace</span></div>
             <p>A spec-first, distance-aware marketplace for construction supplies — designed end to end with its own system.</p>
@@ -553,6 +564,7 @@
         <a class="proj rv" href="mostly-events.html">
           <span class="pimg"><img src="assets/mostly-events/hero-cover.jpg" alt="Mostly Events" loading="lazy"></span>
           <span class="pn">04</span>
+          <span class="pstatus live"><span class="dot"></span>Live</span>
           <div class="pinfo">
             <div class="pi-top"><h4>Mostly Events</h4><span class="pk">Two-Sided Recruitment App</span></div>
             <p>One listing, many roles — a two-sided recruitment app built only for weddings and events.</p>
@@ -562,6 +574,7 @@
         <a class="proj rv" href="verified-beauty-providers.html">
           <span class="pimg mock"><span class="mn"><span class="s"></span><span class="m"><i></i><i></i><i></i><i></i></span></span></span>
           <span class="pn">05</span>
+          <span class="pstatus progress"><span class="dot"></span>In Progress</span>
           <div class="pinfo">
             <div class="pi-top"><h4>Verified Beauty Providers</h4><span class="pk">Marketplace &amp; Design System</span></div>
             <p>A verification-first beauty marketplace built straight from a 48-screen Figma system.</p>
@@ -571,10 +584,11 @@
         <a class="proj rv" href="resume.html">
           <span class="pimg mock purple"><span class="mn"><span class="s"></span><span class="m"><i></i><i></i><i></i><i></i></span></span></span>
           <span class="pn">06</span>
+          <span class="pstatus live"><span class="dot"></span>Live</span>
           <div class="pinfo">
             <div class="pi-top"><h4>Polystox</h4><span class="pk">B2B Marketplace Platform</span></div>
             <p>Trading platform for polymer manufacturers, traders, importers and exporters.</p>
-            <span class="cta">View Case Study <span class="a">↗</span></span>
+            <span class="cta">More in Résumé <span class="a">↗</span></span>
           </div>
         </a>
       </div>
