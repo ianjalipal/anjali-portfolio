@@ -286,8 +286,13 @@
   }
   @media (prefers-reduced-motion: reduce) { .sticker-board .sk { transition: none; } }
 
-  /* ---- selected projects — tall pinned stack (ref: karolinahess.com/works) ---- */
-  .proj-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+  /* ---- selected projects — full-bleed, breaks out of the bento grid (ref: karolinahess.com/works) ---- */
+  .c-projects {
+    width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+    margin-top: clamp(48px, 7vw, 80px); margin-bottom: clamp(48px, 7vw, 80px);
+    padding: 0 var(--edge); box-sizing: border-box;
+  }
+  .proj-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; max-width: 1180px; margin: 0 auto; }
   .proj-head a { font-size: 12.5px; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 5px; }
 
   .proj-scene { display: grid; grid-template-columns: minmax(0, 1fr); margin-top: 10px; }
@@ -535,9 +540,10 @@
       </div>
       <p class="board-hint">try moving things around :)</p>
     </section>
+    </div><!-- /.bento (part 1) -->
 
-    <!-- 5 · SELECTED PROJECTS -->
-    <section class="card c-projects rv" id="projects">
+    <!-- 5 · SELECTED PROJECTS — full-bleed, breaks out of the bento grid -->
+    <section class="c-projects rv" id="projects">
       <div class="proj-head">
         <span class="lbl">Selected Projects</span>
         <a href="resume.html">View all projects <span aria-hidden="true">→</span></a>
@@ -614,6 +620,7 @@
       </div>
     </section>
 
+    <div class="bento"><!-- /.bento (part 2) -->
     <!-- 7 · CONTACT -->
     <section class="card c-contact rv" id="contact">
       <div class="contact-inner">
