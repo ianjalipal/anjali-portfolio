@@ -5,7 +5,7 @@
 <title>Clear Start Tax — Case Study | Anjali Pal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<meta name="description" content="Clear Start Tax — a client portal for a tax-debt relief company. Case status, payments, document upload, appointments and a tax organizer, all in one guided dashboard. Product design end to end — UX, UI and the design system. By Anjali Pal.">
+<meta name="description" content="Clear Start Tax — a client portal for a tax-debt relief company, on web and a companion mobile app. Case status, payments, document upload, appointments and a tax organizer, all in one guided dashboard. Product design end to end — UX, UI and the design system. By Anjali Pal.">
 <meta name="author" content="Anjali Pal">
 <link rel="canonical" href="https://ianjalipal.github.io/anjali-portfolio/clear-start-tax.html">
 <meta property="og:type" content="article">
@@ -139,6 +139,14 @@
   .collage img{ width:100%; height:100%; object-fit:cover; object-position:top center; border-radius:var(--r-sm); aspect-ratio:16/10; }
   @media (max-width:640px){ .collage{ grid-template-columns:1fr; } }
 
+  /* companion mobile app — portrait phone cards */
+  .pgrid{ display:grid; grid-template-columns:repeat(6,1fr); gap:12px; }
+  .pgrid .p{ border-radius:var(--r-sm); overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow); background:#fff; aspect-ratio:9/19.5; transition:transform .3s ease, box-shadow .3s ease; }
+  .pgrid .p:hover{ transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+  .pgrid .p img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+  @media (max-width:860px){ .pgrid{ grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:520px){ .pgrid{ grid-template-columns:repeat(2,1fr); } }
+
   /* marquee + works */
   .marquee{ display:block; margin-top:clamp(72px,11vw,132px); overflow:hidden; padding:clamp(22px,4vw,36px) 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .mq{ display:inline-flex; white-space:nowrap; will-change:transform; animation:mq 24s linear infinite; }
@@ -214,7 +222,7 @@
       <div><dt>Year</dt><dd>2023</dd></div>
       <div><dt>Role</dt><dd>Product designer</dd></div>
       <div><dt>Scope</dt><dd>UX · UI · Design system</dd></div>
-      <div><dt>Category</dt><dd>Fintech · Web dashboard</dd></div>
+      <div><dt>Category</dt><dd>Fintech · Web + Mobile</dd></div>
     </dl>
   </header>
 
@@ -222,7 +230,7 @@
     <div class="sec">
       <h2 class="slabel reveal">Project Scope</h2>
       <div class="sbody reveal">
-        <p>Design the Clear Start Tax client portal end to end — a web dashboard that carries a client through a tax-debt resolution case from sign-in to close. The build covers authentication, a status-first dashboard, billing and payments, document upload, appointment scheduling, a multi-year tax organizer, and self-serve support (FAQ, tax news, contact).</p>
+        <p>Design the Clear Start Tax client portal end to end — a web dashboard, and a companion mobile app, that carry a client through a tax-debt resolution case from sign-in to close. The build covers authentication, a status-first dashboard, billing and payments, document upload, appointment scheduling, a multi-year tax organizer, and self-serve support (FAQ, tax news, contact) — on both platforms.</p>
         <p>My role spanned the whole product: <strong>UX</strong> — information architecture and flows for a process most clients only go through once; <strong>UI</strong> — every screen; and the <strong>design system</strong> — the sidebar navigation, status pills, tables and form patterns reused across every module.</p>
       </div>
     </div>
@@ -273,6 +281,7 @@
           <li><b>One portal, five workflows</b> — payments, documents, appointments, tax organizer and support unified under one sidebar.</li>
           <li><b>Reusable design system</b> — sidebar nav, status pills, tables and form patterns shared across every module.</li>
           <li><b>25+ screens</b> across authentication, dashboard, billing, documents, scheduling, tax organizer and support.</li>
+          <li><b>Companion mobile app</b> — the same case-status-first flow adapted for a phone, so a client can check where things stand without opening a laptop.</li>
         </ul>
       </div>
     </div>
@@ -287,6 +296,25 @@
       <div class="browser reveal">
         <div class="chrome"><i></i><i></i><i></i></div>
         <div class="shotwrap"><img src="assets/clear-start-tax/faq.jpg" alt="FAQ and support"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="app">
+    <div class="sec">
+      <h2 class="slabel reveal">Companion Mobile App</h2>
+      <div class="sbody reveal">
+        <p>The same portal, rebuilt for a phone. A tax case doesn't pause for business hours — clients wanted to check their status, upload a document or confirm an appointment from wherever they were. The mobile app carries the same information hierarchy as the web dashboard — case status first, then a clear next step — with the sidebar collapsed into a menu and every form simplified for a single thumb.</p>
+      </div>
+    </div>
+    <div class="shot reveal">
+      <div class="pgrid">
+        <div class="p"><img src="assets/clear-start-tax-app/sign-in.jpg" alt="Sign in"></div>
+        <div class="p"><img src="assets/clear-start-tax-app/dashboard.jpg" alt="Dashboard"></div>
+        <div class="p"><img src="assets/clear-start-tax-app/payment.jpg" alt="Payment"></div>
+        <div class="p"><img src="assets/clear-start-tax-app/upload-document.jpg" alt="Upload document"></div>
+        <div class="p"><img src="assets/clear-start-tax-app/appointment.jpg" alt="Appointment"></div>
+        <div class="p"><img src="assets/clear-start-tax-app/faq.jpg" alt="FAQ"></div>
       </div>
     </div>
   </section>
