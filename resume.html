@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Résumé | Anjali Pal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Anjali Pal — Product Designer. View or download the résumé (PDF).">
+<meta name="author" content="Anjali Pal">
+<link rel="canonical" href="https://ianjalipal.github.io/anjali-portfolio/resume.html">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Anjali Pal — Résumé">
+<meta property="og:description" content="Product Designer. View or download the résumé (PDF).">
+<meta property="og:url" content="https://ianjalipal.github.io/anjali-portfolio/resume.html">
+<meta name="theme-color" content="#FAFAFA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%234F46E5'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Arial,sans-serif'%20font-size='13'%20font-weight='800'%20text-anchor='middle'%20fill='%23fff'%3EAP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAFA;
+    --card:#FFFFFF;
+    --ink:#16181F;
+    --grey:#6B7280;
+    --dim:#9AA0AC;
+    --line:#ECECEC;
+    --line-2:#E2E2E6;
+    --accent:#4F46E5;
+    --accent-bright:#6366F1;
+    --r-md:20px;
+    --shadow:0 14px 40px -22px rgba(22,24,31,.14);
+    --shadow-lg:0 34px 70px -30px rgba(22,24,31,.22);
+    --font:"Inter",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --wrap:1000px;
+    --pad:clamp(20px,4vw,40px);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:var(--font); font-size:15px; line-height:1.55; letter-spacing:-.011em; -webkit-font-smoothing:antialiased; }
+  a{ color:inherit; text-decoration:none; }
+  p{ margin:0; }
+
+  .wrap{ max-width:var(--wrap); margin:0 auto; padding:0 var(--pad); }
+
+  .nav{
+    position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:16px var(--pad); background:linear-gradient(var(--bg), rgba(250,250,250,.6)); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    font-size:13px; font-weight:600; letter-spacing:-.01em; color:var(--grey);
+  }
+  .nav a{ color:var(--grey); display:inline-flex; align-items:center; gap:6px; }
+  .nav a:hover{ color:var(--accent); }
+
+  header.hero{ text-align:center; padding:clamp(40px,7vw,72px) 0 clamp(28px,4vw,40px); }
+  h1{ font-weight:800; letter-spacing:-.03em; line-height:1.1; font-size:clamp(28px,4.4vw,42px); margin:0 0 10px; }
+  .sub{ color:var(--grey); font-size:15px; max-width:52ch; margin:0 auto 26px; }
+
+  .actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .btn{
+    font-size:13.5px; font-weight:600; letter-spacing:-.01em; border-radius:999px; height:46px; padding:0 22px;
+    display:inline-flex; align-items:center; gap:8px; transition:transform .16s ease, box-shadow .16s ease;
+  }
+  .btn.solid{ background:var(--ink); color:#fff; }
+  .btn.solid:hover{ transform:translateY(-2px); box-shadow:var(--shadow); }
+  .btn.line{ border:1px solid var(--line-2); background:#fff; color:var(--ink); }
+  .btn.line:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+
+  .viewer{
+    margin:clamp(28px,5vw,48px) 0 clamp(56px,8vw,88px);
+    border-radius:var(--r-md); overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow-lg); background:var(--card);
+  }
+  .viewer iframe{ width:100%; height:min(85vh,1100px); border:0; display:block; }
+
+  .fallback{ padding:48px var(--pad); text-align:center; color:var(--grey); font-size:14px; }
+  .fallback a{ color:var(--accent); font-weight:600; }
+
+  footer{ padding:0 0 clamp(40px,6vw,64px); text-align:center; }
+  .foot-fine{ font-size:12.5px; color:var(--dim); }
+  .foot-fine a{ color:var(--grey); }
+  .foot-fine a:hover{ color:var(--accent); }
+
+  @media (max-width:640px){
+    .viewer iframe{ height:70vh; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg> Anjali Pal</a>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <h1>Résumé</h1>
+    <p class="sub">Product Designer — view it below, or download the PDF.</p>
+    <div class="actions">
+      <a class="btn solid" href="assets/resume/Anjali-Pal-Product-Designer.pdf" download>
+        Download PDF
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v13M7 12l5 5 5-5M5 21h14"/></svg>
+      </a>
+      <a class="btn line" href="assets/resume/Anjali-Pal-Product-Designer.pdf" target="_blank" rel="noopener">
+        Open in New Tab
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="viewer">
+    <iframe src="assets/resume/Anjali-Pal-Product-Designer.pdf" title="Anjali Pal — Résumé (PDF)" loading="lazy">
+      <p class="fallback">Your browser can't display the PDF inline. <a href="assets/resume/Anjali-Pal-Product-Designer.pdf">Open it directly</a> instead.</p>
+    </iframe>
+  </div>
+</div>
+
+<footer>
+  <p class="foot-fine"><a href="index.html">&larr; Back to portfolio</a></p>
+</footer>
+
+</body>
+</html>
