@@ -90,6 +90,9 @@
     transition:transform .16s ease, box-shadow .16s ease;
   }
   .btn:hover{ color:#fff; transform:translateY(-2px); box-shadow:var(--shadow); }
+  .btn.line{ background:#fff; color:var(--ink); border:1px solid var(--line-2); }
+  .btn.line:hover{ border-color:var(--accent); color:var(--accent); box-shadow:none; }
+  .actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 
   /* cover — a single framed phone screen, centred */
   .cover{ margin-top:clamp(40px,6vw,72px); display:flex; justify-content:center; }
@@ -177,6 +180,7 @@
   h1.title{ --r:160px; animation-delay:0s; }
   .hero .desc{ --r:70px; animation-delay:.12s; }
   .hero .btn{ --r:50px; animation-delay:.18s; }
+  .hero .actions{ --r:50px; animation-delay:.18s; }
   .hero .cover{ --r:40px; animation-delay:.24s; }
   .hero .meta{ --r:40px; animation-delay:.3s; }
   @keyframes rise{ from{ transform:translateY(var(--r,60px)); } to{ transform:translateY(0); } }
@@ -203,7 +207,10 @@
     <div class="eyebrow" data-h>Case study</div>
     <h1 class="title" data-h>DC</h1>
     <p class="desc" data-h>A health &amp; wellness app that brings fitness, diet plans, a nutrition diary and guided meditation into one dashboard — plus FitGenie, an AI assistant that reads a photo of your meal and returns its nutrition. I designed the product end to end: <strong>UX, UI and the design system</strong>.</p>
-    <a class="btn" data-h href="#design">See the screens &darr;</a>
+    <div class="actions" data-h>
+      <a class="btn" href="#design">See the screens &darr;</a>
+      <a class="btn line" href="https://www.figma.com/design/TDdqljbhs5ehDHMk2me9Uv/DC?node-id=17-7&p=f&t=pmSOeibhhbRdQjAB-0" target="_blank" rel="noopener">View in Figma &#8599;</a>
+    </div>
 
     <div class="cover" data-h>
       <div class="phone">
@@ -215,9 +222,7 @@
       <div><dt>Year</dt><dd>2024</dd></div>
       <div><dt>Role</dt><dd>Product designer</dd></div>
       <div><dt>Scope</dt><dd>UX · UI · Design system</dd></div>
-      <div><dt>Category</dt><dd>Health &amp; Wellness · Mobile</dd></div>
-      <div><dt>Status</dt><dd>Self-directed redesign</dd></div>
-    </dl>
+      <div><dt>Category</dt><dd>Health &amp; Wellness · Mobile</dd></div>    </dl>
   </header>
 
   <section id="scope">

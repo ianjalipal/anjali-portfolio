@@ -90,6 +90,9 @@
     transition:transform .16s ease, box-shadow .16s ease;
   }
   .btn:hover{ color:#fff; transform:translateY(-2px); box-shadow:var(--shadow); }
+  .btn.line{ background:#fff; color:var(--ink); border:1px solid var(--line-2); }
+  .btn.line:hover{ border-color:var(--accent); color:var(--accent); box-shadow:none; }
+  .actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 
   /* cover — full-width landscape */
   .cover{ margin-top:clamp(40px,6vw,72px); }
@@ -202,6 +205,7 @@
   h1.title{ --r:160px; animation-delay:0s; }
   .hero .desc{ --r:70px; animation-delay:.12s; }
   .hero .btn{ --r:50px; animation-delay:.18s; }
+  .hero .actions{ --r:50px; animation-delay:.18s; }
   .hero .cover{ --r:40px; animation-delay:.24s; }
   .hero .meta{ --r:40px; animation-delay:.3s; }
   @keyframes rise{ from{ transform:translateY(var(--r,60px)); } to{ transform:translateY(0); } }
@@ -229,7 +233,10 @@
     <div class="eyebrow" data-h>Case study</div>
     <h1 class="title" data-h>Mostly Events</h1>
     <p class="desc" data-h>A recruitment app built only for the events industry — where one event post staffs a whole crew. A décor lead, servers, a coordinator, a photographer, all from one listing. I designed <strong>both sides solo</strong> at Developer Bazaar: the recruiter product for event companies and the job-seeker app for freelancers.</p>
-    <a class="btn" data-h href="https://mostlyevents.com" target="_blank" rel="noopener">Live preview &#8599;</a>
+    <div class="actions" data-h>
+      <a class="btn" href="https://mostlyevents.com" target="_blank" rel="noopener">Live preview &#8599;</a>
+      <a class="btn line" href="https://www.figma.com/design/HvrUxXf02wTU5zYQ4nF5bN/Mostly-Events?node-id=200-356&p=f&t=Uu6sjgwmcsGkbGao-0" target="_blank" rel="noopener">View in Figma &#8599;</a>
+    </div>
 
     <div class="cover" data-h>
       <figure><img src="assets/mostly-events/hero-cover.jpg" alt="Mostly Events — job-seeker and recruiter apps, with the one-post-many-roles model" width="1421" height="901"></figure>
@@ -239,9 +246,7 @@
       <div><dt>Year</dt><dd>2024</dd></div>
       <div><dt>Role</dt><dd>Sole designer</dd></div>
       <div><dt>Category</dt><dd>Recruitment · Mobile</dd></div>
-      <div><dt>Duration</dt><dd>~3 months</dd></div>
-      <div><dt>Status</dt><dd>Live product</dd></div>
-    </dl>
+      <div><dt>Duration</dt><dd>~3 months</dd></div>    </dl>
   </header>
 
   <section id="scope">
