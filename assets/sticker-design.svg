@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- floating accents -->
+  <g>
+    <path d="M396 96 l6 14 14 6 -14 6 -6 14 -6 -14 -14 -6 14 -6 z" fill="#FFCF00"/>
+    <circle cx="440" cy="150" r="7" fill="#FC09B2"/>
+    <path d="M118 92 l5 11 11 5 -11 5 -5 11 -5 -11 -11 -5 11 -5 z" fill="#00D5FE"/>
+  </g>
+
+  <!-- laptop shadow -->
+  <ellipse cx="256" cy="420" rx="168" ry="18" fill="#000E3F" opacity="0.12"/>
+
+  <!-- laptop base / keyboard deck -->
+  <path d="M78 388 L434 388 L458 424 C460 429 457 434 451 434 L61 434 C55 434 52 429 54 424 Z" fill="#000E3F"/>
+  <rect x="222" y="388" width="68" height="10" rx="3" fill="#0C1A52"/>
+
+  <!-- screen bezel -->
+  <rect x="96" y="104" width="320" height="288" rx="18" fill="#000E3F"/>
+  <rect x="112" y="120" width="288" height="256" rx="8" fill="#FFFFFF"/>
+
+  <!-- browser chrome dots -->
+  <circle cx="130" cy="138" r="5" fill="#FC09B2"/>
+  <circle cx="148" cy="138" r="5" fill="#FFCF00"/>
+  <circle cx="166" cy="138" r="5" fill="#00D5FE"/>
+  <rect x="112" y="120" width="288" height="30" rx="8" fill="#EDEFF7"/>
+  <rect x="112" y="148" width="288" height="2" fill="#E2E2E6"/>
+
+  <!-- sidebar -->
+  <rect x="112" y="150" width="56" height="226" fill="#F4F4F6"/>
+  <rect x="124" y="166" width="32" height="8" rx="4" fill="#915EFD"/>
+  <rect x="124" y="188" width="32" height="6" rx="3" fill="#CFCFE6"/>
+  <rect x="124" y="204" width="32" height="6" rx="3" fill="#CFCFE6"/>
+  <rect x="124" y="220" width="32" height="6" rx="3" fill="#CFCFE6"/>
+
+  <!-- canvas / artboards -->
+  <rect x="184" y="166" width="92" height="66" rx="6" fill="#EAF6FF" stroke="#00D5FE" stroke-width="2"/>
+  <rect x="196" y="178" width="68" height="8" rx="4" fill="#00AEDB"/>
+  <rect x="196" y="192" width="46" height="6" rx="3" fill="#9FE0F7"/>
+  <rect x="196" y="204" width="56" height="6" rx="3" fill="#9FE0F7"/>
+
+  <rect x="288" y="166" width="96" height="66" rx="6" fill="#FFF3FB" stroke="#FC09B2" stroke-width="2"/>
+  <circle cx="306" cy="184" r="9" fill="#FC09B2"/>
+  <rect x="322" y="178" width="50" height="6" rx="3" fill="#FFADE2"/>
+  <rect x="322" y="190" width="38" height="6" rx="3" fill="#FFADE2"/>
+  <rect x="296" y="206" width="78" height="18" rx="5" fill="#FC09B2"/>
+
+  <rect x="184" y="246" width="200" height="76" rx="6" fill="#FFFBEA" stroke="#FFCF00" stroke-width="2"/>
+  <rect x="196" y="258" width="72" height="8" rx="4" fill="#E0A800"/>
+  <rect x="196" y="274" width="176" height="6" rx="3" fill="#F3E2A0"/>
+  <rect x="196" y="286" width="150" height="6" rx="3" fill="#F3E2A0"/>
+  <rect x="196" y="298" width="100" height="6" rx="3" fill="#F3E2A0"/>
+
+  <rect x="184" y="334" width="200" height="30" rx="15" fill="#915EFD"/>
+  <rect x="204" y="344" width="90" height="10" rx="5" fill="#FFFFFF"/>
+
+  <!-- cursor pointing at the pink card -->
+  <path d="M300 230 L300 272 L311 262 L320 280 L329 275 L320 257 L334 257 Z" fill="#000E3F"/>
+  <path d="M302 233 L302 266 L310 258 L318 274 L324 271 L316 255 L327 255 Z" fill="#FFFFFF"/>
+</svg>
