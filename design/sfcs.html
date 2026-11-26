@@ -194,7 +194,7 @@
   <header class="hero">
     <div class="eyebrow" data-h>Case study</div>
     <h1 class="title" data-h>SFCS</h1>
-    <p class="desc" data-h>School of Film and Cinema Studies — India's only all-practical, "no classroom" film school, with campuses in Indore and Ahmedabad. I designed and built the website end to end, and I'm currently running its <strong>digital marketing</strong> — ads, content and admissions inbound.</p>
+    <p class="desc" data-h>School of Film and Cinema Studies — India's only all-practical, "no classroom" film school, with campuses in Indore and Ahmedabad. I designed, built and now maintain the site solo, running live inside Wix Studio as nine custom-coded modules with their own content system and <strong>AI chat assistant</strong>.</p>
     <div class="actions" data-h>
       <a class="btn" href="https://www.schooloffilm.in/" target="_blank" rel="noopener">Visit Site &#8599;</a>
       <a class="btn line" href="#design">See the screens &darr;</a>
@@ -208,30 +208,28 @@
     </div>
 
     <dl class="meta" data-h>
-      <div><dt>Year</dt><dd>2025 – Ongoing</dd></div>
-      <div><dt>Role</dt><dd>Designer &amp; builder</dd></div>
-      <div><dt>Scope</dt><dd>UX · UI · Web build · Marketing</dd></div>
-      <div><dt>Category</dt><dd>Education · Film · Website</dd></div>
+      <div><dt>Year</dt><dd>2026</dd></div>
+      <div><dt>Role</dt><dd>Designer, developer &amp; maintainer</dd></div>
+      <div><dt>Scope</dt><dd>Design · Build · SEO · AI chat</dd></div>
+      <div><dt>Category</dt><dd>Education · Web · Wix Studio</dd></div>
     </dl>
   </header>
 
   <section id="scope">
     <div class="sec">
-      <h2 class="slabel reveal">Project Scope</h2>
+      <h2 class="slabel reveal">Overview</h2>
       <div class="sbody reveal">
-        <p>Design and build the public website for SFCS end to end — a marketing and admissions site covering eight course departments and their fees, a student-projects showcase with real festival credits, a running script grant programme, two campuses, and a full apply/admissions flow, plus a contact form and FAQ.</p>
-        <p><em>A note on context:</em> this is real, live client work — the site is in production at schooloffilm.in, and past the build, I'm the one currently running its digital marketing: paid and organic admissions campaigns, content, and the inbound funnel the site itself feeds.</p>
-        <p>My role spanned design and build: <strong>UX</strong> — the admissions funnel, the course/fee structure, and the student-work showcase; <strong>UI</strong> — every screen and interaction; and <strong>the build</strong> — shipping it as a live, production website rather than handing off a file.</p>
+        <p>SFCS is an all-practical film school with campuses in Indore and Ahmedabad. I designed, built and now maintain its website — schooloffilm.in — solo, from first concept through SEO, launch and ongoing updates. Client contact: Abhinav Dubey, SFCS.</p>
+        <p><em>A note on context:</em> this is real, live client work, actively maintained. The site runs inside Wix Studio, but not as a Wix template — it's nine custom-coded front-end modules that load a single pinned build, with their own content system and an AI chat assistant underneath.</p>
       </div>
     </div>
   </section>
 
   <section id="problem">
     <div class="sec">
-      <h2 class="slabel reveal">Problem Statement</h2>
+      <h2 class="slabel reveal">Problem</h2>
       <div class="sbody reveal">
-        <p>Film-school websites tend to read like any other college's — a logo, a navy palette, a wall of course names. That's a mismatch for a school whose entire pitch is "no classroom, real sets, professional equipment from day one." A prospective student deciding between SFCS and a conventional film school needed to feel the difference in the first few seconds, not read it in a paragraph three scrolls down.</p>
-        <p><strong>Goal: make the site feel like a film set, not a classroom</strong> — while still doing the unglamorous job well: clear fees per department, a legible apply flow, and real proof (festival credits, finished films) that students actually make things here.</p>
+        <p>The school's previous Wix site didn't communicate what makes SFCS different: no classroom lectures, students on real sets with professional equipment from day one. It also had weak SEO and no clear route from visitor to application — fees, the Script to Screen Grant, Ahmedabad pre-registration and admissions were all hard to find. And the school's own team had no way to edit text, fees, films or campus details without a developer.</p>
       </div>
     </div>
     <div class="shot reveal">
@@ -241,47 +239,66 @@
 
   <section id="research">
     <div class="sec">
-      <h2 class="slabel reveal">Research &amp; Ideation</h2>
+      <h2 class="slabel reveal">Approach</h2>
       <div class="sbody reveal">
-        <p>Instead of a conventional "Programs" page, I looked at what a film set actually hands you — a slate, a schedule, a call sheet — and used those as the literal UI metaphor for admissions content that's normally dry.</p>
-        <p><strong>Courses live on a clapperboard</strong> — picking a department fills out a real film slate (production, roll, scene, department, take, length, director) with that department's own fee and structure, instead of a generic accordion. <strong>Proof over promises</strong> — the site leads with real finished student films and their actual festival selections (Cannes Directors' Fortnight, IFFI, London Short Film Festival) rather than marketing copy about "world-class training." <strong>Admissions open to anyone</strong> — the apply flow explicitly welcomes applicants with no filmmaking background, since that's most of who should be applying.</p>
+        <p>I treated this as three problems sharing one page: a cinematic front end that actually shows the "no classroom" pitch, a content system the school team could run themselves, and real, crawlable SEO out of a site that had to live inside Wix's custom-element model.</p>
+        <p>I designed the visual language first — dark background, yellow accent, kinetic type — then built the front end in plain HTML/CSS/JS with GSAP and canvas animation rather than Wix's own templates, so it could carry real motion without fighting the platform.</p>
       </div>
     </div>
     <div class="shot reveal">
       <div class="fcard">
         <span class="kick">The core decision</span>
-        <h3>Borrow every UI metaphor from a film set — a slate, a schedule — never from a classroom.</h3>
-        <span class="foot">Course picker as a real clapperboard &nbsp;&middot;&nbsp; real festival credits, not marketing copy</span>
+        <h3>Build the front end outside Wix entirely, then ship it in as nine custom elements it just has to load.</h3>
+        <span class="foot">Plain HTML/CSS/JS, GSAP and canvas &nbsp;&middot;&nbsp; a content system the school team runs themselves</span>
       </div>
     </div>
   </section>
 
   <section id="design">
     <div class="sec">
-      <h2 class="slabel reveal">Design &amp; Results</h2>
+      <h2 class="slabel reveal">What I built</h2>
       <div class="sbody reveal">
-        <p>The course picker is the centrepiece: choosing Film Direction, Cinematography, Screenwriting or one of five other departments animates a real clapperboard slate into view, filled in with that department's own fee for the Foundation and Intense tracks. Featured Projects runs as a tilted poster-and-still collage per film — real posters, real stills, real director credit — backing onto a running festival list instead of a generic "our achievements" block.</p>
-        <p>Past the showcase, the site carries the operational load a school site actually needs: a two-campus admissions comparison (Indore live, Ahmedabad pre-registration), a plain three-step "how to apply" breakdown for applicants with zero film background, a running Script-to-Screen grant with its own rules and past winners, and a contact form backed by an FAQ. I also handle the site's ongoing digital marketing — the admissions campaigns that drive traffic into this exact funnel.</p>
-        <ul class="result reveal">
-          <li><b>Live, in production</b> — shipped and running real admissions cycles at schooloffilm.in.</li>
-          <li><b>A slate-based course picker</b> — eight departments, each with its own fee structure, framed as a literal film slate.</li>
-          <li><b>Real proof, not marketing copy</b> — finished student films with actual festival selections (Cannes, IFFI, London Short Film Festival).</li>
-          <li><b>A running grant programme</b> — Script to Screen, with its own submission rules and a credited past winner.</li>
-          <li><b>Two-campus admissions</b> — a live Indore flow and a pre-registration flow for the new Ahmedabad batch.</li>
-          <li><b>Ongoing digital marketing</b> — I continue to run the admissions campaigns feeding this site, past the build.</li>
-        </ul>
+        <p>A one-page site with a dark, cinematic look and a yellow accent, led by a kinetic "No classroom film school." headline and a canvas-drawn multicolour ring animation in the hero. Sections cover why SFCS, courses and fees, the Script to Screen Grant (as a popup), admissions, campuses, a 2025–26 projects showcase with real film credits (Marigold, Meera and others), FAQ, contact, a newsletter signup, and social links.</p>
+        <p>All text, fees, dates, films, campuses and social links live in JSON files edited through Pages CMS, so the team updates the site without touching code. A Python build script compiles the site and its content into a single JavaScript file, shipped as nine Wix Studio custom elements — Hero, Why, Courses/Grant, Admissions, Campuses, Message, FAQ/Contact, Subscribe, Footer — loaded from a jsDelivr CDN URL pinned to a specific git commit. Updates go through a pull request, a rebuild, and a check that the live site is actually serving the new build.</p>
+        <p>For SEO, the site generates a crawlable noscript block from the same JSON content, plus LocalBusiness structured data, a shorter page title, image alt text, and 301 redirects from the old site's URLs. I also built and styled a Wix Smart Chat assistant, trained on rules written from the site's real content — courses, fees, how to apply, the grant, campuses — answering in English, Hindi and Hinglish with quick-reply topics. Its launcher is a restyled dark pill with a rotating multicolour stroke in the hero's ring colours, Wix's default glow hidden, lifted clear of the page content.</p>
       </div>
     </div>
 
     <div class="shot stack">
       <div class="shot-inner reveal">
-        <img src="assets/sfcs/course-picker.jpg" alt="SFCS course picker styled as a real film clapperboard slate">
+        <img src="assets/sfcs/course-picker.jpg" alt="SFCS courses and fees section">
       </div>
       <div class="shot-inner reveal">
         <img src="assets/sfcs/projects.jpg" alt="SFCS featured student projects — posters and stills collage">
       </div>
       <div class="shot-inner reveal">
         <img src="assets/sfcs/contact.jpg" alt="SFCS contact form and FAQ">
+      </div>
+    </div>
+  </section>
+
+  <section id="challenges">
+    <div class="sec">
+      <h2 class="slabel reveal">Challenges</h2>
+      <div class="sbody reveal">
+        <p>Getting a heavily animated custom front end to run inside Wix Studio without an iframe, while staying crawlable, was the core technical problem. Because the first script loaded wins inside Wix's custom-element model, all nine elements have to ship from the same build every time — no partial updates.</p>
+        <ul class="result reveal">
+          <li><b>No iframe, still crawlable</b> — a fully custom, animated front end running as native Wix custom elements, not a sandboxed embed.</li>
+          <li><b>One build, nine elements</b> — every module has to ship from the same pinned commit, since the first script loaded wins.</li>
+          <li><b>Styling a widget with no style API</b> — the chat launcher's rotating stroke is applied at runtime by finding Wix's own button on the page.</li>
+          <li><b>Mobile collisions</b> — keeping the floating chat button clear of the hero's Apply button, and fixing the grant popup's scroll on phones.</li>
+          <li><b>A safe editing path</b> — giving a non-technical team a way to change content without ever touching code.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="sec">
+      <h2 class="slabel reveal">Result</h2>
+      <div class="sbody reveal">
+        <p>For Oct 25 – Nov 23, 2026, the site had 218 sessions, up 137% on the previous 30 days, and 116 unique visitors, up 59%. Traffic in that window: 110 direct, 45 from Google organic, 29 from ChatGPT and other AI platforms. Average session length was about 11 minutes — a small sample, but a real signal that visitors who land are reading, not bouncing.</p>
+        <p><strong>What I'd do next:</strong> an Ahmedabad-specific section for search, since that campus is newer and under-indexed; click tracking on the Apply and Pre-register actions, so the funnel from visit to application is measurable, not inferred from sessions; and Google Search Console, properly set up — not wired in yet.</p>
       </div>
     </div>
   </section>
