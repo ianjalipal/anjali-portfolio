@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SFCS — Case Study | Anjali Pal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="SFCS — School of Film and Cinema Studies, India's only all-practical, no-classroom film school. I designed and built the site end to end and currently run its digital marketing. By Anjali Pal.">
+<meta name="author" content="Anjali Pal">
+<link rel="canonical" href="https://ianjalipal.github.io/anjali-portfolio/design/sfcs.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SFCS — School of Film and Cinema Studies (Case Study)">
+<meta property="og:description" content="Designing and building an admissions website for an all-practical film school, plus running its ongoing digital marketing. By Anjali Pal.">
+<meta property="og:url" content="https://ianjalipal.github.io/anjali-portfolio/design/sfcs.html">
+<meta name="theme-color" content="#FAFAFA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%23B8860B'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Arial,sans-serif'%20font-size='13'%20font-weight='800'%20text-anchor='middle'%20fill='%23fff'%3ESF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAFA;
+    --card:#FFFFFF;
+    --ink:#16181F;
+    --grey:#6B7280;
+    --dim:#9AA0AC;
+    --line:#ECECEC;
+    --line-2:#E2E2E6;
+    --accent:#B8860B;        /* SFCS gold — links, hover, on white */
+    --accent-bright:#F0C336;
+    --accent-soft:#FFF8E1;
+    --surface:#F4F4F6;
+    --r:32px;
+    --r-md:20px;
+    --r-sm:13px;
+    --shadow:0 14px 40px -22px rgba(22,24,31,.14);
+    --shadow-lg:0 34px 70px -30px rgba(22,24,31,.22);
+    --font:"Inter",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --hand:"Caveat","Inter",cursive;
+    --serif:"Instrument Serif",Georgia,serif;
+    --wrap:1180px;
+    --pad:clamp(20px,4vw,40px);
+  }
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; overflow-x:hidden; }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:var(--font); font-size:15px; line-height:1.55; letter-spacing:-.011em; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body::before{
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(38% 30% at 88% 4%, rgba(184,134,11,.10), transparent 70%),
+      radial-gradient(34% 30% at 6% 96%, rgba(184,134,11,.07), transparent 70%);
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  a:hover{ color:var(--accent); }
+  ::selection{ background:var(--accent); color:#fff; }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:8px; }
+  p{ margin:0; }
+  strong{ color:var(--ink); font-weight:700; }
+  em{ color:var(--ink); font-style:normal; font-weight:600; }
+
+  .wrap{ position:relative; z-index:1; max-width:var(--wrap); margin:0 auto; padding:0 var(--pad); }
+
+  .nav{
+    position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:16px var(--pad); background:linear-gradient(var(--bg), rgba(250,250,250,.6)); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+    font-size:13px; font-weight:600; letter-spacing:-.01em; color:var(--grey);
+  }
+  .nav a{ color:var(--grey); }
+  .nav a:hover{ color:var(--accent); }
+  .nav .pill{ border:1px solid var(--line-2); border-radius:999px; padding:8px 16px; color:var(--accent); box-shadow:var(--shadow); display:inline-flex; align-items:center; gap:6px; transition:border-color .2s, color .2s, transform .16s ease; }
+  .nav .pill:hover{ border-color:var(--accent); transform:translateY(-1px); }
+  #clock{ font-variant-numeric:tabular-nums; color:var(--dim); font-size:12.5px; font-weight:600; }
+
+  .hero{ text-align:center; padding:clamp(56px,9vw,104px) 0 0; }
+  .hero .eyebrow{ font-family:var(--hand); font-size:22px; font-weight:700; line-height:1; color:var(--accent); display:inline-block; padding-bottom:4px; border-bottom:2px solid var(--accent); margin-bottom:clamp(22px,4vw,34px); }
+  h1.title{
+    font-weight:800; letter-spacing:-.035em; line-height:1.05; color:var(--ink);
+    font-size:clamp(38px,6.4vw,66px); margin:0 auto clamp(18px,2.4vw,26px);
+  }
+  .hero .desc{
+    font-size:clamp(15px,1.4vw,17px); line-height:1.6;
+    color:var(--grey); max-width:62ch; margin:0 auto clamp(26px,3.4vw,38px);
+  }
+  .btn{
+    font-size:13.5px; font-weight:600; letter-spacing:-.01em;
+    background:var(--ink); color:#fff; border-radius:999px; height:46px; padding:0 22px; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .16s ease, box-shadow .16s ease;
+  }
+  .btn:hover{ color:#fff; transform:translateY(-2px); box-shadow:var(--shadow); }
+  .btn.line{ background:#fff; color:var(--ink); border:1px solid var(--line-2); }
+  .btn.line:hover{ border-color:var(--accent); color:var(--accent); box-shadow:none; }
+  .actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+  .cover{ margin-top:clamp(40px,6vw,72px); }
+  .browser{ border-radius:var(--r-md); overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow-lg); background:#fff; }
+  .browser .chrome{ display:flex; align-items:center; gap:6px; padding:12px 16px; background:var(--surface); border-bottom:1px solid var(--line); }
+  .browser .chrome i{ width:10px; height:10px; border-radius:50%; background:var(--line-2); }
+  .browser .shotwrap{ aspect-ratio:1421/840; overflow:hidden; background:#0A0A0B; }
+  .browser img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+
+  .meta{ display:flex; flex-wrap:wrap; gap:24px 40px; justify-content:space-between; margin-top:clamp(40px,6vw,64px); }
+  .meta div{ display:flex; flex-direction:column; gap:6px; }
+  .meta dt{ font-size:12px; font-weight:600; color:var(--dim); }
+  .meta dd{ margin:0; font-weight:800; font-size:clamp(15px,1.6vw,18px); letter-spacing:-.02em; color:var(--ink); line-height:1.15; }
+  .meta dd a{ color:var(--accent); }
+  @media (max-width:760px){ .meta{ gap:20px 28px; } .meta div{ flex:1 1 40%; } }
+
+  section{ padding:clamp(60px,9vw,112px) 0 0; }
+  .sec{ display:grid; grid-template-columns:260px minmax(0,640px); justify-content:space-between; gap:40px; }
+  @media (max-width:960px){ .sec{ grid-template-columns:1fr; gap:16px; } }
+  .slabel{ font-weight:800; font-size:clamp(19px,2.2vw,24px); line-height:1.15; letter-spacing:-.03em; color:var(--ink); margin:0; }
+  .sbody p{ font-size:clamp(15px,1.4vw,17px); line-height:1.62; color:var(--grey); }
+  .sbody p + p{ margin-top:1.2em; }
+  .sbody .result{ list-style:none; margin:1.5em 0 0; padding:0; }
+  .sbody .result li{ font-size:clamp(15px,1.4vw,17px); line-height:1.55; color:var(--grey); position:relative; padding-left:20px; margin:.5em 0; }
+  .sbody .result li::before{ content:"—"; position:absolute; left:0; color:var(--accent); }
+  .sbody .result li b{ color:var(--ink); font-weight:700; }
+
+  .shot{ margin-top:clamp(36px,5vw,64px); border-radius:var(--r-md); overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow); background:#0A0A0B; }
+  .shot img{ width:100%; display:block; }
+  .shot.stack{ display:grid; gap:clamp(18px,3vw,32px); border-radius:0; overflow:visible; border:0; box-shadow:none; background:none; }
+  .shot.stack .shot-inner{ border-radius:var(--r-md); overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow); background:#0A0A0B; }
+
+  .fcard{
+    position:relative; overflow:hidden; border-radius:var(--r-md); padding:clamp(28px,5vw,56px);
+    min-height:clamp(280px,32vw,380px); display:flex; flex-direction:column; justify-content:space-between;
+    background:linear-gradient(135deg,#1A1308,#B8860B 62%,#F0C336);
+  }
+  .fcard .kick{ font-size:12px; font-weight:600; color:rgba(26,19,8,.65); position:relative; z-index:2; }
+  .fcard h3{ font-weight:800; font-size:clamp(22px,3vw,34px); line-height:1.1; letter-spacing:-.03em; color:#1A1308; max-width:24ch; margin:0; position:relative; z-index:2; }
+  .fcard .foot{ font-size:12px; font-weight:600; color:rgba(26,19,8,.75); position:relative; z-index:2; }
+
+  .collage{ display:grid; grid-template-columns:repeat(2,1fr); gap:8px; background:var(--card); border:1px solid var(--line); border-radius:var(--r-md); padding:12px; box-shadow:var(--shadow); }
+  .collage img{ width:100%; height:100%; object-fit:cover; object-position:top center; border-radius:var(--r-sm); aspect-ratio:4/3; background:#0A0A0B; }
+  @media (max-width:640px){ .collage{ grid-template-columns:1fr; } }
+
+  .marquee{ display:block; margin-top:clamp(72px,11vw,132px); overflow:hidden; padding:clamp(22px,4vw,36px) 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .mq{ display:inline-flex; white-space:nowrap; will-change:transform; animation:mq 24s linear infinite; }
+  .mq span{ font-weight:800; font-size:clamp(38px,7vw,82px); line-height:1; letter-spacing:-.04em; color:var(--ink); padding:0 .35em; }
+  .mq span.o{ color:transparent; -webkit-text-stroke:1px var(--line-2); }
+  .marquee:hover .mq{ animation-play-state:paused; }
+  @keyframes mq{ to{ transform:translateX(-50%); } }
+
+  .works{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(14px,2vw,20px); margin-top:clamp(36px,6vw,56px); }
+  @media (max-width:720px){ .works{ grid-template-columns:1fr; } }
+  .work{ position:relative; overflow:hidden; border-radius:var(--r-md); border:1px solid var(--line); aspect-ratio:16/10; display:flex; align-items:flex-end; padding:24px; background:var(--card); box-shadow:var(--shadow); transition:transform .22s ease, box-shadow .22s ease; }
+  .work:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+  .work .wt{ font-weight:800; font-size:clamp(16px,2vw,21px); letter-spacing:-.02em; color:var(--ink); }
+  .work .wk{ font-size:12px; font-weight:600; color:var(--dim); display:block; margin-top:4px; }
+  .work:hover .wt{ color:var(--accent); }
+  .work .arw{ position:absolute; top:22px; right:22px; color:var(--dim); }
+  .work:hover .arw{ color:var(--accent); }
+
+  footer{ padding:clamp(56px,8vw,88px) 0 clamp(36px,6vw,56px); }
+  .foot-links{ display:flex; gap:22px; flex-wrap:wrap; font-size:13px; font-weight:600; }
+  .foot-links a{ color:var(--grey); }
+  .foot-links a:hover{ color:var(--accent); }
+  .foot-fine{ margin-top:22px; font-size:12.5px; line-height:1.6; color:var(--dim); max-width:72ch; }
+
+  .toTop{ position:fixed; left:clamp(16px,3vw,32px); bottom:clamp(16px,3vw,32px); z-index:45; width:46px; height:46px; border-radius:50%; border:1px solid var(--line-2); background:rgba(255,255,255,.85); box-shadow:var(--shadow); backdrop-filter:blur(6px); color:var(--ink); display:grid; place-items:center; cursor:pointer; opacity:0; transform:translateY(10px); transition:opacity .3s, transform .3s, border-color .2s; }
+  .toTop.on{ opacity:1; transform:none; }
+  .toTop:hover{ border-color:var(--accent); color:var(--accent); }
+
+  .nav{ animation:drop .85s cubic-bezier(.16,1,.3,1) .4s both; }
+  @keyframes drop{ from{ transform:translateY(-160px); } to{ transform:translateY(0); } }
+  [data-h]{ animation:rise .9s cubic-bezier(.16,1,.3,1) both; }
+  .hero .eyebrow{ --r:70px; animation-delay:.05s; }
+  h1.title{ --r:160px; animation-delay:0s; }
+  .hero .desc{ --r:70px; animation-delay:.12s; }
+  .hero .actions{ --r:50px; animation-delay:.18s; }
+  .hero .cover{ --r:40px; animation-delay:.24s; }
+  .hero .meta{ --r:40px; animation-delay:.3s; }
+  @keyframes rise{ from{ transform:translateY(var(--r,60px)); } to{ transform:translateY(0); } }
+
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    .mq{ animation:none; }
+    .nav,[data-h]{ animation:none; }
+    .toTop,.work,.btn,.pill{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">&larr; Portfolio</a>
+  <span id="clock" aria-hidden="true">--:--:--</span>
+  <a class="pill" href="#scope">Overview &darr;</a>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow" data-h>Case study</div>
+    <h1 class="title" data-h>SFCS</h1>
+    <p class="desc" data-h>School of Film and Cinema Studies — India's only all-practical, "no classroom" film school, with campuses in Indore and Ahmedabad. I run its <strong>digital marketing</strong>, and I designed, built and now maintain the site solo — live inside Wix Studio as nine custom-coded modules with their own content system and AI chat assistant.</p>
+    <div class="actions" data-h>
+      <a class="btn" href="https://www.schooloffilm.in/" target="_blank" rel="noopener">Visit Site &#8599;</a>
+      <a class="btn line" href="#design">See the screens &darr;</a>
+    </div>
+
+    <div class="cover" data-h>
+      <div class="browser">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <div class="shotwrap"><img src="assets/sfcs/hero.jpg" alt="SFCS homepage — No Classroom Film School"></div>
+      </div>
+    </div>
+
+    <dl class="meta" data-h>
+      <div><dt>Year</dt><dd>2026</dd></div>
+      <div><dt>Role</dt><dd>Marketing, design &amp; build</dd></div>
+      <div><dt>Scope</dt><dd>Design · Build · SEO · AI chat</dd></div>
+      <div><dt>Category</dt><dd>Education · Web · Wix Studio</dd></div>
+    </dl>
+  </header>
+
+  <section id="scope">
+    <div class="sec">
+      <h2 class="slabel reveal">Overview</h2>
+      <div class="sbody reveal">
+        <p>SFCS is an all-practical film school with campuses in Indore and Ahmedabad. I currently run its digital marketing, and I designed, built and now maintain its website — schooloffilm.in — solo, from first concept through SEO, launch and ongoing updates. Client contact: Abhinav Dubey, SFCS.</p>
+        <p><em>A note on context:</em> this is real, live client work, actively maintained. The site runs inside Wix Studio, but not as a Wix template — it's nine custom-coded front-end modules that load a single pinned build, with their own content system and an AI chat assistant underneath.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="problem">
+    <div class="sec">
+      <h2 class="slabel reveal">Problem</h2>
+      <div class="sbody reveal">
+        <p>The school's previous Wix site didn't communicate what makes SFCS different: no classroom lectures, students on real sets with professional equipment from day one. It also had weak SEO and no clear route from visitor to application — fees, the Script to Screen Grant, Ahmedabad pre-registration and admissions were all hard to find. And the school's own team had no way to edit text, fees, films or campus details without a developer.</p>
+      </div>
+    </div>
+    <div class="shot reveal">
+      <img src="assets/sfcs/marquee.jpg" alt="SFCS diagonal caution-tape style marquee band">
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="sec">
+      <h2 class="slabel reveal">Approach</h2>
+      <div class="sbody reveal">
+        <p>I treated this as three problems sharing one page: a cinematic front end that actually shows the "no classroom" pitch, a content system the school team could run themselves, and real, crawlable SEO out of a site that had to live inside Wix's custom-element model.</p>
+        <p>I designed the visual language first — dark background, yellow accent, kinetic type — then built the front end in plain HTML/CSS/JS with GSAP and canvas animation rather than Wix's own templates, so it could carry real motion without fighting the platform.</p>
+      </div>
+    </div>
+    <div class="shot reveal">
+      <div class="fcard">
+        <span class="kick">The core decision</span>
+        <h3>Build the front end outside Wix entirely, then ship it in as nine custom elements it just has to load.</h3>
+        <span class="foot">Plain HTML/CSS/JS, GSAP and canvas &nbsp;&middot;&nbsp; a content system the school team runs themselves</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="design">
+    <div class="sec">
+      <h2 class="slabel reveal">What I built</h2>
+      <div class="sbody reveal">
+        <p>A one-page site with a dark, cinematic look and a yellow accent, led by a kinetic "No classroom film school." headline and a canvas-drawn multicolour ring animation in the hero. Sections cover why SFCS, courses and fees, the Script to Screen Grant (as a popup), admissions, campuses, a 2025–26 projects showcase with real film credits (Marigold, Meera and others), FAQ, contact, a newsletter signup, and social links.</p>
+        <p>All text, fees, dates, films, campuses and social links live in JSON files edited through Pages CMS, so the team updates the site without touching code. A Python build script compiles the site and its content into a single JavaScript file, shipped as nine Wix Studio custom elements — Hero, Why, Courses/Grant, Admissions, Campuses, Message, FAQ/Contact, Subscribe, Footer — loaded from a jsDelivr CDN URL pinned to a specific git commit. Updates go through a pull request, a rebuild, and a check that the live site is actually serving the new build.</p>
+        <p>For SEO, the site generates a crawlable noscript block from the same JSON content, plus LocalBusiness structured data, a shorter page title, image alt text, and 301 redirects from the old site's URLs. I also built and styled a Wix Smart Chat assistant, trained on rules written from the site's real content — courses, fees, how to apply, the grant, campuses — answering in English, Hindi and Hinglish with quick-reply topics. Its launcher is a restyled dark pill with a rotating multicolour stroke in the hero's ring colours, Wix's default glow hidden, lifted clear of the page content.</p>
+      </div>
+    </div>
+
+    <div class="shot stack">
+      <div class="shot-inner reveal">
+        <img src="assets/sfcs/course-picker.jpg" alt="SFCS courses and fees section">
+      </div>
+      <div class="shot-inner reveal">
+        <img src="assets/sfcs/projects.jpg" alt="SFCS featured student projects — posters and stills collage">
+      </div>
+      <div class="shot-inner reveal">
+        <img src="assets/sfcs/contact.jpg" alt="SFCS contact form and FAQ">
+      </div>
+    </div>
+  </section>
+
+  <section id="challenges">
+    <div class="sec">
+      <h2 class="slabel reveal">Challenges</h2>
+      <div class="sbody reveal">
+        <p>Getting a heavily animated custom front end to run inside Wix Studio without an iframe, while staying crawlable, was the core technical problem. Because the first script loaded wins inside Wix's custom-element model, all nine elements have to ship from the same build every time — no partial updates.</p>
+        <ul class="result reveal">
+          <li><b>No iframe, still crawlable</b> — a fully custom, animated front end running as native Wix custom elements, not a sandboxed embed.</li>
+          <li><b>One build, nine elements</b> — every module has to ship from the same pinned commit, since the first script loaded wins.</li>
+          <li><b>Styling a widget with no style API</b> — the chat launcher's rotating stroke is applied at runtime by finding Wix's own button on the page.</li>
+          <li><b>Mobile collisions</b> — keeping the floating chat button clear of the hero's Apply button, and fixing the grant popup's scroll on phones.</li>
+          <li><b>A safe editing path</b> — giving a non-technical team a way to change content without ever touching code.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="sec">
+      <h2 class="slabel reveal">Result</h2>
+      <div class="sbody reveal">
+        <p>For Oct 25 – Nov 23, 2026, the site had 218 sessions, up 137% on the previous 30 days, and 116 unique visitors, up 59%. Traffic in that window: 110 direct, 45 from Google organic, 29 from ChatGPT and other AI platforms. Average session length was about 11 minutes — a small sample, but a real signal that visitors who land are reading, not bouncing.</p>
+        <p><strong>What I'd do next:</strong> an Ahmedabad-specific section for search, since that campus is newer and under-indexed; click tracking on the Apply and Pre-register actions, so the funnel from visit to application is measurable, not inferred from sessions; and Google Search Console, properly set up — not wired in yet.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<a class="marquee" href="sfcs.html" aria-label="More works">
+  <div class="mq"><span>More Works</span><span class="o">More Works</span><span>More Works</span><span class="o">More Works</span></div>
+</a>
+
+<div class="wrap">
+  <div class="works">
+    <a class="work" href="car-arbab.html">
+      <span class="arw">&#8599;</span>
+      <span><span class="wt">Car Arbab</span><span class="wk">Salvage Vehicle Auction Marketplace</span></span>
+    </a>
+    <a class="work" href="dc.html">
+      <span class="arw">&#8599;</span>
+      <span><span class="wt">DC</span><span class="wk">Health &amp; Wellness App</span></span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="index.html">&larr; Back to portfolio</a>
+      <a href="mailto:palanjali0853@gmail.com">palanjali0853@gmail.com</a>
+      <a href="https://linkedin.com/in/anjali-paal" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="foot-fine">SFCS — School of Film and Cinema Studies. Screens shown are captured from the live site at schooloffilm.in.</p>
+  </div>
+</footer>
+
+<button class="toTop" id="toTop" type="button" aria-label="Back to top">&uarr;</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  (function () {
+    var clock = document.getElementById("clock");
+    function tick() { var d = new Date(), p = function (n) { return (n < 10 ? "0" : "") + n; };
+      clock.textContent = p(d.getHours()) + ":" + p(d.getMinutes()) + ":" + p(d.getSeconds()); }
+    tick(); setInterval(tick, 1000);
+
+    var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var toTop = document.getElementById("toTop");
+    toTop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); });
+    addEventListener("scroll", function () { toTop.classList.toggle("on", scrollY > 700); }, { passive: true });
+
+    if (!window.gsap || reduce) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    requestAnimationFrame(function () {
+      gsap.set(".reveal", { opacity: 0, y: 18 });
+      ScrollTrigger.batch(".reveal", { start: "top 92%",
+        onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, duration: 0.55, stagger: 0.08, ease: "power2.out", overwrite: true }); } });
+      ScrollTrigger.refresh();
+      gsap.utils.toArray(".reveal").forEach(function (el) {
+        if (el.getBoundingClientRect().top < innerHeight * 0.92) gsap.set(el, { opacity: 1, y: 0 });
+      });
+
+      var coverImg = document.querySelector(".cover img");
+      if (coverImg) {
+        gsap.set(coverImg, { willChange: "transform" });
+        gsap.fromTo(coverImg, { scale: 1.08 }, {
+          scale: 1, ease: "none",
+          scrollTrigger: { trigger: coverImg.closest(".cover"), start: "top bottom", end: "center center", scrub: 0.9 }
+        });
+      }
+
+      setTimeout(function () {
+        var r = document.querySelector(".slabel.reveal");
+        if (r && getComputedStyle(r).opacity === "0") gsap.set(".reveal", { clearProps: "opacity,transform" });
+      }, 4000);
+    });
+  })();
+</script>
+
+</body>
+</html>
